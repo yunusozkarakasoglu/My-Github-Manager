@@ -83,7 +83,9 @@ Son günlerde oluşturulan, kategorilerine uygun **yeni açık kaynak repoları*
 
 ### Kullanım:
 ```bash
-python3 tara.py --gun 30                      # son 30 günde oluşturulanlar
+python3 tara.py --gun 30                      # son 30 günde oluşturulanlar (SORAR)
+python3 tara.py --gun 30 --auto             # ⚡ soru sormadan uygunları otomatik ekler
+python3 tara.py --gun 30 --no-add           # sadece tara, ekleme yapma
 python3 tara.py --since 2026-08-01           # belirli tarihten beri
 python3 tara.py --since X --until Y          # tarih aralığı
 python3 tara.py --gun 14 --kategori "AI"     # yalnızca belirli kategori
@@ -102,7 +104,7 @@ python3 tara.py --gun 30 --min-stars 100     # isteğe bağlı min ★ (varsayı
 - ⛔ Min ★ kriteri yok (istemezsen) — küçük ama değerli repolar da yakalanır
 - 🗂️ Her sonuç için **önerilen kategori** otomatik eşleştirilir (TR+EN anahtar kelimelerle)
 
-> 💡 **Asistana söyle:** *"repo tara"* → senin için çalıştırır, listeyi sunar, onayınla star + kategoriye ekler.
+> 💡 **Asistana söyle:** *"repo tara"* → senin için çalıştırır, listeyi sunar ve **sana sorar** hangilerini ekleyeceğini (manuel). *"repo tara --auto"* dersen hepsini otomatik ekler.
 
 ---
 
@@ -133,3 +135,38 @@ python3 tara.py --gun 30 --min-stars 100     # isteğe bağlı min ★ (varsayı
 - **Star listesi:** GitHub REST API (`GET /user/starred`)
 - **Kategori üyelikleri:** GitHub GraphQL (`viewer.lists`)
 - Tüm işlemler ücretsiz GitHub API limitleri içinde çalışır (token başına 5000 istek/saat)
+
+---
+
+## 🛠️ Karşılaşılabilecek Sorunlar ve Çözümleri
+
+| # | Sorun | Belirti | Çözüm |
+|---|---|---|---|
+| 1 | **gh girişi yok** | `gh: To use GitHub CLI... please run gh auth login` | `gh auth login` ile giriş yap |
+| 2 | **Token scope eksik** | `INSUFFICIENT_SCOPES ... requires one of: ['user']` (liste işlemlerinde) | `gh auth refresh -s user` ile scope ekle |
+| 3 | **API limiti aşıldı** | `API rate limit exceeded` / HTTP 403 | Scriptler otomatik bekleyip tekrar dener; 1 saat sonra tekrar dene (limit: 5000/saat, arama 30/dk) |
+| 4 | **tara.py asılı kalıyor** | Uzun süre çıktı yok | Script URL'leri encode eder ama eski sürüm kalıntısı olabilir → `git pull` ile güncelle; `python3 -u tara.py` ile çalıştır (önbelleksiz) |
+| 5 | **Türkçe/özel karakter hatası** | `JSONDecodeError` / boş sonuç | Komut satırında kategori adlarını tırnak içinde ver: `--kategori "AI"` |
+| 6 | **Repo kategoriye eklenmiyor** | "Liste bulunamadı" / emoji eşleşmiyor | `tara.py` listeleri her çalıştırmada taze çeker; sorun devam ederse `gh api graphql -f 'query={ viewer { lists { nodes { name } } } }'` ile listeyi doğrula |
+| 7 | **Bir repo birden fazla listeden düşüyor** | Repo sadece son eklenen listede kalıyor | ⚠️ `updateUserListsForItem` **eklemez, DEĞİŞTİRİR** — çoklu listede kalması için tüm liste ID'lerini birlikte vermek gerekir (scriptler bunu doğru yapar) |
+| 8 | **GitHub Pages build hatası** | Pages durumu `errored` — "Page build failed" | Repoda `.nojekyll` dosyası olmalı (zaten var — silme); Jekyll işlemeyi kapatır |
+| 9 | **index.html eski görünüyor** | Yeni star/liste yansımamış | `./guncelle.sh` çalıştır; Pages canlıysa build 2-3 dk sürer, bekle |
+| 10 | **data.json bozuk/eski** | guncelle.py hata veriyor | `python3 guncelle.py --fetch` ile veriyi yeniden çek (--fetch olmadan önbelleği kullanır) |
+| 11 | **tarama sonucu boş** | "0 yeni repo" | Tarih aralığını genişlet (`--gun 60`), `--kategori` filtresini kontrol et, `--min-stars` verdiysen düşür veya kaldır |
+| 12 | **gh api yavaş/çöküyor** | Timeout / bağlantı hatası | İnterneti kontrol et; `gh api rate_limit` ile kalan limiti gör; birkaç dk bekle |
+| 13 | **git push reddediliyor** | `Authentication failed` / `rejected` | `git remote -v` ve `gh auth status` kontrol et; kimlik: `git config user.name` + `user.email` |
+| 14 | **Python yok/eski** | `python3: command not found` | `sudo apt install python3` (Debian/Ubuntu) — 3.8+ gerekli |
+| 15 | **Yıldız sayısı sayfada farklı** | GitHub UI ile API farklı | GitHub cache/gecikmesi — F5, birkaç dk bekle |
+
+---
+
+## ⚠️ Dikkat Edilmesi Gerekenler
+
+- ⛔ **Star silme işlemi geri alınamaz** — unstar edilen repo bir daha "ne zaman star'ladım" bilgisini taşımaz. Temizlik öncesi `data.json`/yedek alın.
+- 🔄 **`updateUserListsForItem` eklemez, değiştirir** — bir repoyu 2. listeye eklerken 1. listeden düşmemesi için scriptler tüm liste ID'lerini tek çağrıda verir. Elle müdahalede buna dikkat et.
+- 🧪 **Hobi & Diğer listesi boş** — o kategorideki repolar yeni mantığa uymadığı için star'dan düşürüldü. İstersen tekrar eklenebilir.
+- 🕒 **GitHub Pages build gecikmesi** — push sonrası canlı sitedeki güncelleme 2-3 dk sürebilir.
+- 💰 **Hepsi ücretsiz** — tüm scriptler GitHub'ın ücretsiz API limitleriyle çalışır; ek ücret yok. Ama arama API limiti (30/dk) aşılırsa script otomatik bekler.
+- 📁 **`index.html` tek dosyadır** — sunucu/database gerekmez; sadece tarayıcıda aç. İnternet gerektirmez (veri gömülüdür).
+- 🔐 **`gh` token'ı `user` scope'u olmadan liste okuyamaz** — `gh auth refresh -s user` bir kez yapılmalı.
+- 📊 **Kategoriler GitHub Lists'te yaşar** — GitHub star sayfası klasör göstermez; düzen bu katalogda ve Lists'te görünür.

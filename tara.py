@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 # ⭐ Yeni Repo Tarama
 # Kullanım:
-#   python3 tara.py --gun 30                  # son 30 günde oluşturulan ilgili repolar
+#   python3 tara.py --gun 30                  # son 30 günde oluşturulan ilgili repolar (sorar)
+#   python3 tara.py --gun 30 --auto           # soru sormadan uygun olanları otomatik ekler
+#   python3 tara.py --gun 30 --no-add         # sadece tara, ekleme yapma
 #   python3 tara.py --since 2026-08-01        # belirli tarihten itibaren
 #   python3 tara.py --since X --until Y       # tarih aralığı
-#   python3 tara.py --gun 14 --min-stars 50   # yıldız eşiği ile
-#   python3 tara.py --gun 30 --kategori "AI"  # yalnızca belirli kategori
-#   python3 tara.py --gun 30 --kaydet         # sonucu tarama.md olarak kaydet
+#   python3 tara.py --gun 14 --kategori "AI"  # yalnızca belirli kategori
+#   python3 tara.py --gun 30 --kaydet         # sonucu tarama.md olarak kaydeder
 #
-# Çıktı sütunları: Repo Adı | URL | Tarih (eklenme) | Özellikler (ne yapar)
+# Çıktı sütunları: Repo Adı | URL | Tarih | Özellikler (ne yapar) | ★ | Lisans | Kategori
 
-import argparse, json, subprocess, datetime, sys, os, urllib.parse
+import argparse, json, subprocess, datetime, sys, os, urllib.parse, time
 
 # ── Kategori → arama anahtar kelimeleri (TR + EN) ──
 QUERIES = {
@@ -45,6 +46,7 @@ QUERIES = {
   "🔌 Ücretsiz API'ler & Kütüphaneler": ["free api","public apis","free api collection","ücretsiz api"],
 }
 
+# ⛔ LİSANS: kesinlikle tamamen açık kaynak + ücretsiz (OSI onaylı)
 GOOD_LICENSES = {'MIT','Apache-2.0','GPL-3.0','GPL-2.0','AGPL-3.0','LGPL-3.0','LGPL-2.1','MPL-2.0','BSD-3-Clause','BSD-2-Clause','ISC','EPL-2.0','EPL-1.0','Unlicense','0BSD','CC0-1.0','Zlib','BSL-1.0'}
 
 def gh_api(path, retries=3):
@@ -52,16 +54,13 @@ def gh_api(path, retries=3):
         try:
             r = subprocess.run(['gh','api',path], capture_output=True, text=True, timeout=60)
         except subprocess.TimeoutExpired:
-            if attempt < retries - 1:
-                import time; time.sleep(4); continue
+            if attempt < retries - 1: time.sleep(4); continue
             return None
         if r.returncode == 0:
             try: return json.loads(r.stdout)
             except: return None
-        # 403 rate-limit → bekle ve tekrar dene
         if '403' in r.stderr or 'rate limit' in (r.stdout + r.stderr).lower():
-            if attempt < retries - 1:
-                import time; time.sleep(10); continue
+            if attempt < retries - 1: time.sleep(10); continue
         return None
     return None
 
@@ -69,13 +68,77 @@ def starred_set():
     r = subprocess.run(['gh','api','user/starred','--paginate','-q','.[].full_name'], capture_output=True, text=True)
     return set(r.stdout.split())
 
+def list_ids():
+    r = subprocess.run(['gh','api','graphql','-f',
+        'query={ viewer { lists(first: 100) { nodes { id name } } } }'], capture_output=True, text=True)
+    try:
+        return {l['name']: l['id'] for l in json.loads(r.stdout)['data']['viewer']['lists']['nodes']}
+    except:
+        return {}
+
+def repo_node_id(name):
+    r = subprocess.run(['gh','api','user/starred','--paginate','-q',f'.[] | select(.full_name == "{name}") | .node_id'],
+                       capture_output=True, text=True)
+    return r.stdout.strip()
+
 def search(q, created_q, per_page=12):
-    # URL-encode: boşluk, >=, : karakterleri düzgün kodlanmalı (yoksa gh api asılı kalır)
     query = f'{q} created:{created_q}'
     encoded = urllib.parse.quote(query, safe='')
     url = f'search/repositories?q={encoded}&sort=stars&order=desc&per_page={per_page}'
     d = gh_api(url)
     return d.get('items', []) if d else []
+
+# ── EKLEME ──
+def add_repo(name, cat, lids, mode='otomatik'):
+    """Repoyu star'lar ve kategori listesine ekler."""
+    if name not in starred_set():
+        r = subprocess.run(['gh','api','-X','PUT',f'user/starred/{name}','--silent'], capture_output=True, text=True)
+        if r.returncode != 0:
+            print(f"   ❌ star: {name}"); return False
+    rid = repo_node_id(name)
+    lid = lids.get(cat)
+    if not lid:
+        print(f"   ❌ kategori listesi bulunamadı: {cat}"); return False
+    q = f'mutation {{ updateUserListsForItem(input: {{ itemId: "{rid}", listIds: ["{lid}"] }}) {{ clientMutationId }} }}'
+    r = subprocess.run(['gh','api','graphql','-f',f'query={q}'], capture_output=True, text=True)
+    ok = r.returncode == 0 and '"errors"' not in r.stdout
+    if ok:
+        print(f"   ✅ {name} → {cat} ({mode})")
+    else:
+        print(f"   ❌ {name}: {r.stderr[:80]}")
+    return ok
+
+def interactive_select(found):
+    """Kullanıcıya hangi repoların ekleneceğini sorar."""
+    print("\n" + "="*70)
+    print("📋 TARANAN REPOLAR — hangilerini ekleyelim?")
+    print("="*70)
+    for i, (cat, r) in enumerate(found, 1):
+        print(f"  {i:2}. {r['name']:<45} → {cat}  (★{r['stars']}, {r['lic']})")
+    print("-"*70)
+    print("  Seçenekler: 1,3,5 · 'hepsi' · 'hiçbiri' · '5:Diğer Araçlar' (kategori değiştir)")
+    try:
+        ans = input("  Seçiminiz: ").strip().lower()
+    except (EOFError, KeyboardInterrupt):
+        print("  (giriş yok — ekleme yapılmadı)"); return []
+    if ans in ('h','hayır','hiçbiri','none','no'):
+        return []
+    if ans in ('e','evet','hepsi','all'):
+        return [(cat, r, cat) for cat, r in found]
+    sel = []
+    for part in ans.replace(',', ' ').split():
+        if ':' in part:
+            idx, newcat = part.split(':', 1)
+            try:
+                cat, r = found[int(idx)-1]
+                sel.append((cat, r, newcat.strip()))
+            except: pass
+        else:
+            try:
+                cat, r = found[int(part)-1]
+                sel.append((cat, r, cat))
+            except: pass
+    return sel
 
 def main():
     p = argparse.ArgumentParser(description='⭐ Yeni repo tarama')
@@ -83,9 +146,11 @@ def main():
     p.add_argument('--since', help='Başlangıç tarihi (YYYY-MM-DD)')
     p.add_argument('--until', help='Bitiş tarihi (YYYY-MM-DD)')
     p.add_argument('--kategori', help='Yalnızca bu kategoriyi tara (isim parçası)')
-    p.add_argument('--min-stars', type=int, default=0, help='İsteğe bağlı min yıldız (varsayılan: kriter yok)', dest='min_stars')
+    p.add_argument('--min-stars', type=int, default=0, help='İsteğe bağlı min yıldız (varsayılan: kriter yok)')
     p.add_argument('--max', type=int, default=8, help='Kategori başına maksimum sonuç (varsayılan 8)')
-    p.add_argument('--kaydet', action='store_true', help='Sonucu tarama.md olarak kaydet')
+    p.add_argument('--kaydet', action='store_true', help='Sonucu tarama.md olarak kaydeder')
+    p.add_argument('--auto', action='store_true', help='Soru sormadan uygun olanları otomatik ekler')
+    p.add_argument('--no-add', action='store_true', help='Sadece tara, ekleme yapma')
     args = p.parse_args()
 
     # Tarih aralığı
@@ -94,27 +159,20 @@ def main():
         since = today - datetime.timedelta(days=args.gun)
         created_q = f">={since.isoformat()}"
     elif args.since:
-        since_d = datetime.date.fromisoformat(args.since)
-        if args.until:
-            created_q = f"{args.since}..{args.until}"
-        else:
-            created_q = f">={args.since}"
+        created_q = f"{args.since}..{args.until}" if args.until else f">={args.since}"
     else:
-        since = today - datetime.timedelta(days=30)
-        created_q = f">={since.isoformat()}"
+        created_q = f">={today - datetime.timedelta(days=30)}"
 
-    print(f"🔍 Tarama başladı: {created_q.replace('>=','sonrası ')} | min ★{args.min_stars}\n")
+    print(f"🔍 Tarama başladı: {created_q.replace('>=','sonrası ')} | lisans: OSI açık kaynak + ücretsiz\n")
 
     cats = QUERIES
     if args.kategori:
         cats = {k: v for k, v in QUERIES.items() if args.kategori.lower() in k.lower()}
         if not cats:
-            print(f"❌ Kategori bulunamadı: {args.kategori}")
-            sys.exit(1)
+            print(f"❌ Kategori bulunamadı: {args.kategori}"); sys.exit(1)
 
     already = starred_set()
-    found = []          # (kategori, repo)
-    seen = set()
+    found, seen = [], set()
     for cat, kws in cats.items():
         for kw in kws:
             items = search(kw, created_q, per_page=args.max)
@@ -122,23 +180,15 @@ def main():
                 full = it['full_name']
                 if full in seen or full in already: continue
                 lic = (it.get('license') or {}).get('spdx_id') or ''
-                # ⛔ LİSANS: kesinlikle tamamen açık kaynak + ücretsiz (OSI onaylı)
-                if lic not in GOOD_LICENSES:
-                    continue
+                if lic not in GOOD_LICENSES: continue          # ⛔ açık kaynak + ücretsiz
                 if it.get('archived'): continue
-                # min ★ kriteri yalnızca --min-stars > 0 verilirse uygulanır
                 if args.min_stars and it['stargazers_count'] < args.min_stars: continue
                 seen.add(full)
-                found.append((cat, {
-                    'name': full, 'url': it['html_url'],
-                    'created': (it.get('created_at') or '')[:10],
-                    'desc': (it.get('description') or '').strip(),
-                    'stars': it['stargazers_count'], 'lic': lic,
-                    'lang': it.get('language') or '',
-                }))
-            # arama limiti koruması
-            import time; time.sleep(2.0)
-        if len(found) < 500: pass
+                found.append((cat, {'name': full, 'url': it['html_url'],
+                                    'created': (it.get('created_at') or '')[:10],
+                                    'desc': (it.get('description') or '').strip(),
+                                    'stars': it['stargazers_count'], 'lic': lic}))
+            time.sleep(2.0)
 
     # ── Çıktı ──
     md = [f"# 🔍 Yeni Repo Tarama ({datetime.date.today().isoformat()})", "",
@@ -148,23 +198,38 @@ def main():
     for cat, r in sorted(found, key=lambda x: -x[1]['stars']):
         desc = (r['desc'] or '—').replace('|','\\|')[:90]
         md.append(f"| [{r['name']}]({r['url']}) | {r['url']} | {r['created']} | {desc} | ★{r['stars']} | {r['lic']} | {cat} |")
-
     out = "\n".join(md)
     print(out)
-    print(f"\n{'─'*60}\n📊 TOPLAM: {len(found)} yeni repo bulundu")
-
-    # kategori bazlı özet
-    print()
-    print('📂 KATEGORİ DAĞILIMI:')
-    from collections import Counter
-    for c, n in Counter(c for c, _ in found).most_common():
-        print(f'   {c}: {n} repo')
-    print()
+    print(f"\n{'─'*70}\n📊 TOPLAM: {len(found)} yeni repo bulundu")
 
     if args.kaydet:
         fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tarama.md')
         open(fn, 'w', encoding='utf-8').write(out)
         print(f"💾 Kaydedildi: {fn}")
+
+    # ── Eklemeye karar ──
+    if not found:
+        print("ℹ️  Uygun yeni repo bulunamadı."); return
+    if args.no_add:
+        print("ℹ️  --no-add: ekleme yapılmadı (isteğe bağlı olarak bu repoları ekleyebilirsin).")
+        return
+
+    lids = list_ids()
+    if args.auto:
+        print("\n⚡ AUTO MOD: soru sorulmadan ekleniyor...")
+        for cat, r in found:
+            add_repo(r['name'], cat, lids, mode='otomatik')
+        print("✅ AUTO tamamlandı")
+        return
+
+    sel = interactive_select(found)
+    if not sel:
+        print("ℹ️  Hiçbir repo eklenmedi.")
+        return
+    print(f"\n➕ {len(sel)} repo ekleniyor...")
+    for cat, r, newcat in sel:
+        add_repo(r['name'], newcat, lids, mode='manuel')
+    print("✅ Tamamlandı — 'kataloğu güncelle' dersen index.html de güncellenir.")
 
 if __name__ == '__main__':
     main()
