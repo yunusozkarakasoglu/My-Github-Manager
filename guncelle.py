@@ -183,6 +183,11 @@ td.repo a {{ color:var(--accent); font-weight:600; text-decoration:none; font-si
 td.repo a:hover {{ text-decoration:underline; }}
 td.repo .owner {{ color:var(--muted); font-size:12px; display:block; margin-top:2px; }}
 td.repo .push {{ color:var(--muted); font-size:11px; margin-top:4px; }}
+td.stars {{ min-width:110px; white-space:nowrap; }}
+.starNum {{ font-weight:700; color:#7ee787; font-size:14px; }}
+.starBar {{ width:100px; height:4px; background:#21262d; border-radius:2px; margin-top:5px; overflow:hidden; }}
+.starFill {{ height:100%; background:linear-gradient(90deg,#1f6feb,#3fb950); border-radius:2px; }}
+.th-stars {{ width:110px; }}
 td.desc {{ color:#c9d1d9; min-width:240px; max-width:380px; }}
 .badges {{ display:flex; flex-wrap:wrap; gap:5px; }}
 .badge {{ font-size:11px; padding:2px 8px; border-radius:10px; white-space:nowrap; }}
@@ -231,6 +236,7 @@ td.tags {{ min-width:170px; }}
       <table>
         <thead><tr>
           <th data-sort="name">Repo Adı</th>
+          <th data-sort="stars" class="th-stars">★ Yıldız</th>
           <th>Kısa Açıklama</th>
           <th>Özellikler</th>
           <th>Etiketler</th>
@@ -337,21 +343,26 @@ function render() {{
   rows.forEach(r => {{
     const feats = [];
     if (r.lang) feats.push(`<span class="badge lang">${{r.lang}}</span>`);
-    feats.push(`<span class="badge star">★${{r.stars.toLocaleString('tr-TR')}}</span>`);
     if (r.license) feats.push(`<span class="badge lic">${{r.license}}</span>`);
     (r.topics||[]).slice(0,3).forEach(t => feats.push(`<span class="badge topic">${{esc(t)}}</span>`));
     const tags = [...genTags(r), ...(r.cats||[])].filter((v,i,a) => a.indexOf(v) === i).slice(0,8);
+    const maxStars = Math.max(...REPOS.map(x => x.stars));
+    const starW = Math.max(4, Math.round(r.stars / maxStars * 100));
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td class="repo"><a href="${{r.url}}" target="_blank" rel="noopener">${{esc(r.name.split('/')[1])}}</a>
         <span class="owner">${{esc(r.name)}}</span>
         <span class="push">🕒 ${{r.pushed||'—'}}</span></td>
+      <td class="stars">
+        <div class="starNum">★ ${{r.stars.toLocaleString('tr-TR')}}</div>
+        <div class="starBar"><div class="starFill" style="width:${{starW}}%"></div></div>
+      </td>
       <td class="desc">${{esc(r.desc)||'—'}}</td>
       <td><div class="badges">${{feats.join('')}}</div></td>
       <td class="tags"><div class="badges">${{tags.map(t=>`<span class="tag">${{esc(t)}}</span>`).join('')||'—'}}</div></td>`;
     tbody.appendChild(tr);
   }});
-  if (!rows.length) tbody.innerHTML = '<tr><td colspan="4" class="empty">Sonuç bulunamadı 🔍</td></tr>';
+  if (!rows.length) tbody.innerHTML = '<tr><td colspan="5" class="empty">Sonuç bulunamadı 🔍</td></tr>';
   document.getElementById('shownCount').textContent = rows.length;
 }}
 
