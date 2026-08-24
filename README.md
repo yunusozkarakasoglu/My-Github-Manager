@@ -15,6 +15,21 @@ GitHub star'larını ve kategori (Lists) üyeliklerini otomatik çeker, tarayıc
 
 ---
 
+## ℹ️ Bu Repo Nedir?
+
+**Star Kataloğu**, GitHub'da star'ladığım tüm repoları **süzülmüş, kategorize edilmiş ve aranabilir** bir kütüphaneye dönüştüren kişisel bir araç deposudur. GitHub'ın dağınık star listesi yerine; kullanım amacına göre 30 kategoriye ayrılmış, **tamamı açık kaynak + ücretsiz + kaliteli** repolardan oluşan bir koleksiyon sunar.
+
+### 🎯 Ne İşe Yarar?
+
+- **Proje kütüphanesi** — Yeni bir projeye başladığında GitHub'da saatlerce aramak yerine, kategorilere ayrılmış bu kütüphaneden "bu projede hangi repoyu kullanabiliriz?" sorusuna saniyeler içinde cevap buluruz.
+- **Yeni repo keşfi** — "Repo tara" komutuyla son günlerde oluşturulan, ilgi alanlarına uygun yeni açık kaynak repoları otomatik keşfeder; onayla kataloğa eklenir.
+- **Canlı katalog** — Tek dosyalık HTML katalog (GitHub Pages'te yayında): sol menüden kategori seç, ara, filtrele, yıldıza göre sırala.
+- **Hızlı arama** — `ara.py` ile 300+ repoyu anahtar kelime, kategori, dil ve özellik etiketlerine göre anında tarar.
+
+> 💡 **Kısacası:** Bu repo, GitHub karmaşasından arındırılmış, **kendi seçtiğim kaliteli açık kaynak araçlarımın** hem görsel kataloğu hem de akıllı tarama/asistan altyapısıdır.
+
+---
+
 ## ✅ Gereksinimler
 
 | Araç | Neden gerekli |
