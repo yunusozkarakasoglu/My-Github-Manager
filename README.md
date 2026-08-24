@@ -64,14 +64,19 @@ cd star-katalog
 ```
 Bu script sırayla:
 1. GitHub'dan **star listesini** ve **kategori üyeliklerini** çeker
-2. `index.html`'i yeniden üretir
-3. Değişiklikleri commit + push eder
-4. GitHub Pages otomatik yeniden derlenir (2-3 dk)
+2. **`data.json`**'ı günceller (benim okuduğum ana JSON veri dosyası — etiketler dahil)
+3. **`index.html`** kataloğu yeniden üretir
+4. **`repo-indeksi.txt`** (grep indeksi) yeniden üretir
+5. Değişiklikleri commit + push eder
+6. GitHub Pages otomatik yeniden derlenir (2-3 dk)
 
 ### Elle:
 ```bash
-python3 guncelle.py --fetch   # veriyi GitHub'dan çek + index.html üret
+python3 guncelle.py --fetch   # veriyi GitHub'dan çek + data.json + index.html + repo-indeksi.txt üret
 ```
+
+> 🔄 **Tara sonrası otomatik güncelleme:** `tara.py` ile yeni repo eklediğinde, script ekleme sonrası
+> `data.json` + `index.html` + `repo-indeksi.txt`'i **kendiliğinden tazeler** — ayrıca "kataloğu güncelle" demene gerek kalmaz.
 
 > 💡 **Asistana söyle:** *"kataloğu güncelle"* → `./guncelle.sh` çalıştırılır.
 
@@ -128,7 +133,7 @@ ASİSTAN: 1) Projenin ihtiyaçlarını anlar
 ```bash
 python3 ara.py --indeks              # indeks dosyalarını (yeniden) üret
 python3 ara.py "pdf"                 # anahtar kelime ara
-python3 ara.py "pdf üretim"          # çok kelimeli arama
+python3 ara.py "pdf üretim"          # çok kelimeli arama (hepsi eşleşmeli)
 python3 ara.py "rag" --kategori "Bellek"  # kategori filtresi
 python3 ara.py "crm" --lang python   # dil filtresi
 python3 ara.py "erp" --min 1000      # min ★ ile
@@ -138,9 +143,10 @@ python3 ara.py --liste               # tüm kategoriler + sayılar
 **Veri dosyaları (senin için hızlı tarama):**
 | Dosya | İçerik |
 |---|---|
-| `repo-indeksi.json` | Yapılandırılmış indeks (her repo: ad, url, açıklama, etiketler, kategori, dil, ★, lisans) |
-| `repo-indeksi.txt` | **grep dostu** tek satır kayıtlar → `grep -i "pdf" repo-indeksi.txt` ile anlık arama |
-| `data.json` | Ham veri (guncelle.py üretir) |
+| `data.json` | **ANA veri dosyası (JSON)** — her repo: ad, url, açıklama, dil, ★, lisans, topic, kategori + **otomatik etiketler**. Asistan bu dosyayı okur; her güncellemede tazelenir |
+| `repo-indeksi.txt` | JSON'dan türetilen **grep dostu** indeks → `grep -i "pdf" repo-indeksi.txt` ile anlık arama |
+
+> 💡 Asistanına *"projem için pdf işi yapan repo bul"* gibi bir istek verdiğinde, `data.json` üzerinden saniyeler içinde tarar ve önerir.
 
 > 💡 Asistanına *"projem için pdf işi yapan repo bul"* gibi bir istek verdiğinde, bu indeks dosyaları üzerinden saniyeler içinde tarar ve önerir.
 
@@ -155,7 +161,7 @@ python3 ara.py --liste               # tüm kategoriler + sayılar
 | `guncelle.sh` | Tek komutla güncelleme (çek → üret → commit → push) |
 | `tara.py` | 🔍 Yeni repo tarama aracı |
 | `ara.py` | ⚡ Hızlı arama / indeks aracı (proje kütüphanesi) |
-| `repo-indeksi.json` / `.txt` | Arama için optimize indeks dosyaları |
+| `repo-indeksi.txt` | grep dostu indeks (data.json'dan türetilir) |
 | `data.json` | Son veri önbelleği (repo + kategori üyelikleri) |
 | `tarama.md` | Son tarama çıktısı (—kaydet ile oluşur) |
 

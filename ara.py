@@ -15,8 +15,6 @@ import json, os, sys, argparse, re
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(BASE, 'data.json')
-IDX_JSON = os.path.join(BASE, 'repo-indeksi.json')
-IDX_TXT = os.path.join(BASE, 'repo-indeksi.txt')
 
 # ── Etiket/özellik anahtar kelimeleri (tara.py ile aynı mantık) ──
 KEYWORD_TAGS = [
@@ -58,25 +56,6 @@ def load_data():
         sys.exit(1)
     return json.load(open(DATA, encoding='utf-8'))
 
-def build_index():
-    data = load_data()
-    repos = []
-    for r in data['repos']:
-        r2 = dict(r)
-        r2['tags'] = gen_tags(r)
-        repos.append(r2)
-    # JSON indeks
-    json.dump({'updated': data['updated'], 'count': len(repos), 'repos': repos},
-              open(IDX_JSON, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    # grep dostu TXT indeks: name | kategori | ★ | dil | lisans | etiketler | açıklama
-    lines = [f"# {data['updated']} — {len(repos)} repo | format: ad | kategori | ★ | dil | lisans | etiketler | açıklama"]
-    for r in sorted(repos, key=lambda x: -x['stars']):
-        cats = ';'.join(r.get('cats') or [])
-        tags = ','.join(r['tags'])
-        lines.append(f"{r['name']} | {cats} | ★{r['stars']} | {r.get('lang','')} | {r.get('license','')} | {tags} | {(r.get('desc') or '').replace(chr(10),' ')}")
-    open(IDX_TXT, 'w', encoding='utf-8').write('\n'.join(lines))
-    print(f"✅ İndeks üretildi: repo-indeksi.json ({os.path.getsize(IDX_JSON):,} B) + repo-indeksi.txt ({os.path.getsize(IDX_TXT):,} B)")
-
 def search(kw, kateg=None, lang=None, min_stars=0):
     data = load_data()
     terms = [t.lower() for t in kw.split() if t.strip()]
@@ -88,7 +67,7 @@ def search(kw, kateg=None, lang=None, min_stars=0):
             continue
         if min_stars and r.get('stars',0) < min_stars:
             continue
-        tags = gen_tags(r)
+        tags = r.get('tags') or gen_tags(r)
         hay = ' '.join([r['name'], r.get('desc',''), r.get('lang',''),
                         ' '.join(r.get('topics') or []), ' '.join(tags),
                         ' '.join(r.get('cats') or [])]).lower()
@@ -100,15 +79,11 @@ def search(kw, kateg=None, lang=None, min_stars=0):
 def main():
     p = argparse.ArgumentParser(description='⭐ Hızlı repo arama')
     p.add_argument('kelime', nargs='?', help='Aranacak anahtar kelime(ler)')
-    p.add_argument('--indeks', action='store_true', help='İndeks dosyalarını üret')
     p.add_argument('--kategori', help='Kategori filtresi')
     p.add_argument('--lang', help='Dil filtresi')
     p.add_argument('--min', type=int, default=0, help='Min ★')
     p.add_argument('--liste', action='store_true', help='Kategorileri listele')
     args = p.parse_args()
-
-    if args.indeks:
-        build_index(); return
 
     if args.liste:
         data = load_data()
@@ -122,7 +97,7 @@ def main():
         return
 
     if not args.kelime:
-        print("Kullanım: python3 ara.py \"pdf\" | python3 ara.py --indeks | python3 ara.py --liste")
+        print("Kullanım: python3 ara.py \"pdf\" | python3 ara.py --liste")
         sys.exit(1)
 
     res = search(args.kelime, args.kategori, args.lang, args.min)

@@ -3,9 +3,41 @@
 # Kullanım: python3 guncelle.py  → GitHub'dan star'ları + kategorileri çeker, index.html üretir
 import json, subprocess, datetime, sys, os
 
+KEYWORD_TAGS = [
+    ('ai','AI'),('llm','LLM'),('mcp','MCP'),('agent','Ajan'),('rag','RAG'),('docker','Docker'),
+    ('self-host','Self-host'),('selfhost','Self-host'),('open source','Açık Kaynak'),('open-source','Açık Kaynak'),
+    ('privacy','Gizlilik'),('dashboard','Dashboard'),('automation','Otomasyon'),('cms','CMS'),
+    ('erp','ERP'),('crm','CRM'),('ecommerce','E-Ticaret'),('pdf','PDF'),('label','Etiket'),
+    ('print','Baskı'),('thermal','Termal'),('kanban','Kanban'),('note','Not'),('memory','Bellek'),
+    ('codebase','Codebase'),('graph','Graf'),('react','React'),('typescript','TypeScript'),
+    ('python','Python'),('rust','Rust'),('go','Go'),('vue','Vue'),('neovim','Neovim'),
+    ('vscode','VS Code'),('terminal','Terminal'),('cli','CLI'),('tui','TUI'),('extension','Eklenti'),
+    ('skill','Skill'),('plugin','Eklenti'),('api','API'),('search','Arama'),('rss','RSS'),
+    ('media','Medya'),('music','Müzik'),('video','Video'),('camera','Kamera'),('security','Güvenlik'),
+    ('vpn','VPN'),('network','Ağ'),('password','Şifre'),('email','E-posta'),('finance','Finans'),
+    ('budget','Bütçe'),('invoice','Fatura'),('hr','İK'),('website builder','Site Kurucu'),
+    ('webflow','Site Kurucu'),('static site','Statik Site'),('headless','Headless'),
+    ('database','Veritabanı'),('no-code','No-Code'),('low-code','Low-Code'),('workflow','İş Akışı'),
+    ('webhook','Webhook'),('speedtest','Hız Testi'),('whiteboard','Beyaz Tahta'),('form','Form'),
+    ('helpdesk','Helpdesk'),('smart home','Akıllı Ev'),('iot','IoT'),
+    ('ocr','OCR'),('translation','Çeviri'),('e-book','E-Kitap'),('comic','Çizgi Roman'),
+    ('voice','Ses'),('speech','Konuşma'),('image','Görsel'),('accounting','Muhasebe'),
+    ('warehouse','Depo'),('pos','POS'),('calendar','Takvim'),('mail','E-posta'),
+    ('chat','Sohbet'),('billing','Faturalama'),
+]
+
+def gen_tags(repo):
+    tags = set()
+    blob = ((repo.get('desc') or '') + ' ' + ' '.join(repo.get('topics') or [])).lower()
+    for kw, tag in KEYWORD_TAGS:
+        if kw in blob:
+            tags.add(tag)
+    if repo.get('lang'):
+        tags.add(repo['lang'])
+    return sorted(tags)
+
 def fetch_data():
     """GitHub API'den star'lı repoları + liste üyeliklerini çeker."""
-    # 1) Star'lı repolar
     r = subprocess.run(['gh','api','user/starred','--paginate','-q',
       '.[] | {name: .full_name, url: .html_url, desc: (.description // ""), lang: (.language // ""), stars: .stargazers_count, license: (.license.spdx_id // ""), topics: (.topics // []), pushed: (.pushed_at // "")[:10]}'],
       capture_output=True, text=True)
@@ -19,7 +51,6 @@ def fetch_data():
                 repos[d['name']] = d
             except: pass
 
-    # 2) Liste üyelikleri
     r2 = subprocess.run(['gh','api','graphql','-f',
       'query={ viewer { lists(first: 100) { nodes { name items(first: 100) { nodes { ... on Repository { nameWithOwner } } } } } } }'],
       capture_output=True, text=True)
@@ -37,7 +68,8 @@ def fetch_data():
     for name, d in repos.items():
         final.append({'name': name, 'url': d['url'], 'desc': d['desc'], 'lang': d['lang'],
                       'stars': d['stars'], 'license': d['license'], 'topics': d['topics'],
-                      'pushed': d['pushed'], 'cats': cat_of.get(name, [])})
+                      'pushed': d['pushed'], 'cats': cat_of.get(name, []),
+                      'tags': gen_tags(d)})
     final.sort(key=lambda x: -x['stars'])
     return {'updated': datetime.date.today().isoformat(), 'lists': list_names, 'repos': final}
 
@@ -51,52 +83,7 @@ else:
 
 repos, list_names = data['repos'], data['lists']
 
-# ── Etiket üretimi ──
-KEYWORD_TAGS = [
-    ('ai', 'AI'), ('llm', 'LLM'), ('mcp', 'MCP'), ('agent', 'Ajan'), ('rag', 'RAG'),
-    ('docker', 'Docker'), ('self-host', 'Self-host'), ('selfhost', 'Self-host'),
-    ('open source', 'Açık Kaynak'), ('open-source', 'Açık Kaynak'),
-    ('privacy', 'Gizlilik'), ('dashboard', 'Dashboard'), ('automation', 'Otomasyon'),
-    ('cms', 'CMS'), ('erp', 'ERP'), ('crm', 'CRM'), ('ecommerce', 'E-Ticaret'),
-    ('pdf', 'PDF'), ('label', 'Etiket'), ('print', 'Baskı'), ('thermal', 'Termal'),
-    ('kanban', 'Kanban'), ('note', 'Not'), ('memory', 'Bellek'), ('codebase', 'Codebase'),
-    ('graph', 'Graf'), ('react', 'React'), ('typescript', 'TypeScript'), ('python', 'Python'),
-    ('rust', 'Rust'), ('go', 'Go'), ('vue', 'Vue'), ('neovim', 'Neovim'), ('vscode', 'VS Code'),
-    ('terminal', 'Terminal'), ('cli', 'CLI'), ('tui', 'TUI'), ('extension', 'Eklenti'),
-    ('skill', 'Skill'), ('plugin', 'Eklenti'), ('api', 'API'), ('search', 'Arama'),
-    ('rss', 'RSS'), ('media', 'Medya'), ('music', 'Müzik'), ('video', 'Video'),
-    ('camera', 'Kamera'), ('security', 'Güvenlik'), ('vpn', 'VPN'), ('network', 'Ağ'),
-    ('password', 'Şifre'), ('email', 'E-posta'), ('finance', 'Finans'), ('budget', 'Bütçe'),
-    ('invoice', 'Fatura'), ('crm', 'CRM'), ('hr', 'İK'), ('invoice', 'Fatura'),
-    ('website builder', 'Site Kurucu'), ('webflow', 'Site Kurucu'), ('static site', 'Statik Site'),
-    ('headless', 'Headless'), ('database', 'Veritabanı'), ('no-code', 'No-Code'),
-    ('low-code', 'Low-Code'), ('workflow', 'İş Akışı'), ('webhook', 'Webhook'),
-    ('speedtest', 'Hız Testi'), ('whiteboard', 'Beyaz Tahta'), ('form', 'Form'),
-    ('helpdesk', 'Helpdesk'), ('smart home', 'Akıllı Ev'), ('iot', 'IoT'),
-]
 
-def gen_tags(repo):
-    tags = set()
-    blob = (repo['desc'] + ' ' + ' '.join(repo['topics'])).lower()
-    for kw, tag in KEYWORD_TAGS:
-        if kw in blob:
-            tags.add(tag)
-    # dil etiketi
-    if repo['lang']:
-        tags.add(repo['lang'])
-    # kategori etiketleri (ayrı tutulacak)
-    return sorted(tags)
-
-def gen_features(repo):
-    feats = []
-    if repo['lang']: feats.append({'t': repo['lang'], 'c': 'lang'})
-    feats.append({'t': f"★{repo['stars']:,}", 'c': 'star'})
-    if repo['license']: feats.append({'t': repo['license'], 'c': 'lic'})
-    for t in repo['topics'][:3]:
-        feats.append({'t': t, 'c': 'topic'})
-    return feats
-
-# ── HTML ──
 def esc(s):
     return (s or '').replace('&','&amp;').replace('<','&lt;').replace('>','&gt;').replace('"','&quot;')
 
@@ -399,6 +386,12 @@ buildSidebar(); buildFilters(); setCategory('Tümü');
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'index.html')
 open(out, 'w', encoding='utf-8').write(HTML)
 print(f"✅ index.html üretildi: {os.path.getsize(out):,} bytes ({len(repos)} repo)")
-# İndeks dosyalarını da tazele
-import subprocess as _sp
-_sp.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ara.py'), '--indeks'], check=False)
+# grep dostu repo-indeksi.txt üret (data.json'dan)
+txt = [f"# {data['updated']} — {len(data['repos'])} repo | format: ad | kategori | ★ | dil | lisans | etiketler | açıklama"]
+for r in sorted(data['repos'], key=lambda x: -x['stars']):
+    cats = ';'.join(r.get('cats') or [])
+    tags = ','.join(r.get('tags') or [])
+    txt.append(f"{r['name']} | {cats} | ★{r['stars']} | {r.get('lang','')} | {r.get('license','')} | {tags} | {(r.get('desc') or '').replace(chr(10),' ')}")
+txt_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'repo-indeksi.txt')
+open(txt_path, 'w', encoding='utf-8').write('\n'.join(txt))
+print(f"✅ repo-indeksi.txt üretildi: {os.path.getsize(txt_path):,} bytes")

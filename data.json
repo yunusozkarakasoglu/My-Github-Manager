@@ -38,7 +38,7 @@
    "url": "https://github.com/public-apis/public-apis",
    "desc": "A collective list of free APIs",
    "lang": "Python",
-   "stars": 469862,
+   "stars": 469870,
    "license": "MIT",
    "topics": [
     "api",
@@ -58,6 +58,11 @@
    "pushed": "2026-08-19",
    "cats": [
     "🔌 Ücretsiz API'ler & Kütüphaneler"
+   ],
+   "tags": [
+    "API",
+    "Açık Kaynak",
+    "Python"
    ]
   },
   {
@@ -65,7 +70,7 @@
    "url": "https://github.com/obra/superpowers",
    "desc": "An agentic skills framework & software development methodology that works.",
    "lang": "Shell",
-   "stars": 277094,
+   "stars": 277104,
    "license": "MIT",
    "topics": [
     "ai",
@@ -80,6 +85,13 @@
    "pushed": "2026-08-19",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "ERP",
+    "Shell",
+    "Skill"
    ]
   },
   {
@@ -87,7 +99,7 @@
    "url": "https://github.com/deepseek-ai/deepseek-harness",
    "desc": "DeepSeek Harness: Everything is a Plugin.",
    "lang": "TypeScript",
-   "stars": 191865,
+   "stars": 191887,
    "license": "MIT",
    "topics": [
     "ai-agents",
@@ -99,6 +111,12 @@
    "cats": [
     "🤖 AI IDE Arayüz",
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -106,7 +124,7 @@
    "url": "https://github.com/open-webui/open-webui",
    "desc": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
    "lang": "Python",
-   "stars": 149802,
+   "stars": 149803,
    "license": "NOASSERTION",
    "topics": [
     "ai",
@@ -128,6 +146,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "API",
+    "LLM",
+    "MCP",
+    "Python",
+    "RAG",
+    "Self-host"
    ]
   },
   {
@@ -135,7 +162,7 @@
    "url": "https://github.com/langchain-ai/langchain",
    "desc": "The agent engineering platform.",
    "lang": "Python",
-   "stars": 144912,
+   "stars": 144911,
    "license": "MIT",
    "topics": [
     "agents",
@@ -162,6 +189,20 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "ERP",
+    "Form",
+    "Graf",
+    "LLM",
+    "Python",
+    "RAG",
+    "Sohbet",
+    "TypeScript",
+    "İK"
    ]
   },
   {
@@ -169,7 +210,7 @@
    "url": "https://github.com/Graphify-Labs/graphify",
    "desc": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
    "lang": "Python",
-   "stars": 110117,
+   "stars": 110124,
    "license": "Apache-2.0",
    "topics": [
     "ai-agents",
@@ -195,6 +236,21 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔍 Kod İstihbaratı & Knowledge G"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Arama",
+    "CLI",
+    "Codebase",
+    "Graf",
+    "LLM",
+    "MCP",
+    "PDF",
+    "Python",
+    "RAG",
+    "Skill",
+    "İK"
    ]
   },
   {
@@ -202,7 +258,7 @@
    "url": "https://github.com/mui/material-ui",
    "desc": "Material UI: Comprehensive React component library that implements Google's Material Design. Free forever.",
    "lang": "JavaScript",
-   "stars": 98916,
+   "stars": 98915,
    "license": "MIT",
    "topics": [
     "design-system",
@@ -214,6 +270,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🎨 UI Kütüphaneleri & Tasarım"
+   ],
+   "tags": [
+    "Go",
+    "JavaScript",
+    "React"
    ]
   },
   {
@@ -221,12 +282,21 @@
    "url": "https://github.com/earendil-works/pi",
    "desc": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
    "lang": "TypeScript",
-   "stars": 96597,
+   "stars": 96605,
    "license": "MIT",
    "topics": [],
    "pushed": "2026-08-24",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "API",
+    "Ajan",
+    "CLI",
+    "LLM",
+    "TUI",
+    "TypeScript"
    ]
   },
   {
@@ -234,7 +304,7 @@
    "url": "https://github.com/thedotmack/claude-mem",
    "desc": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
    "lang": "JavaScript",
-   "stars": 91718,
+   "stars": 91721,
    "license": "Apache-2.0",
    "topics": [
     "ai",
@@ -261,6 +331,16 @@
    "pushed": "2026-08-23",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Bellek",
+    "Eklenti",
+    "JavaScript",
+    "RAG",
+    "Skill",
+    "İK"
    ]
   },
   {
@@ -268,7 +348,7 @@
    "url": "https://github.com/nexu-io/open-design",
    "desc": "🎨 Best DeepSeek Harness Design Plugin. The open-source Claude Design alternative. 🖥️ Local-first desktop app. 🖼️ Your coding agent becomes the design engine: prototypes, landing pages, dashboards, slides, images & video — real files, HTML/PDF/PPTX/MP4 export. 🤖 Claude Code / Codex / Cursor / DeepSeek Harness / OpenCode & 20+ CLIs via BYOK.",
    "lang": "TypeScript",
-   "stars": 91085,
+   "stars": 91087,
    "license": "Apache-2.0",
    "topics": [
     "agent-skills",
@@ -295,6 +375,19 @@
    "pushed": "2026-08-24",
    "cats": [
     "🎨 UI Kütüphaneleri & Tasarım"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "CLI",
+    "Dashboard",
+    "Eklenti",
+    "Görsel",
+    "PDF",
+    "Skill",
+    "TypeScript",
+    "Video"
    ]
   },
   {
@@ -302,7 +395,7 @@
    "url": "https://github.com/Stirling-Tools/Stirling-PDF",
    "desc": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
    "lang": "Java",
-   "stars": 90334,
+   "stars": 90335,
    "license": "NOASSERTION",
    "topics": [
     "docker",
@@ -322,6 +415,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "🗂️ Dosya & Belge Yönetimi"
+   ],
+   "tags": [
+    "Docker",
+    "Java",
+    "OCR",
+    "PDF",
+    "Self-host"
    ]
   },
   {
@@ -329,7 +429,7 @@
    "url": "https://github.com/home-assistant/core",
    "desc": ":house_with_garden: Open source home automation that puts local control and privacy first.",
    "lang": "Python",
-   "stars": 90096,
+   "stars": 90097,
    "license": "Apache-2.0",
    "topics": [
     "asyncio",
@@ -344,6 +444,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏠 Akıllı Ev & IoT"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Gizlilik",
+    "IoT",
+    "Otomasyon",
+    "Python"
    ]
   },
   {
@@ -351,7 +458,7 @@
    "url": "https://github.com/addyosmani/agent-skills",
    "desc": "Production-grade engineering skills for AI coding agents.",
    "lang": "JavaScript",
-   "stars": 89486,
+   "stars": 89487,
    "license": "MIT",
    "topics": [
     "agent-skills",
@@ -364,6 +471,12 @@
    "pushed": "2026-08-21",
    "cats": [
     "📚 Kaynak & Awesome Listeler"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "JavaScript",
+    "Skill"
    ]
   },
   {
@@ -371,12 +484,17 @@
    "url": "https://github.com/odysseus-dev/odysseus",
    "desc": "Self-hosted AI workspace. ",
    "lang": "Python",
-   "stars": 86139,
+   "stars": 86138,
    "license": "AGPL-3.0",
    "topics": [],
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Python",
+    "Self-host"
    ]
   },
   {
@@ -384,7 +502,7 @@
    "url": "https://github.com/OpenHands/OpenHands",
    "desc": "🙌 OpenHands: AI-Driven Development",
    "lang": "TypeScript",
-   "stars": 84982,
+   "stars": 84984,
    "license": "MIT",
    "topics": [
     "agent",
@@ -400,6 +518,14 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "CLI",
+    "LLM",
+    "Sohbet",
+    "TypeScript"
    ]
   },
   {
@@ -407,7 +533,7 @@
    "url": "https://github.com/bytedance/deer-flow",
    "desc": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
    "lang": "Python",
-   "stars": 80801,
+   "stars": 80802,
    "license": "MIT",
    "topics": [
     "agent",
@@ -432,6 +558,19 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Arama",
+    "Açık Kaynak",
+    "Graf",
+    "LLM",
+    "Python",
+    "RAG",
+    "Skill",
+    "TypeScript",
+    "İş Akışı"
    ]
   },
   {
@@ -463,6 +602,18 @@
    "pushed": "2026-08-11",
    "cats": [
     "🔍 Kod İstihbaratı & Knowledge G"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Arama",
+    "Bellek",
+    "CLI",
+    "Codebase",
+    "Graf",
+    "LLM",
+    "Skill",
+    "TypeScript"
    ]
   },
   {
@@ -495,6 +646,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔌 Ücretsiz API'ler & Kütüphaneler"
+   ],
+   "tags": [
+    "API",
+    "Açık Kaynak",
+    "CLI",
+    "Graf",
+    "POS",
+    "TypeScript",
+    "Vue"
    ]
   },
   {
@@ -502,7 +662,7 @@
    "url": "https://github.com/AppFlowy-IO/AppFlowy",
    "desc": "Bring projects, wikis, and teams together with AI. AppFlowy is the AI collaborative workspace where you achieve more without losing control of your data. The leading open source Notion alternative.",
    "lang": "Dart",
-   "stars": 75922,
+   "stars": 75925,
    "license": "AGPL-3.0",
    "topics": [
     "blog",
@@ -521,6 +681,12 @@
    "pushed": "2026-08-11",
    "cats": [
     "📊 Proje Yönetimi & Çalışma Alan"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "Dart",
+    "Not"
    ]
   },
   {
@@ -528,7 +694,7 @@
    "url": "https://github.com/unslothai/unsloth",
    "desc": "Local UI to run and train LLMs and diffusion models, including Qwen3.8, Kimi K3, MiniMax-H3, Gemma 4, DeepSeek-V4, FLUX and more.",
    "lang": "Python",
-   "stars": 74621,
+   "stars": 74623,
    "license": "Apache-2.0",
    "topics": [
     "agent",
@@ -555,6 +721,16 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Görsel",
+    "Konuşma",
+    "LLM",
+    "Python",
+    "Self-host",
+    "Sohbet"
    ]
   },
   {
@@ -588,6 +764,17 @@
    "pushed": "2026-08-24",
    "cats": [
     "🗄️ Veritabanı & CMS"
+   ],
+   "tags": [
+    "API",
+    "Açık Kaynak",
+    "CMS",
+    "Dashboard",
+    "Graf",
+    "Headless",
+    "No-Code",
+    "POS",
+    "TypeScript"
    ]
   },
   {
@@ -607,6 +794,12 @@
    "pushed": "2026-01-21",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "LLM",
+    "Python"
    ]
   },
   {
@@ -614,12 +807,17 @@
    "url": "https://github.com/colbymchenry/codegraph",
    "desc": "Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
    "lang": "C",
-   "stars": 67934,
+   "stars": 67935,
    "license": "MIT",
    "topics": [],
    "pushed": "2026-08-22",
    "cats": [
     "🔍 Kod İstihbaratı & Knowledge G"
+   ],
+   "tags": [
+    "Ajan",
+    "C",
+    "Graf"
    ]
   },
   {
@@ -627,7 +825,7 @@
    "url": "https://github.com/headroomlabs-ai/headroom",
    "desc": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
    "lang": "Python",
-   "stars": 67414,
+   "stars": 67415,
    "license": "Apache-2.0",
    "topics": [
     "agent",
@@ -654,6 +852,17 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "AI",
+    "API",
+    "Ajan",
+    "LLM",
+    "MCP",
+    "Python",
+    "RAG",
+    "TypeScript",
+    "İK"
    ]
   },
   {
@@ -661,7 +870,7 @@
    "url": "https://github.com/dani-garcia/vaultwarden",
    "desc": "Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs",
    "lang": "Rust",
-   "stars": 66122,
+   "stars": 66124,
    "license": "AGPL-3.0",
    "topics": [
     "bitwarden",
@@ -674,6 +883,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔒 Güvenlik & Ağ"
+   ],
+   "tags": [
+    "Docker",
+    "Form",
+    "Rust"
    ]
   },
   {
@@ -702,6 +916,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Bellek",
+    "LLM",
+    "Python",
+    "RAG",
+    "Sohbet"
    ]
   },
   {
@@ -729,6 +952,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "📝 Not Alma & Bilgi Yönetimi"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Ağ",
+    "Docker",
+    "Go",
+    "Not",
+    "React",
+    "Self-host"
    ]
   },
   {
@@ -736,7 +968,7 @@
    "url": "https://github.com/pocketbase/pocketbase",
    "desc": "Open Source realtime backend in 1 file",
    "lang": "Go",
-   "stars": 60797,
+   "stars": 60798,
    "license": "MIT",
    "topics": [
     "authentication",
@@ -747,6 +979,10 @@
    "pushed": "2026-08-24",
    "cats": [
     "🖥️ Geliştirici Altyapısı & Back"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Go"
    ]
   },
   {
@@ -754,7 +990,7 @@
    "url": "https://github.com/marktext/marktext",
    "desc": "📝A simple and elegant markdown editor, available for Linux, macOS and Windows.",
    "lang": "TypeScript",
-   "stars": 60525,
+   "stars": 60528,
    "license": "MIT",
    "topics": [
     "dark-mode",
@@ -775,6 +1011,11 @@
    "pushed": "2026-07-27",
    "cats": [
     "📝 Doküman, Ofis & PDF"
+   ],
+   "tags": [
+    "AI",
+    "TypeScript",
+    "Vue"
    ]
   },
   {
@@ -795,6 +1036,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "Bellek",
+    "LLM",
+    "MCP",
+    "Python",
+    "İK"
    ]
   },
   {
@@ -802,7 +1052,7 @@
    "url": "https://github.com/makeplane/plane",
    "desc": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
    "lang": "TypeScript",
-   "stars": 57897,
+   "stars": 57905,
    "license": "AGPL-3.0",
    "topics": [
     "boards",
@@ -829,6 +1079,19 @@
    "pushed": "2026-08-24",
    "cats": [
     "📊 Proje Yönetimi & Çalışma Alan"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Baskı",
+    "CLI",
+    "Docker",
+    "Form",
+    "Go",
+    "Kanban",
+    "POS",
+    "Python",
+    "React",
+    "TypeScript"
    ]
   },
   {
@@ -848,6 +1111,12 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "LLM",
+    "Python"
    ]
   },
   {
@@ -855,7 +1124,7 @@
    "url": "https://github.com/jellyfin/jellyfin",
    "desc": "The Free Software Media System - Server Backend & API",
    "lang": "C#",
-   "stars": 56138,
+   "stars": 56140,
    "license": "GPL-2.0",
    "topics": [
     "csharp",
@@ -866,6 +1135,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🎬 Medya & Eğlence"
+   ],
+   "tags": [
+    "API",
+    "C#",
+    "Medya"
    ]
   },
   {
@@ -887,6 +1161,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏢 ERP & İşletme Yazılımları"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "ERP",
+    "Python"
    ]
   },
   {
@@ -906,6 +1185,9 @@
    "pushed": "2026-01-26",
    "cats": [
     "📚 Kaynak & Awesome Listeler"
+   ],
+   "tags": [
+    "React"
    ]
   },
   {
@@ -939,6 +1221,18 @@
    "pushed": "2026-08-24",
    "cats": [
     "📝 Not Alma & Bilgi Yönetimi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "Gizlilik",
+    "Graf",
+    "MCP",
+    "Not",
+    "PDF",
+    "Self-host",
+    "TypeScript"
    ]
   },
   {
@@ -964,6 +1258,12 @@
    "pushed": "2026-08-24",
    "cats": [
     "🗂️ Dosya & Belge Yönetimi"
+   ],
+   "tags": [
+    "Go",
+    "OCR",
+    "PDF",
+    "Python"
    ]
   },
   {
@@ -997,6 +1297,17 @@
    "pushed": "2026-08-24",
    "cats": [
     "🗄️ Veritabanı & CMS"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "CMS",
+    "ERP",
+    "Go",
+    "Graf",
+    "Headless",
+    "POS",
+    "React",
+    "TypeScript"
    ]
   },
   {
@@ -1030,6 +1341,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔒 Güvenlik & Ağ"
+   ],
+   "tags": [
+    "Ağ",
+    "Güvenlik",
+    "Rust"
    ]
   },
   {
@@ -1037,7 +1353,7 @@
    "url": "https://github.com/DeusData/codebase-memory-mcp",
    "desc": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
    "lang": "C",
-   "stars": 40388,
+   "stars": 40394,
    "license": "MIT",
    "topics": [
     "aider",
@@ -1064,6 +1380,16 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔍 Kod İstihbaratı & Knowledge G"
+   ],
+   "tags": [
+    "AI",
+    "C",
+    "CLI",
+    "Codebase",
+    "Form",
+    "Graf",
+    "MCP",
+    "RAG"
    ]
   },
   {
@@ -1085,6 +1411,10 @@
    "pushed": "2026-08-24",
    "cats": [
     "🌐 Web Sitesi Oluşturucu"
+   ],
+   "tags": [
+    "CMS",
+    "Java"
    ]
   },
   {
@@ -1115,6 +1445,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏢 ERP & İşletme Yazılımları"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "CRM",
+    "ERP",
+    "Muhasebe",
+    "Python",
+    "İK"
    ]
   },
   {
@@ -1144,6 +1483,13 @@
    "pushed": "2026-08-22",
    "cats": [
     "🔍 Arama & RSS"
+   ],
+   "tags": [
+    "Arama",
+    "Gizlilik",
+    "Go",
+    "Python",
+    "Veritabanı"
    ]
   },
   {
@@ -1151,7 +1497,7 @@
    "url": "https://github.com/blakeblackshear/frigate",
    "desc": "NVR with realtime local object detection for IP cameras",
    "lang": "TypeScript",
-   "stars": 35358,
+   "stars": 35359,
    "license": "MIT",
    "topics": [
     "ai",
@@ -1170,6 +1516,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "📹 Güvenlik Kamerası"
+   ],
+   "tags": [
+    "AI",
+    "Go",
+    "Kamera",
+    "Otomasyon",
+    "TypeScript"
    ]
   },
   {
@@ -1177,7 +1530,7 @@
    "url": "https://github.com/volcengine/OpenViking",
    "desc": "Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.",
    "lang": "Python",
-   "stars": 32961,
+   "stars": 32969,
    "license": "AGPL-3.0",
    "topics": [
     "agent-memory",
@@ -1190,6 +1543,16 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Bellek",
+    "Eklenti",
+    "Python",
+    "RAG",
+    "Skill",
+    "Veritabanı"
    ]
   },
   {
@@ -1197,7 +1560,7 @@
    "url": "https://github.com/herdrdev/herdr",
    "desc": "the runtime your coding agents live on",
    "lang": "Rust",
-   "stars": 32065,
+   "stars": 32067,
    "license": "Apache-2.0",
    "topics": [
     "agent",
@@ -1222,6 +1585,14 @@
    "pushed": "2026-08-24",
    "cats": [
     "🖥️ Geliştirici Altyapısı & Back"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "CLI",
+    "Rust",
+    "TUI",
+    "Terminal"
    ]
   },
   {
@@ -1242,6 +1613,10 @@
    "pushed": "2026-08-22",
    "cats": [
     "🎨 UI Kütüphaneleri & Tasarım"
+   ],
+   "tags": [
+    "React",
+    "TypeScript"
    ]
   },
   {
@@ -1260,6 +1635,11 @@
    "pushed": "2026-08-22",
    "cats": [
     "🎨 UI Kütüphaneleri & Tasarım"
+   ],
+   "tags": [
+    "React",
+    "TUI",
+    "TypeScript"
    ]
   },
   {
@@ -1267,7 +1647,7 @@
    "url": "https://github.com/topoteretes/cognee",
    "desc": "Cognee is the open-source AI memory platform for agents. Give your AI agents persistent long-term memory across sessions with a self-hosted knowledge graph engine.",
    "lang": "Python",
-   "stars": 30230,
+   "stars": 30232,
    "license": "Apache-2.0",
    "topics": [
     "agent-memory",
@@ -1293,6 +1673,20 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "Bellek",
+    "Form",
+    "Go",
+    "Graf",
+    "Python",
+    "RAG",
+    "Self-host",
+    "Skill",
+    "Veritabanı"
    ]
   },
   {
@@ -1321,6 +1715,16 @@
    "pushed": "2026-08-24",
    "cats": [
     "📝 Doküman, Ofis & PDF"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "C#",
+    "CLI",
+    "ERP",
+    "POS",
+    "Skill"
    ]
   },
   {
@@ -1342,6 +1746,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🖥️ Geliştirici Altyapısı & Back"
+   ],
+   "tags": [
+    "Go",
+    "RAG",
+    "Self-host"
    ]
   },
   {
@@ -1349,7 +1758,7 @@
    "url": "https://github.com/oraios/serena",
    "desc": "A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent",
    "lang": "Python",
-   "stars": 28454,
+   "stars": 28455,
    "license": "MIT",
    "topics": [
     "agent",
@@ -1368,6 +1777,12 @@
    "pushed": "2026-08-20",
    "cats": [
     "🤖 AI IDE Arayüz"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "MCP",
+    "Python"
    ]
   },
   {
@@ -1375,7 +1790,7 @@
    "url": "https://github.com/actualbudget/actual",
    "desc": "A local-first personal finance app",
    "lang": "TypeScript",
-   "stars": 28356,
+   "stars": 28358,
    "license": "MIT",
    "topics": [
     "budgeting",
@@ -1386,6 +1801,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "💰 Finans & Bütçe"
+   ],
+   "tags": [
+    "Bütçe",
+    "Finans",
+    "TypeScript"
    ]
   },
   {
@@ -1420,6 +1840,16 @@
    "pushed": "2026-08-24",
    "cats": [
     "🛒 E-Ticaret"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "E-Ticaret",
+    "ERP",
+    "Eklenti",
+    "Form",
+    "Headless",
+    "PHP"
    ]
   },
   {
@@ -1427,7 +1857,7 @@
    "url": "https://github.com/kestra-io/kestra",
    "desc": "Event Driven Orchestration & Scheduling Platform for Mission Critical Applications",
    "lang": "Java",
-   "stars": 27912,
+   "stars": 27913,
    "license": "Apache-2.0",
    "topics": [
     "ai-agents",
@@ -1454,6 +1884,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 Otomasyon & Geliştirme"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Form",
+    "Java",
+    "Low-Code",
+    "Otomasyon",
+    "İş Akışı"
    ]
   },
   {
@@ -1483,6 +1922,13 @@
    "pushed": "2026-08-11",
    "cats": [
     "📊 Proje Yönetimi & Çalışma Alan"
+   ],
+   "tags": [
+    "CRM",
+    "Form",
+    "Sohbet",
+    "TypeScript",
+    "İK"
    ]
   },
   {
@@ -1490,7 +1936,7 @@
    "url": "https://github.com/rohitg00/agentmemory",
    "desc": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
    "lang": "TypeScript",
-   "stars": 27361,
+   "stars": 27359,
    "license": "Apache-2.0",
    "topics": [
     "agentmemory",
@@ -1510,6 +1956,12 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Bellek",
+    "TypeScript"
    ]
   },
   {
@@ -1517,7 +1969,7 @@
    "url": "https://github.com/can1357/oh-my-pi",
    "desc": "⌥ Coding agent with the IDE wired in",
    "lang": "TypeScript",
-   "stars": 27142,
+   "stars": 27146,
    "license": "MIT",
    "topics": [
     "ai-agent",
@@ -1540,6 +1992,18 @@
    "cats": [
     "🤖 AI IDE Arayüz",
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "CLI",
+    "LLM",
+    "MCP",
+    "Rust",
+    "TUI",
+    "Terminal",
+    "TypeScript",
+    "İK"
    ]
   },
   {
@@ -1573,6 +2037,13 @@
    "pushed": "2026-07-22",
    "cats": [
     "🤖 AI IDE Arayüz"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "Low-Code",
+    "React",
+    "TypeScript"
    ]
   },
   {
@@ -1597,6 +2068,13 @@
    "pushed": "2026-05-18",
    "cats": [
     "📊 Proje Yönetimi & Çalışma Alan"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Go",
+    "Kanban",
+    "Self-host",
+    "TypeScript"
    ]
   },
   {
@@ -1624,6 +2102,12 @@
    "pushed": "2026-08-21",
    "cats": [
     "🧪 Diğer Araçlar"
+   ],
+   "tags": [
+    "Dashboard",
+    "Docker",
+    "Self-host",
+    "Vue"
    ]
   },
   {
@@ -1646,6 +2130,10 @@
    "pushed": "2026-04-24",
    "cats": [
     "🧑‍💼 İK & CRM"
+   ],
+   "tags": [
+    "CRM",
+    "PHP"
    ]
   },
   {
@@ -1673,6 +2161,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏠 Akıllı Ev & IoT"
+   ],
+   "tags": [
+    "C",
+    "IoT",
+    "Otomasyon"
    ]
   },
   {
@@ -1691,6 +2184,13 @@
    "pushed": "2026-08-23",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Bellek",
+    "Form",
+    "LLM"
    ]
   },
   {
@@ -1723,6 +2223,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "💰 Finans & Bütçe"
+   ],
+   "tags": [
+    "Bütçe",
+    "Docker",
+    "Finans",
+    "Muhasebe",
+    "PHP"
    ]
   },
   {
@@ -1730,7 +2237,7 @@
    "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
    "desc": "TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, shared, and equipped across agents and frameworks.",
    "lang": "TypeScript",
-   "stars": 24248,
+   "stars": 24250,
    "license": "NOASSERTION",
    "topics": [
     "agent",
@@ -1746,6 +2253,19 @@
    "pushed": "2026-08-15",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Arama",
+    "Bellek",
+    "Eklenti",
+    "Go",
+    "Graf",
+    "LLM",
+    "Skill",
+    "Sohbet",
+    "TypeScript"
    ]
   },
   {
@@ -1777,6 +2297,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧑‍💼 İK & CRM"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "CRM",
+    "Form",
+    "PHP",
+    "Vue"
    ]
   },
   {
@@ -1798,6 +2325,10 @@
    "cats": [
     "🤖 Otomasyon & Geliştirme",
     "🏠 Akıllı Ev & IoT"
+   ],
+   "tags": [
+    "JavaScript",
+    "Low-Code"
    ]
   },
   {
@@ -1811,6 +2342,10 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "TypeScript"
    ]
   },
   {
@@ -1843,6 +2378,14 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔒 Güvenlik & Ağ"
+   ],
+   "tags": [
+    "Ağ",
+    "IoT",
+    "Rust",
+    "Self-host",
+    "TypeScript",
+    "VPN"
    ]
   },
   {
@@ -1864,6 +2407,13 @@
    "pushed": "2026-08-11",
    "cats": [
     "🎨 UI Kütüphaneleri & Tasarım"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "MDX",
+    "React",
+    "TypeScript"
    ]
   },
   {
@@ -1871,7 +2421,7 @@
    "url": "https://github.com/comet-ml/opik",
    "desc": "Debug, evaluate, and monitor your LLM applications, RAG systems, and agentic workflows with comprehensive tracing, automated evaluations, and production-ready dashboards.",
    "lang": "Python",
-   "stars": 21577,
+   "stars": 21578,
    "license": "Apache-2.0",
    "topics": [
     "evaluation",
@@ -1891,6 +2441,16 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 Otomasyon & Geliştirme"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "Dashboard",
+    "LLM",
+    "Python",
+    "RAG",
+    "İş Akışı"
    ]
   },
   {
@@ -1898,7 +2458,7 @@
    "url": "https://github.com/dyad-sh/dyad",
    "desc": "Local, open-source AI app builder for power users ✨ v0 / Lovable / Replit / Bolt alternative 🌟 Star if you like it!",
    "lang": "TypeScript",
-   "stars": 21316,
+   "stars": 21315,
    "license": "NOASSERTION",
    "topics": [
     "ai-app-builder",
@@ -1924,6 +2484,14 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "LLM",
+    "React",
+    "TypeScript",
+    "İK"
    ]
   },
   {
@@ -1947,6 +2515,14 @@
    "pushed": "2026-08-24",
    "cats": [
     "📊 Proje Yönetimi & Çalışma Alan"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Docker",
+    "Görsel",
+    "JavaScript",
+    "Kanban",
+    "Çeviri"
    ]
   },
   {
@@ -1964,6 +2540,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "LLM",
+    "TypeScript"
    ]
   },
   {
@@ -1998,6 +2581,17 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Bellek",
+    "CLI",
+    "Eklenti",
+    "Form",
+    "MCP",
+    "Skill",
+    "TypeScript"
    ]
   },
   {
@@ -2032,6 +2626,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🎬 Medya & Eğlence"
+   ],
+   "tags": [
+    "Go",
+    "Medya",
+    "Video"
    ]
   },
   {
@@ -2059,6 +2658,13 @@
    "pushed": "2026-08-23",
    "cats": [
     "🗄️ Veritabanı & CMS"
+   ],
+   "tags": [
+    "CMS",
+    "Headless",
+    "JavaScript",
+    "React",
+    "Statik Site"
    ]
   },
   {
@@ -2082,6 +2688,12 @@
    "pushed": "2026-08-08",
    "cats": [
     "🎨 UI Kütüphaneleri & Tasarım"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "React",
+    "TypeScript"
    ]
   },
   {
@@ -2102,6 +2714,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Python"
    ]
   },
   {
@@ -2109,12 +2726,17 @@
    "url": "https://github.com/PrimeIntellect-ai/prime-agent",
    "desc": "A self-improving RLM agent for coding workflows and long-running autonomous tasks.",
    "lang": "TypeScript",
-   "stars": 18140,
+   "stars": 18142,
    "license": "MIT",
    "topics": [],
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "Ajan",
+    "TypeScript",
+    "İş Akışı"
    ]
   },
   {
@@ -2128,6 +2750,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI IDE Arayüz"
+   ],
+   "tags": [
+    "AI",
+    "Lua",
+    "Neovim"
    ]
   },
   {
@@ -2147,6 +2774,15 @@
    "pushed": "2026-08-18",
    "cats": [
     "📧 İletişim & E-posta"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "E-posta",
+    "Form",
+    "Go",
+    "POS",
+    "Ruby"
    ]
   },
   {
@@ -2169,6 +2805,11 @@
    "pushed": "2025-01-18",
    "cats": [
     "📝 Doküman, Ofis & PDF"
+   ],
+   "tags": [
+    "AI",
+    "Sohbet",
+    "TypeScript"
    ]
   },
   {
@@ -2203,6 +2844,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "📋 Proje & Görev Yönetimi"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "Kanban",
+    "Ruby",
+    "İş Akışı"
    ]
   },
   {
@@ -2232,6 +2880,17 @@
    "pushed": "2026-08-24",
    "cats": [
     "🛒 E-Ticaret"
+   ],
+   "tags": [
+    "API",
+    "Açık Kaynak",
+    "E-Ticaret",
+    "ERP",
+    "Form",
+    "Headless",
+    "Ruby",
+    "Self-host",
+    "TypeScript"
    ]
   },
   {
@@ -2266,6 +2925,12 @@
    "pushed": "2026-08-01",
    "cats": [
     "🔌 Ücretsiz API'ler & Kütüphaneler"
+   ],
+   "tags": [
+    "AI",
+    "API",
+    "Arama",
+    "Açık Kaynak"
    ]
   },
   {
@@ -2286,6 +2951,12 @@
    "pushed": "2026-08-24",
    "cats": [
     "🎬 Medya & Eğlence"
+   ],
+   "tags": [
+    "AI",
+    "CLI",
+    "Müzik",
+    "Python"
    ]
   },
   {
@@ -2299,6 +2970,9 @@
    "pushed": "2026-08-24",
    "cats": [
     "🎬 Medya & Eğlence"
+   ],
+   "tags": [
+    "C#"
    ]
   },
   {
@@ -2322,6 +2996,12 @@
    "pushed": "2026-08-15",
    "cats": [
     "🧪 Diğer Araçlar"
+   ],
+   "tags": [
+    "Hız Testi",
+    "JavaScript",
+    "Self-host",
+    "İK"
    ]
   },
   {
@@ -2356,6 +3036,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "🗂️ Dosya & Belge Yönetimi"
+   ],
+   "tags": [
+    "Docker",
+    "Gizlilik",
+    "JavaScript",
+    "OCR",
+    "PDF",
+    "Self-host",
+    "TypeScript"
    ]
   },
   {
@@ -2378,6 +3067,9 @@
    "pushed": "2026-08-24",
    "cats": [
     "🎬 Medya & Eğlence"
+   ],
+   "tags": [
+    "C#"
    ]
   },
   {
@@ -2385,7 +3077,7 @@
    "url": "https://github.com/HabitRPG/habitica",
    "desc": "A habit tracker app which treats your goals like a Role Playing Game.",
    "lang": "JavaScript",
-   "stars": 14087,
+   "stars": 14088,
    "license": "NOASSERTION",
    "topics": [
     "css",
@@ -2403,6 +3095,11 @@
    "pushed": "2026-08-21",
    "cats": [
     "📋 Proje & Görev Yönetimi"
+   ],
+   "tags": [
+    "Go",
+    "JavaScript",
+    "Vue"
    ]
   },
   {
@@ -2426,6 +3123,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "🗄️ Veritabanı & CMS"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "CMS",
+    "Headless",
+    "React",
+    "TypeScript"
    ]
   },
   {
@@ -2445,6 +3149,12 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "CLI",
+    "TypeScript"
    ]
   },
   {
@@ -2463,6 +3173,10 @@
    "pushed": "2026-08-04",
    "cats": [
     "🔌 Ücretsiz API'ler & Kütüphaneler"
+   ],
+   "tags": [
+    "API",
+    "Bütçe"
    ]
   },
   {
@@ -2497,6 +3211,11 @@
    "pushed": "2026-08-05",
    "cats": [
     "🤖 Otomasyon & Geliştirme"
+   ],
+   "tags": [
+    "Go",
+    "Otomasyon",
+    "Webhook"
    ]
   },
   {
@@ -2526,6 +3245,18 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏢 ERP & İşletme Yazılımları"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "Depo",
+    "ERP",
+    "Fatura",
+    "Form",
+    "Muhasebe",
+    "PHP",
+    "Ses",
+    "İK"
    ]
   },
   {
@@ -2533,7 +3264,7 @@
    "url": "https://github.com/Leantime/leantime",
    "desc": "Leantime is a goals focused project management system for non-project managers. Building with ADHD, Autism, and dyslexia in mind.",
    "lang": "PHP",
-   "stars": 11434,
+   "stars": 11435,
    "license": "AGPL-3.0",
    "topics": [
     "agile",
@@ -2560,6 +3291,13 @@
    "pushed": "2026-08-15",
    "cats": [
     "📊 Proje Yönetimi & Çalışma Alan"
+   ],
+   "tags": [
+    "CLI",
+    "Go",
+    "Kanban",
+    "PHP",
+    "Takvim"
    ]
   },
   {
@@ -2567,7 +3305,7 @@
    "url": "https://github.com/blinkospace/blinko",
    "desc": "An open-source, self-hosted personal AI note tool prioritizing privacy, built using TypeScript .",
    "lang": "TypeScript",
-   "stars": 10949,
+   "stars": 10950,
    "license": "GPL-3.0",
    "topics": [
     "markdown",
@@ -2582,6 +3320,16 @@
    "pushed": "2026-08-03",
    "cats": [
     "📝 Not Alma & Bilgi Yönetimi"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "Gizlilik",
+    "Not",
+    "POS",
+    "React",
+    "Self-host",
+    "TypeScript"
    ]
   },
   {
@@ -2604,6 +3352,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "🛒 E-Ticaret"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "E-Ticaret",
+    "Form",
+    "PHP",
+    "React"
    ]
   },
   {
@@ -2623,6 +3378,12 @@
    "pushed": "2026-08-24",
    "cats": [
     "🛒 E-Ticaret"
+   ],
+   "tags": [
+    "E-Ticaret",
+    "Form",
+    "React",
+    "TypeScript"
    ]
   },
   {
@@ -2643,6 +3404,14 @@
    "pushed": "2026-08-24",
    "cats": [
     "🗄️ Veritabanı & CMS"
+   ],
+   "tags": [
+    "CMS",
+    "ERP",
+    "Graf",
+    "Headless",
+    "React",
+    "TypeScript"
    ]
   },
   {
@@ -2662,6 +3431,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "📊 Proje Yönetimi & Çalışma Alan"
+   ],
+   "tags": [
+    "Kanban",
+    "PHP",
+    "Self-host"
    ]
   },
   {
@@ -2688,6 +3462,12 @@
    "pushed": "2026-07-25",
    "cats": [
     "🔒 Güvenlik & Ağ"
+   ],
+   "tags": [
+    "C#",
+    "CLI",
+    "Form",
+    "Gizlilik"
    ]
   },
   {
@@ -2711,6 +3491,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔌 Ücretsiz API'ler & Kütüphaneler"
+   ],
+   "tags": [
+    "API",
+    "Açık Kaynak",
+    "JavaScript"
    ]
   },
   {
@@ -2727,7 +3512,8 @@
    "pushed": "2026-07-18",
    "cats": [
     "📚 Kaynak & Awesome Listeler"
-   ]
+   ],
+   "tags": []
   },
   {
    "name": "heyform/heyform",
@@ -2744,6 +3530,11 @@
    "pushed": "2026-08-19",
    "cats": [
     "🧪 Diğer Araçlar"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Form",
+    "TypeScript"
    ]
   },
   {
@@ -2751,12 +3542,19 @@
    "url": "https://github.com/trycompai/crm",
    "desc": "Comp AI CRM is an open source, CRM designed for AI agents. Agentic-first CRM.",
    "lang": "TypeScript",
-   "stars": 8888,
+   "stars": 8887,
    "license": "MIT",
    "topics": [],
    "pushed": "2026-08-21",
    "cats": [
     "🧑‍💼 İK & CRM"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "CRM",
+    "TypeScript"
    ]
   },
   {
@@ -2779,6 +3577,12 @@
    "pushed": "2026-08-24",
    "cats": [
     "💰 Finans & Bütçe"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "PHP",
+    "Self-host",
+    "Vue"
    ]
   },
   {
@@ -2810,6 +3614,14 @@
    "pushed": "2026-08-24",
    "cats": [
     "🌐 Web Sitesi Oluşturucu"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "CMS",
+    "Headless",
+    "React",
+    "Site Kurucu",
+    "TypeScript"
    ]
   },
   {
@@ -2844,6 +3656,14 @@
    "pushed": "2026-08-24",
    "cats": [
     "🌐 Web Sitesi Oluşturucu"
+   ],
+   "tags": [
+    "CMS",
+    "Headless",
+    "RAG",
+    "React",
+    "TypeScript",
+    "Vue"
    ]
   },
   {
@@ -2878,6 +3698,19 @@
    "pushed": "2026-08-14",
    "cats": [
     "🏢 ERP & İşletme Yazılımları"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "CRM",
+    "E-Ticaret",
+    "ERP",
+    "Fatura",
+    "Form",
+    "Go",
+    "JavaScript",
+    "Muhasebe",
+    "React",
+    "Ses"
    ]
   },
   {
@@ -2912,6 +3745,13 @@
    "pushed": "2026-08-23",
    "cats": [
     "🧑‍💼 İK & CRM"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "ERP",
+    "Form",
+    "Python",
+    "İK"
    ]
   },
   {
@@ -2942,6 +3782,14 @@
    "pushed": "2026-08-24",
    "cats": [
     "🛒 E-Ticaret"
+   ],
+   "tags": [
+    "API",
+    "Açık Kaynak",
+    "E-Ticaret",
+    "Form",
+    "Headless",
+    "PHP"
    ]
   },
   {
@@ -2962,6 +3810,14 @@
    "pushed": "2026-08-23",
    "cats": [
     "💰 Finans & Bütçe"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Bütçe",
+    "Docker",
+    "Finans",
+    "PHP",
+    "Self-host"
    ]
   },
   {
@@ -2983,6 +3839,12 @@
    "pushed": "2026-08-23",
    "cats": [
     "🎬 Medya & Eğlence"
+   ],
+   "tags": [
+    "Arama",
+    "Medya",
+    "Python",
+    "Video"
    ]
   },
   {
@@ -3004,6 +3866,16 @@
    "cats": [
     "🌐 Web Sitesi Oluşturucu",
     "🎨 UI Kütüphaneleri & Tasarım"
+   ],
+   "tags": [
+    "Ajan",
+    "Açık Kaynak",
+    "CMS",
+    "Eklenti",
+    "Self-host",
+    "Site Kurucu",
+    "TypeScript",
+    "Veritabanı"
    ]
   },
   {
@@ -3032,6 +3904,12 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔒 Güvenlik & Ağ"
+   ],
+   "tags": [
+    "Ağ",
+    "Docker",
+    "Güvenlik",
+    "Lua"
    ]
   },
   {
@@ -3055,6 +3933,12 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔍 Kod İstihbaratı & Knowledge G"
+   ],
+   "tags": [
+    "Ajan",
+    "CLI",
+    "Skill",
+    "TypeScript"
    ]
   },
   {
@@ -3079,6 +3963,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "🖥️ Geliştirici Altyapısı & Back"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "Docker",
+    "TUI",
+    "TypeScript"
    ]
   },
   {
@@ -3101,6 +3992,11 @@
    "pushed": "2026-06-27",
    "cats": [
     "🎬 Medya & Eğlence"
+   ],
+   "tags": [
+    "C++",
+    "Müzik",
+    "İK"
    ]
   },
   {
@@ -3122,6 +4018,12 @@
    "pushed": "2025-09-10",
    "cats": [
     "🔒 Güvenlik & Ağ"
+   ],
+   "tags": [
+    "Ağ",
+    "Go",
+    "Güvenlik",
+    "Self-host"
    ]
   },
   {
@@ -3156,6 +4058,16 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏢 ERP & İşletme Yazılımları"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "CRM",
+    "ERP",
+    "Fatura",
+    "Muhasebe",
+    "PHP",
+    "POS",
+    "Ses"
    ]
   },
   {
@@ -3190,6 +4102,14 @@
    "pushed": "2026-08-15",
    "cats": [
     "🌐 Web Sitesi Oluşturucu"
+   ],
+   "tags": [
+    "CMS",
+    "Gizlilik",
+    "HTML",
+    "Statik Site",
+    "TUI",
+    "Vue"
    ]
   },
   {
@@ -3218,6 +4138,10 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏠 Akıllı Ev & IoT"
+   ],
+   "tags": [
+    "Go",
+    "Otomasyon"
    ]
   },
   {
@@ -3238,6 +4162,12 @@
    "pushed": "2026-08-12",
    "cats": [
     "🔒 Güvenlik & Ağ"
+   ],
+   "tags": [
+    "Ajan",
+    "Ağ",
+    "Form",
+    "HTML"
    ]
   },
   {
@@ -3266,6 +4196,13 @@
    "pushed": "2026-08-23",
    "cats": [
     "🔒 Güvenlik & Ağ"
+   ],
+   "tags": [
+    "Ağ",
+    "Güvenlik",
+    "Otomasyon",
+    "Python",
+    "Self-host"
    ]
   },
   {
@@ -3300,6 +4237,11 @@
    "pushed": "2026-07-22",
    "cats": [
     "📝 Doküman, Ofis & PDF"
+   ],
+   "tags": [
+    "Form",
+    "PDF",
+    "Shell"
    ]
   },
   {
@@ -3326,6 +4268,14 @@
    "pushed": "2026-08-17",
    "cats": [
     "🎬 Medya & Eğlence"
+   ],
+   "tags": [
+    "AI",
+    "API",
+    "Docker",
+    "Kotlin",
+    "Medya",
+    "Çizgi Roman"
    ]
   },
   {
@@ -3343,6 +4293,10 @@
    "pushed": "2026-08-24",
    "cats": [
     "🖥️ Geliştirici Altyapısı & Back"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Rust"
    ]
   },
   {
@@ -3365,6 +4319,18 @@
    "pushed": "2026-08-15",
    "cats": [
     "🤖 AI IDE Arayüz"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Arama",
+    "Açık Kaynak",
+    "Eklenti",
+    "LLM",
+    "MCP",
+    "Sohbet",
+    "TypeScript",
+    "VS Code"
    ]
   },
   {
@@ -3378,6 +4344,10 @@
    "pushed": "2026-08-03",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "Ajan",
+    "Python"
    ]
   },
   {
@@ -3396,6 +4366,11 @@
    "pushed": "2026-05-21",
    "cats": [
     "📚 Kaynak & Awesome Listeler"
+   ],
+   "tags": [
+    "AI",
+    "LLM",
+    "Shell"
    ]
   },
   {
@@ -3418,6 +4393,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧪 Diğer Araçlar"
+   ],
+   "tags": [
+    "CLI",
+    "Dashboard",
+    "Docker",
+    "Form",
+    "Hız Testi",
+    "PHP",
+    "Self-host"
    ]
   },
   {
@@ -3446,6 +4430,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "📧 İletişim & E-posta"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "Graf",
+    "Helpdesk",
+    "Ruby",
+    "TypeScript",
+    "Vue"
    ]
   },
   {
@@ -3459,6 +4452,13 @@
    "pushed": "2026-08-23",
    "cats": [
     "📧 İletişim & E-posta"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "E-posta",
+    "Go",
+    "Self-host"
    ]
   },
   {
@@ -3490,6 +4490,12 @@
    "pushed": "2026-07-31",
    "cats": [
     "🧑‍💼 İK & CRM"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "CRM",
+    "PHP",
+    "İş Akışı"
    ]
   },
   {
@@ -3520,6 +4526,21 @@
    "pushed": "2026-08-24",
    "cats": [
     "🗄️ Veritabanı & CMS"
+   ],
+   "tags": [
+    "AI",
+    "API",
+    "Ajan",
+    "Açık Kaynak",
+    "Dashboard",
+    "Form",
+    "Low-Code",
+    "No-Code",
+    "Otomasyon",
+    "POS",
+    "Python",
+    "Self-host",
+    "Veritabanı"
    ]
   },
   {
@@ -3554,6 +4575,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "💰 Finans & Bütçe"
+   ],
+   "tags": [
+    "Docker",
+    "Finans",
+    "Go",
+    "Muhasebe",
+    "Self-host",
+    "TypeScript",
+    "Vue"
    ]
   },
   {
@@ -3576,6 +4606,13 @@
    "pushed": "2026-08-21",
    "cats": [
     "🛒 E-Ticaret"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "E-Ticaret",
+    "Form",
+    "Ruby"
    ]
   },
   {
@@ -3583,12 +4620,16 @@
    "url": "https://github.com/agegr/pi-web",
    "desc": "Web UI for the pi coding agent",
    "lang": "TypeScript",
-   "stars": 5169,
+   "stars": 5170,
    "license": "MIT",
    "topics": [],
    "pushed": "2026-08-21",
    "cats": [
     "🤖 AI IDE Arayüz"
+   ],
+   "tags": [
+    "Ajan",
+    "TypeScript"
    ]
   },
   {
@@ -3623,6 +4664,17 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔍 Kod İstihbaratı & Knowledge G"
+   ],
+   "tags": [
+    "AI",
+    "Arama",
+    "Codebase",
+    "Graf",
+    "LLM",
+    "MCP",
+    "Python",
+    "RAG",
+    "Veritabanı"
    ]
   },
   {
@@ -3646,6 +4698,12 @@
    "pushed": "2026-08-01",
    "cats": [
     "🖨️ Etiket & Baskı Sistemleri"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "PDF",
+    "React",
+    "TypeScript"
    ]
   },
   {
@@ -3668,6 +4726,9 @@
    "pushed": "2026-06-25",
    "cats": [
     "🔒 Güvenlik & Ağ"
+   ],
+   "tags": [
+    "Go"
    ]
   },
   {
@@ -3689,6 +4750,10 @@
    "pushed": "2024-09-26",
    "cats": [
     "🔌 Ücretsiz API'ler & Kütüphaneler"
+   ],
+   "tags": [
+    "API",
+    "Graf"
    ]
   },
   {
@@ -3722,6 +4787,12 @@
    "pushed": "2026-08-22",
    "cats": [
     "🖥️ Geliştirici Altyapısı & Back"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "CLI",
+    "Go",
+    "Otomasyon"
    ]
   },
   {
@@ -3747,6 +4818,12 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Form",
+    "TypeScript"
    ]
   },
   {
@@ -3775,6 +4852,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "📧 İletişim & E-posta"
+   ],
+   "tags": [
+    "AI",
+    "E-posta",
+    "Helpdesk",
+    "PHP",
+    "Self-host"
    ]
   },
   {
@@ -3796,6 +4880,11 @@
    "pushed": "2026-08-21",
    "cats": [
     "🖥️ Geliştirici Altyapısı & Back"
+   ],
+   "tags": [
+    "API",
+    "Go",
+    "Self-host"
    ]
   },
   {
@@ -3819,6 +4908,12 @@
    "pushed": "2026-08-13",
    "cats": [
     "🎬 Medya & Eğlence"
+   ],
+   "tags": [
+    "AI",
+    "Müzik",
+    "Ruby",
+    "Self-host"
    ]
   },
   {
@@ -3851,6 +4946,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔍 Kod İstihbaratı & Knowledge G"
+   ],
+   "tags": [
+    "AI",
+    "CLI",
+    "Codebase",
+    "Rust",
+    "TypeScript"
    ]
   },
   {
@@ -3858,7 +4960,7 @@
    "url": "https://github.com/ever-co/ever-gauzy",
    "desc": "Ever® Gauzy™ - Open Business Management Platform (ERP/CRM/HRM/ATS/PM) - https://gauzy.co",
    "lang": "TypeScript",
-   "stars": 4348,
+   "stars": 4349,
    "license": "AGPL-3.0",
    "topics": [
     "accounting",
@@ -3885,6 +4987,17 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏢 ERP & İşletme Yazılımları"
+   ],
+   "tags": [
+    "CRM",
+    "ERP",
+    "Fatura",
+    "Faturalama",
+    "Form",
+    "Muhasebe",
+    "Ses",
+    "TypeScript",
+    "İK"
    ]
   },
   {
@@ -3904,6 +5017,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔍 Arama & RSS"
+   ],
+   "tags": [
+    "RSS",
+    "Ruby",
+    "Self-host"
    ]
   },
   {
@@ -3931,6 +5049,12 @@
    "pushed": "2026-08-20",
    "cats": [
     "🔍 Arama & RSS"
+   ],
+   "tags": [
+    "Arama",
+    "Ağ",
+    "Gizlilik",
+    "Java"
    ]
   },
   {
@@ -3948,9 +5072,15 @@
     "network-client",
     "network-server"
    ],
-   "pushed": "2026-08-07",
+   "pushed": "2026-08-24",
    "cats": [
     "🔒 Güvenlik & Ağ"
+   ],
+   "tags": [
+    "API",
+    "Ağ",
+    "C",
+    "CLI"
    ]
   },
   {
@@ -3985,6 +5115,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏠 Akıllı Ev & IoT"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "C++",
+    "IoT",
+    "Otomasyon",
+    "Python"
    ]
   },
   {
@@ -4006,6 +5143,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧪 Diğer Araçlar"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Form",
+    "PHP"
    ]
   },
   {
@@ -4029,6 +5171,10 @@
    "pushed": "2026-08-24",
    "cats": [
     "🎨 UI Kütüphaneleri & Tasarım"
+   ],
+   "tags": [
+    "React",
+    "TypeScript"
    ]
   },
   {
@@ -4048,6 +5194,12 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔍 Arama & RSS"
+   ],
+   "tags": [
+    "Go",
+    "Java",
+    "RSS",
+    "Self-host"
    ]
   },
   {
@@ -4069,6 +5221,12 @@
    "pushed": "2025-10-10",
    "cats": [
     "🎨 UI Kütüphaneleri & Tasarım"
+   ],
+   "tags": [
+    "AI",
+    "Dashboard",
+    "React",
+    "TypeScript"
    ]
   },
   {
@@ -4103,6 +5261,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "📝 Doküman, Ofis & PDF"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "ERP",
+    "Form",
+    "PDF",
+    "TypeScript"
    ]
   },
   {
@@ -4130,6 +5297,16 @@
    "pushed": "2024-09-27",
    "cats": [
     "🔍 Arama & RSS"
+   ],
+   "tags": [
+    "AI",
+    "API",
+    "Arama",
+    "ERP",
+    "LLM",
+    "React",
+    "Self-host",
+    "TypeScript"
    ]
   },
   {
@@ -4143,6 +5320,9 @@
    "pushed": "2026-07-22",
    "cats": [
     "📊 Proje Yönetimi & Çalışma Alan"
+   ],
+   "tags": [
+    "Shell"
    ]
   },
   {
@@ -4167,6 +5347,13 @@
    "pushed": "2026-08-18",
    "cats": [
     "🌐 Web Sitesi Oluşturucu"
+   ],
+   "tags": [
+    "CMS",
+    "E-Ticaret",
+    "HTML",
+    "RAG",
+    "Site Kurucu"
    ]
   },
   {
@@ -4174,7 +5361,7 @@
    "url": "https://github.com/frappe/crm",
    "desc": "Fully featured, open source CRM",
    "lang": "Vue",
-   "stars": 3380,
+   "stars": 3381,
    "license": "AGPL-3.0",
    "topics": [
     "crm",
@@ -4200,6 +5387,14 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧑‍💼 İK & CRM"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "CRM",
+    "Form",
+    "Low-Code",
+    "Python",
+    "Vue"
    ]
   },
   {
@@ -4227,6 +5422,13 @@
    "pushed": "2026-08-20",
    "cats": [
     "📧 İletişim & E-posta"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Helpdesk",
+    "Python",
+    "TypeScript",
+    "Vue"
    ]
   },
   {
@@ -4259,6 +5461,18 @@
    "pushed": "2026-08-20",
    "cats": [
     "🧑‍💼 İK & CRM"
+   ],
+   "tags": [
+    "AI",
+    "Açık Kaynak",
+    "CRM",
+    "E-posta",
+    "Form",
+    "Kanban",
+    "OCR",
+    "Otomasyon",
+    "PHP",
+    "Takvim"
    ]
   },
   {
@@ -4284,6 +5498,13 @@
    "pushed": "2026-08-21",
    "cats": [
     "📋 Proje & Görev Yönetimi"
+   ],
+   "tags": [
+    "Not",
+    "React",
+    "Self-host",
+    "TypeScript",
+    "İş Akışı"
    ]
   },
   {
@@ -4318,6 +5539,21 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔍 Kod İstihbaratı & Knowledge G"
+   ],
+   "tags": [
+    "AI",
+    "API",
+    "Arama",
+    "CLI",
+    "Codebase",
+    "Docker",
+    "ERP",
+    "Eklenti",
+    "Graf",
+    "MCP",
+    "Skill",
+    "TypeScript",
+    "Veritabanı"
    ]
   },
   {
@@ -4338,6 +5574,13 @@
    "pushed": "2026-08-02",
    "cats": [
     "📝 Not Alma & Bilgi Yönetimi"
+   ],
+   "tags": [
+    "Not",
+    "RAG",
+    "Self-host",
+    "Veritabanı",
+    "Vue"
    ]
   },
   {
@@ -4361,6 +5604,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏠 Akıllı Ev & IoT"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Gizlilik",
+    "IoT",
+    "JavaScript",
+    "Otomasyon"
    ]
   },
   {
@@ -4368,7 +5618,7 @@
    "url": "https://github.com/SharpAI/DeepCamera",
    "desc": "Open-Source AI Camera Skills Platform, AI NVR & CCTV Surveillance. Local VLM video analysis with Qwen, DeepSeek, SmolVLM, LLaVA, YOLO26. LLM-powered agentic security camera agent — watches, understands, remembers & guards your home via Telegram, Discord or Slack. Pluggable AI skills. OpenAI, Google, Anthropic or local AI. Runs on Mac Mini & AI PC.",
    "lang": "JavaScript",
-   "stars": 3014,
+   "stars": 3013,
    "license": "MIT",
    "topics": [
     "ai",
@@ -4395,6 +5645,21 @@
    "pushed": "2026-06-18",
    "cats": [
     "📹 Güvenlik Kamerası"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "Form",
+    "Go",
+    "Güvenlik",
+    "JavaScript",
+    "Kamera",
+    "LLM",
+    "Python",
+    "Skill",
+    "Video",
+    "İK"
    ]
   },
   {
@@ -4418,6 +5683,13 @@
    "pushed": "2025-11-23",
    "cats": [
     "🗂️ Dosya & Belge Yönetimi"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Go",
+    "OCR",
+    "PDF",
+    "Python"
    ]
   },
   {
@@ -4441,6 +5713,12 @@
    "pushed": "2025-07-06",
    "cats": [
     "💰 Finans & Bütçe"
+   ],
+   "tags": [
+    "CLI",
+    "Python",
+    "TUI",
+    "Terminal"
    ]
   },
   {
@@ -4474,6 +5752,16 @@
    "pushed": "2026-08-17",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Bellek",
+    "CLI",
+    "Eklenti",
+    "JavaScript",
+    "Skill",
+    "İş Akışı"
    ]
   },
   {
@@ -4496,6 +5784,15 @@
    "pushed": "2026-08-22",
    "cats": [
     "🎬 Medya & Eğlence"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Medya",
+    "React",
+    "Rust",
+    "Self-host",
+    "TypeScript",
+    "Çizgi Roman"
    ]
   },
   {
@@ -4517,6 +5814,10 @@
    "pushed": "2026-08-05",
    "cats": [
     "🧪 Diğer Araçlar"
+   ],
+   "tags": [
+    "Beyaz Tahta",
+    "JavaScript"
    ]
   },
   {
@@ -4550,6 +5851,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "Graf",
+    "Otomasyon",
+    "Python",
+    "İş Akışı"
    ]
   },
   {
@@ -4577,6 +5887,15 @@
    "pushed": "2026-08-17",
    "cats": [
     "🗂️ Dosya & Belge Yönetimi"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Docker",
+    "ERP",
+    "JavaScript",
+    "OCR",
+    "Self-host",
+    "İş Akışı"
    ]
   },
   {
@@ -4590,6 +5909,12 @@
    "pushed": "2026-06-06",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "CLI",
+    "JavaScript",
+    "Skill"
    ]
   },
   {
@@ -4618,6 +5943,17 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏢 ERP & İşletme Yazılımları"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "CRM",
+    "Docker",
+    "ERP",
+    "Görsel",
+    "Java",
+    "Muhasebe",
+    "POS",
+    "React"
    ]
   },
   {
@@ -4650,6 +5986,17 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "CLI",
+    "Eklenti",
+    "MCP",
+    "Python",
+    "Self-host",
+    "Skill"
    ]
   },
   {
@@ -4678,6 +6025,13 @@
    "pushed": "2026-08-09",
    "cats": [
     "🧪 Diğer Araçlar"
+   ],
+   "tags": [
+    "Gizlilik",
+    "React",
+    "Sohbet",
+    "TypeScript",
+    "Video"
    ]
   },
   {
@@ -4705,6 +6059,16 @@
    "pushed": "2026-08-24",
    "cats": [
     "🌐 Web Sitesi Oluşturucu"
+   ],
+   "tags": [
+    "AI",
+    "CMS",
+    "ERP",
+    "Low-Code",
+    "Python",
+    "TUI",
+    "TypeScript",
+    "Vue"
    ]
   },
   {
@@ -4722,6 +6086,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "💰 Finans & Bütçe"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Finans",
+    "Gizlilik",
+    "Python",
+    "Self-host"
    ]
   },
   {
@@ -4742,6 +6113,11 @@
    "pushed": "2026-03-08",
    "cats": [
     "📋 Proje & Görev Yönetimi"
+   ],
+   "tags": [
+    "JavaScript",
+    "Kanban",
+    "Self-host"
    ]
   },
   {
@@ -4760,6 +6136,11 @@
    "pushed": "2026-08-22",
    "cats": [
     "🔍 Arama & RSS"
+   ],
+   "tags": [
+    "RSS",
+    "Self-host",
+    "TypeScript"
    ]
   },
   {
@@ -4794,6 +6175,16 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔒 Güvenlik & Ağ"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Arama",
+    "Go",
+    "Güvenlik",
+    "LLM",
+    "MCP",
+    "RAG"
    ]
   },
   {
@@ -4801,7 +6192,7 @@
    "url": "https://github.com/Alinto/sogo",
    "desc": "SOGo is a very fast and scalable modern collaboration suite (groupware). It offers calendaring, address book management, and a full-featured Webmail client along with resource sharing and permission handling. It also makes use of documented standards (IMAP, CalDAV, CardDAV, etc.) and thereby provides native connectivity (without plugins) to many clients such as Microsoft Outlook, Apple iCal, the iPhone, Mozilla Lightning, and a plethora of mobile devices.",
    "lang": "Objective-C",
-   "stars": 2152,
+   "stars": 2153,
    "license": "GPL-2.0",
    "topics": [
     "angularjs-material",
@@ -4812,6 +6203,15 @@
    "pushed": "2026-08-13",
    "cats": [
     "📧 İletişim & E-posta"
+   ],
+   "tags": [
+    "AI",
+    "CLI",
+    "E-posta",
+    "Eklenti",
+    "Go",
+    "Objective-C",
+    "Takvim"
    ]
   },
   {
@@ -4825,6 +6225,9 @@
    "pushed": "2025-10-13",
    "cats": [
     "📊 Proje Yönetimi & Çalışma Alan"
+   ],
+   "tags": [
+    "Shell"
    ]
   },
   {
@@ -4840,6 +6243,14 @@
    "pushed": "2026-07-13",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "Arama",
+    "Codebase",
+    "Graf",
+    "MCP",
+    "RAG",
+    "TypeScript"
    ]
   },
   {
@@ -4847,13 +6258,14 @@
    "url": "https://github.com/ornith-ai/Ornith-1",
    "desc": "",
    "lang": "",
-   "stars": 1936,
+   "stars": 1938,
    "license": "MIT",
    "topics": [],
    "pushed": "2026-08-22",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
-   ]
+   ],
+   "tags": []
   },
   {
    "name": "hashicorp-forge/hermes",
@@ -4869,6 +6281,10 @@
    "pushed": "2026-03-27",
    "cats": [
     "🗂️ Dosya & Belge Yönetimi"
+   ],
+   "tags": [
+    "Go",
+    "TypeScript"
    ]
   },
   {
@@ -4903,6 +6319,12 @@
    "pushed": "2026-08-23",
    "cats": [
     "📝 Doküman, Ofis & PDF"
+   ],
+   "tags": [
+    "CLI",
+    "Gizlilik",
+    "HTML",
+    "MCP"
    ]
   },
   {
@@ -4923,6 +6345,11 @@
    "pushed": "2026-08-09",
    "cats": [
     "📋 Proje & Görev Yönetimi"
+   ],
+   "tags": [
+    "Go",
+    "Python",
+    "Self-host"
    ]
   },
   {
@@ -4936,6 +6363,9 @@
    "pushed": "2026-08-18",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Rust"
    ]
   },
   {
@@ -4949,6 +6379,12 @@
    "pushed": "2026-03-11",
    "cats": [
     "📧 İletişim & E-posta"
+   ],
+   "tags": [
+    "AI",
+    "CLI",
+    "E-posta",
+    "PHP"
    ]
   },
   {
@@ -4962,6 +6398,10 @@
    "pushed": "2025-05-15",
    "cats": [
     "🧠 AI Bellek & Bağlam Motorları"
+   ],
+   "tags": [
+    "Batchfile",
+    "Bellek"
    ]
   },
   {
@@ -4988,6 +6428,13 @@
    "pushed": "2025-10-18",
    "cats": [
     "💰 Finans & Bütçe"
+   ],
+   "tags": [
+    "Docker",
+    "Finans",
+    "Go",
+    "HTML",
+    "Self-host"
    ]
   },
   {
@@ -5022,6 +6469,14 @@
    "pushed": "2026-08-24",
    "cats": [
     "📋 Proje & Görev Yönetimi"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Dart",
+    "Form",
+    "Gizlilik",
+    "Go",
+    "RAG"
    ]
   },
   {
@@ -5035,6 +6490,11 @@
    "pushed": "2025-11-03",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "Ajan",
+    "Python",
+    "Terminal"
    ]
   },
   {
@@ -5067,6 +6527,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧪 Diğer Araçlar"
+   ],
+   "tags": [
+    "AI",
+    "API",
+    "Arama",
+    "E-posta",
+    "Form",
+    "JavaScript",
+    "Self-host"
    ]
   },
   {
@@ -5089,6 +6558,14 @@
    "pushed": "2026-08-23",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Eklenti",
+    "LLM",
+    "MCP",
+    "TypeScript"
    ]
   },
   {
@@ -5108,6 +6585,12 @@
    "pushed": "2026-05-14",
    "cats": [
     "🔌 Ücretsiz API'ler & Kütüphaneler"
+   ],
+   "tags": [
+    "API",
+    "Rust",
+    "TUI",
+    "Terminal"
    ]
   },
   {
@@ -5136,6 +6619,13 @@
    "pushed": "2026-07-21",
    "cats": [
     "🔍 Kod İstihbaratı & Knowledge G"
+   ],
+   "tags": [
+    "AI",
+    "Arama",
+    "LLM",
+    "Python",
+    "Veritabanı"
    ]
   },
   {
@@ -5150,6 +6640,10 @@
    "cats": [
     "🤖 AI IDE Arayüz",
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "Ajan",
+    "TypeScript"
    ]
   },
   {
@@ -5174,6 +6668,12 @@
    "pushed": "2025-02-08",
    "cats": [
     "🔌 Ücretsiz API'ler & Kütüphaneler"
+   ],
+   "tags": [
+    "API",
+    "Go",
+    "JavaScript",
+    "React"
    ]
   },
   {
@@ -5181,7 +6681,7 @@
    "url": "https://github.com/nicobailon/pi-web-access",
    "desc": "Web search and content extraction extension for Pi coding agent",
    "lang": "TypeScript",
-   "stars": 1211,
+   "stars": 1212,
    "license": "MIT",
    "topics": [
     "perplexity",
@@ -5192,6 +6692,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Arama",
+    "ERP",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -5226,6 +6733,14 @@
    "pushed": "2026-08-11",
    "cats": [
     "🔍 Arama & RSS"
+   ],
+   "tags": [
+    "API",
+    "Arama",
+    "Açık Kaynak",
+    "Gizlilik",
+    "Rust",
+    "Self-host"
    ]
   },
   {
@@ -5239,6 +6754,10 @@
    "pushed": "2026-06-03",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "TypeScript"
    ]
   },
   {
@@ -5258,6 +6777,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏠 Akıllı Ev & IoT"
+   ],
+   "tags": [
+    "IoT",
+    "Java",
+    "Otomasyon"
    ]
   },
   {
@@ -5271,6 +6795,11 @@
    "pushed": "2023-10-06",
    "cats": [
     "🧪 Diğer Araçlar"
+   ],
+   "tags": [
+    "Beyaz Tahta",
+    "JavaScript",
+    "Medya"
    ]
   },
   {
@@ -5296,6 +6825,14 @@
    "pushed": "2026-08-24",
    "cats": [
     "📹 Güvenlik Kamerası"
+   ],
+   "tags": [
+    "AI",
+    "Form",
+    "Kamera",
+    "Otomasyon",
+    "TypeScript",
+    "Video"
    ]
   },
   {
@@ -5312,6 +6849,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🗄️ Veritabanı & CMS"
+   ],
+   "tags": [
+    "CMS",
+    "PHP",
+    "POS"
    ]
   },
   {
@@ -5331,6 +6873,10 @@
    "pushed": "2026-08-24",
    "cats": [
     "🔌 Ücretsiz API'ler & Kütüphaneler"
+   ],
+   "tags": [
+    "API",
+    "Güvenlik"
    ]
   },
   {
@@ -5358,6 +6904,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "CLI",
+    "React",
+    "Skill",
+    "TypeScript"
    ]
   },
   {
@@ -5383,6 +6938,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "💰 Finans & Bütçe"
+   ],
+   "tags": [
+    "Fatura",
+    "Faturalama",
+    "PHP",
+    "Self-host",
+    "Ses"
    ]
   },
   {
@@ -5401,6 +6963,12 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -5423,6 +6991,10 @@
    "pushed": "2026-08-24",
    "cats": [
     "🤖 Otomasyon & Geliştirme"
+   ],
+   "tags": [
+    "Form",
+    "Rust"
    ]
   },
   {
@@ -5437,6 +7009,10 @@
    "cats": [
     "🤖 AI IDE Arayüz",
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "TypeScript"
    ]
   },
   {
@@ -5444,7 +7020,7 @@
    "url": "https://github.com/eduard256/Strix",
    "desc": "Smart IP camera stream finder. Tests 102K+ URL patterns in 30 seconds. Supports 67K camera models. Generates ready Frigate/go2rtc configs.",
    "lang": "HTML",
-   "stars": 858,
+   "stars": 857,
    "license": "MIT",
    "topics": [
     "camera-discovery",
@@ -5471,6 +7047,53 @@
    "pushed": "2026-08-24",
    "cats": [
     "📹 Güvenlik Kamerası"
+   ],
+   "tags": [
+    "Docker",
+    "Go",
+    "HTML",
+    "Kamera",
+    "Otomasyon",
+    "Self-host",
+    "Video"
+   ]
+  },
+  {
+   "name": "sohaibdevv/youtube-music",
+   "url": "https://github.com/sohaibdevv/youtube-music",
+   "desc": "A lightweight, ad‑free client for streaming music from YouTube Music. No subscription required. Supports background playback, search, and custom playlists via the reverse‑engineered API.",
+   "lang": "TypeScript",
+   "stars": 846,
+   "license": "MIT",
+   "topics": [
+    "ad-free",
+    "audio-streaming",
+    "background-playback",
+    "desktop-app",
+    "free",
+    "music",
+    "music-player",
+    "no-ads",
+    "open-source",
+    "player",
+    "playlist-manager",
+    "streaming",
+    "windows",
+    "youtube",
+    "youtube-music",
+    "yt-music"
+   ],
+   "pushed": "2026-08-11",
+   "cats": [
+    "🔌 Ücretsiz API'ler & Kütüphaneler"
+   ],
+   "tags": [
+    "API",
+    "Arama",
+    "Açık Kaynak",
+    "CLI",
+    "Müzik",
+    "TypeScript"
    ]
   },
   {
@@ -5498,6 +7121,14 @@
    "cats": [
     "🤖 AI IDE Arayüz",
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Docker",
+    "LLM",
+    "Self-host",
+    "TypeScript"
    ]
   },
   {
@@ -5519,6 +7150,10 @@
    "pushed": "2026-08-20",
    "cats": [
     "🧪 Diğer Araçlar"
+   ],
+   "tags": [
+    "ERP",
+    "Elixir"
    ]
   },
   {
@@ -5537,6 +7172,10 @@
    "pushed": "2026-08-21",
    "cats": [
     "📝 Not Alma & Bilgi Yönetimi"
+   ],
+   "tags": [
+    "Not",
+    "TypeScript"
    ]
   },
   {
@@ -5567,6 +7206,13 @@
    "pushed": "2026-08-10",
    "cats": [
     "🖨️ Etiket & Baskı Sistemleri"
+   ],
+   "tags": [
+    "Baskı",
+    "CLI",
+    "Etiket",
+    "Termal",
+    "TypeScript"
    ]
   },
   {
@@ -5593,6 +7239,11 @@
    "pushed": "2026-08-22",
    "cats": [
     "🔌 Ücretsiz API'ler & Kütüphaneler"
+   ],
+   "tags": [
+    "API",
+    "CLI",
+    "JavaScript"
    ]
   },
   {
@@ -5623,6 +7274,11 @@
    "pushed": "2026-01-09",
    "cats": [
     "🖨️ Etiket & Baskı Sistemleri"
+   ],
+   "tags": [
+    "Baskı",
+    "Etiket",
+    "Python"
    ]
   },
   {
@@ -5636,6 +7292,11 @@
    "pushed": "2026-08-23",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -5670,6 +7331,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "Bellek",
+    "CLI",
+    "MCP",
+    "TypeScript"
    ]
   },
   {
@@ -5696,6 +7366,14 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏢 ERP & İşletme Yazılımları"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "CRM",
+    "ERP",
+    "Java",
+    "Muhasebe",
+    "POS"
    ]
   },
   {
@@ -5719,6 +7397,11 @@
    "pushed": "2026-07-25",
    "cats": [
     "🖨️ Etiket & Baskı Sistemleri"
+   ],
+   "tags": [
+    "Baskı",
+    "Python",
+    "Termal"
    ]
   },
   {
@@ -5732,6 +7415,10 @@
    "pushed": "2026-07-30",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "TypeScript"
    ]
   },
   {
@@ -5757,6 +7444,11 @@
    "cats": [
     "🤖 AI IDE Arayüz",
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "TypeScript"
    ]
   },
   {
@@ -5781,6 +7473,10 @@
    "pushed": "2026-08-01",
    "cats": [
     "🤖 Otomasyon & Geliştirme"
+   ],
+   "tags": [
+    "Go",
+    "Webhook"
    ]
   },
   {
@@ -5810,6 +7506,10 @@
    "pushed": "2026-06-01",
    "cats": [
     "🔌 Ücretsiz API'ler & Kütüphaneler"
+   ],
+   "tags": [
+    "API",
+    "Python"
    ]
   },
   {
@@ -5827,6 +7527,11 @@
    "pushed": "2026-05-17",
    "cats": [
     "🖨️ Etiket & Baskı Sistemleri"
+   ],
+   "tags": [
+    "Baskı",
+    "Etiket",
+    "Python"
    ]
   },
   {
@@ -5851,6 +7556,10 @@
    "pushed": "2026-06-21",
    "cats": [
     "📝 Not Alma & Bilgi Yönetimi"
+   ],
+   "tags": [
+    "AI",
+    "TypeScript"
    ]
   },
   {
@@ -5884,6 +7593,16 @@
    "pushed": "2026-08-17",
    "cats": [
     "🖥️ Geliştirici Altyapısı & Back"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "CLI",
+    "Güvenlik",
+    "JavaScript",
+    "LLM",
+    "Skill",
+    "VS Code"
    ]
   },
   {
@@ -5891,12 +7610,15 @@
    "url": "https://github.com/elpapi42/pi-observational-memory",
    "desc": "Make Pi sessions feel endless",
    "lang": "TypeScript",
-   "stars": 473,
+   "stars": 475,
    "license": "MIT",
    "topics": [],
    "pushed": "2026-08-22",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "TypeScript"
    ]
   },
   {
@@ -5910,6 +7632,11 @@
    "pushed": "2026-08-23",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -5926,6 +7653,9 @@
    "pushed": "2026-08-05",
    "cats": [
     "🧪 Diğer Araçlar"
+   ],
+   "tags": [
+    "Java"
    ]
   },
   {
@@ -5939,6 +7669,10 @@
    "pushed": "2026-07-23",
    "cats": [
     "📧 İletişim & E-posta"
+   ],
+   "tags": [
+    "Görsel",
+    "Lua"
    ]
   },
   {
@@ -5952,6 +7686,12 @@
    "pushed": "2026-08-19",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "Python",
+    "Skill"
    ]
   },
   {
@@ -5965,6 +7705,10 @@
    "pushed": "2026-07-27",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "JavaScript"
    ]
   },
   {
@@ -5981,6 +7725,9 @@
    "pushed": "2026-08-03",
    "cats": [
     "🗂️ Dosya & Belge Yönetimi"
+   ],
+   "tags": [
+    "Ruby"
    ]
   },
   {
@@ -6005,6 +7752,11 @@
    "pushed": "2026-04-26",
    "cats": [
     "🤖 AI Ajanları & Kodlama Asistan"
+   ],
+   "tags": [
+    "C",
+    "Form",
+    "LLM"
    ]
   },
   {
@@ -6018,6 +7770,10 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Form",
+    "TypeScript"
    ]
   },
   {
@@ -6052,6 +7808,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "📊 Proje Yönetimi & Çalışma Alan"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "Baskı",
+    "Kanban",
+    "Self-host",
+    "TypeScript"
    ]
   },
   {
@@ -6065,6 +7830,10 @@
    "pushed": "2026-08-03",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "TypeScript"
    ]
   },
   {
@@ -6082,6 +7851,11 @@
    "pushed": "2026-07-09",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -6097,6 +7871,10 @@
    "pushed": "2026-07-23",
    "cats": [
     "🖥️ Geliştirici Altyapısı & Back"
+   ],
+   "tags": [
+    "Eklenti",
+    "Go"
    ]
   },
   {
@@ -6111,6 +7889,14 @@
    "cats": [
     "🤖 AI IDE Arayüz",
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Dashboard",
+    "Sohbet",
+    "TUI",
+    "Terminal",
+    "TypeScript"
    ]
   },
   {
@@ -6125,6 +7911,10 @@
    "cats": [
     "🤖 AI IDE Arayüz",
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "TypeScript"
    ]
   },
   {
@@ -6139,6 +7929,10 @@
    "cats": [
     "🤖 AI IDE Arayüz",
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Eklenti",
+    "JavaScript"
    ]
   },
   {
@@ -6156,6 +7950,12 @@
    "pushed": "2026-06-23",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "Graf",
+    "TypeScript"
    ]
   },
   {
@@ -6173,6 +7973,11 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -6193,6 +7998,11 @@
    "pushed": "2026-08-06",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Eklenti",
+    "Go",
+    "TypeScript"
    ]
   },
   {
@@ -6206,6 +8016,11 @@
    "pushed": "2026-04-24",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -6227,6 +8042,13 @@
    "pushed": "2026-08-24",
    "cats": [
     "🏠 Akıllı Ev & IoT"
+   ],
+   "tags": [
+    "AI",
+    "Dashboard",
+    "Form",
+    "Ruby",
+    "Self-host"
    ]
   },
   {
@@ -6240,6 +8062,13 @@
    "pushed": "2026-08-21",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "CLI",
+    "Eklenti",
+    "Skill",
+    "TypeScript"
    ]
   },
   {
@@ -6266,6 +8095,12 @@
    "pushed": "2026-07-03",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "Güvenlik",
+    "TypeScript"
    ]
   },
   {
@@ -6279,6 +8114,10 @@
    "pushed": "2026-05-18",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "TypeScript"
    ]
   },
   {
@@ -6300,6 +8139,13 @@
    "pushed": "2026-08-19",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "API",
+    "Eklenti",
+    "LLM",
+    "TypeScript"
    ]
   },
   {
@@ -6325,6 +8171,15 @@
    "pushed": "2026-08-23",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "CLI",
+    "LLM",
+    "MCP",
+    "POS",
+    "TypeScript"
    ]
   },
   {
@@ -6355,6 +8210,16 @@
    "cats": [
     "🤖 AI IDE Arayüz",
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Açık Kaynak",
+    "LLM",
+    "React",
+    "Rust",
+    "Sohbet",
+    "TypeScript"
    ]
   },
   {
@@ -6377,6 +8242,11 @@
    "pushed": "2026-03-31",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -6390,6 +8260,10 @@
    "pushed": "2026-08-21",
    "cats": [
     "🖥️ Geliştirici Altyapısı & Back"
+   ],
+   "tags": [
+    "Form",
+    "TypeScript"
    ]
   },
   {
@@ -6403,6 +8277,11 @@
    "pushed": "2026-04-15",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -6416,6 +8295,11 @@
    "pushed": "2026-08-23",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -6438,6 +8322,13 @@
    "pushed": "2026-07-05",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Otomasyon",
+    "TypeScript",
+    "İş Akışı"
    ]
   },
   {
@@ -6455,6 +8346,10 @@
    "pushed": "2026-07-06",
    "cats": [
     "🎨 UI Kütüphaneleri & Tasarım"
+   ],
+   "tags": [
+    "CLI",
+    "TypeScript"
    ]
   },
   {
@@ -6468,6 +8363,10 @@
    "pushed": "2026-08-12",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Skill",
+    "TypeScript"
    ]
   },
   {
@@ -6487,6 +8386,12 @@
    "pushed": "2026-08-23",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "CLI",
+    "Rust"
    ]
   },
   {
@@ -6505,6 +8410,13 @@
    "pushed": "2026-06-23",
    "cats": [
     "🔍 Kod İstihbaratı & Knowledge G"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "LLM",
+    "Sohbet",
+    "TypeScript"
    ]
   },
   {
@@ -6518,6 +8430,9 @@
    "pushed": "2026-07-12",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "TypeScript"
    ]
   },
   {
@@ -6531,6 +8446,13 @@
    "pushed": "2026-05-13",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "LLM",
+    "TypeScript",
+    "İK"
    ]
   },
   {
@@ -6548,6 +8470,12 @@
    "pushed": "2026-06-15",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "Lua",
+    "Neovim"
    ]
   },
   {
@@ -6555,7 +8483,7 @@
    "url": "https://github.com/yukukotani/pi-voice",
    "desc": "Headless voice interface for the Pi Coding Agent",
    "lang": "TypeScript",
-   "stars": 77,
+   "stars": 78,
    "license": "MIT",
    "topics": [
     "pi",
@@ -6564,6 +8492,13 @@
    "pushed": "2026-02-13",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Headless",
+    "Ses",
+    "TypeScript"
    ]
   },
   {
@@ -6577,6 +8512,11 @@
    "pushed": "2026-08-19",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "JavaScript"
    ]
   },
   {
@@ -6590,6 +8530,12 @@
    "pushed": "2026-08-17",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "Skill",
+    "TypeScript"
    ]
   },
   {
@@ -6603,6 +8549,11 @@
    "pushed": "2026-04-30",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -6620,6 +8571,31 @@
    "pushed": "2026-05-31",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "Go",
+    "TypeScript"
+   ]
+  },
+  {
+   "name": "CroireF/LocalVoiceStudio",
+   "url": "https://github.com/CroireF/LocalVoiceStudio",
+   "desc": "VoiceStudio is a local-first, free text-to-speech studio for multi-languages. Create polished voiceovers with named neural voices, style presets, pitch/rate/volume controls, browser preview, local history, and MP3/WAV/AAC export—no API key required.",
+   "lang": "TypeScript",
+   "stars": 64,
+   "license": "MIT",
+   "topics": [],
+   "pushed": "2026-08-24",
+   "cats": [
+    "🔌 Ücretsiz API'ler & Kütüphaneler"
+   ],
+   "tags": [
+    "API",
+    "Konuşma",
+    "Ses",
+    "TypeScript"
    ]
   },
   {
@@ -6640,6 +8616,13 @@
    "pushed": "2026-07-05",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "Terminal",
+    "TypeScript",
+    "İş Akışı"
    ]
   },
   {
@@ -6658,6 +8641,12 @@
    "pushed": "2026-06-11",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "C",
+    "Docker",
+    "POS"
    ]
   },
   {
@@ -6678,6 +8667,14 @@
    "pushed": "2026-04-21",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Eklenti",
+    "Otomasyon",
+    "TypeScript",
+    "İş Akışı"
    ]
   },
   {
@@ -6703,6 +8700,14 @@
    "pushed": "2026-08-15",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Arama",
+    "Eklenti",
+    "Otomasyon",
+    "Skill",
+    "TypeScript"
    ]
   },
   {
@@ -6724,6 +8729,13 @@
    "pushed": "2026-08-16",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Eklenti",
+    "LLM",
+    "TypeScript"
    ]
   },
   {
@@ -6737,6 +8749,10 @@
    "pushed": "2026-04-07",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "TypeScript"
    ]
   },
   {
@@ -6766,6 +8782,18 @@
    "pushed": "2026-07-08",
    "cats": [
     "🖨️ Etiket & Baskı Sistemleri"
+   ],
+   "tags": [
+    "Baskı",
+    "CLI",
+    "Etiket",
+    "Form",
+    "Görsel",
+    "RAG",
+    "React",
+    "Termal",
+    "Terminal",
+    "TypeScript"
    ]
   },
   {
@@ -6783,6 +8811,12 @@
    "pushed": "2026-05-08",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "TypeScript",
+    "VS Code"
    ]
   },
   {
@@ -6796,6 +8830,10 @@
    "pushed": "2026-07-17",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "TypeScript"
    ]
   },
   {
@@ -6829,6 +8867,18 @@
    "pushed": "2026-08-22",
    "cats": [
     "🖨️ Etiket & Baskı Sistemleri"
+   ],
+   "tags": [
+    "Açık Kaynak",
+    "Baskı",
+    "Depo",
+    "Etiket",
+    "PDF",
+    "RAG",
+    "React",
+    "Termal",
+    "TypeScript",
+    "Vue"
    ]
   },
   {
@@ -6842,6 +8892,11 @@
    "pushed": "2026-05-29",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "TUI",
+    "TypeScript"
    ]
   },
   {
@@ -6855,12 +8910,15 @@
    "pushed": "2026-06-23",
    "cats": [
     "📚 Kaynak & Awesome Listeler"
+   ],
+   "tags": [
+    "Python"
    ]
   },
   {
    "name": "amosblomqvist/pi-dictate",
    "url": "https://github.com/amosblomqvist/pi-dictate",
-   "desc": "Dictation extension for pi",
+   "desc": "Dictation extension for pi.",
    "lang": "TypeScript",
    "stars": 36,
    "license": "MIT",
@@ -6868,6 +8926,10 @@
    "pushed": "2026-07-22",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -6881,6 +8943,12 @@
    "pushed": "2026-02-21",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "CLI",
+    "TypeScript",
+    "İK"
    ]
   },
   {
@@ -6894,6 +8962,10 @@
    "pushed": "2026-03-26",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "TypeScript"
    ]
   },
   {
@@ -6907,6 +8979,11 @@
    "pushed": "2026-08-21",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -6927,6 +9004,13 @@
    "pushed": "2025-09-02",
    "cats": [
     "🖨️ Etiket & Baskı Sistemleri"
+   ],
+   "tags": [
+    "AI",
+    "Etiket",
+    "Graf",
+    "Görsel",
+    "Vue"
    ]
   },
   {
@@ -6946,6 +9030,12 @@
    "pushed": "2026-07-12",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "RAG",
+    "TypeScript"
    ]
   },
   {
@@ -6959,6 +9049,11 @@
    "pushed": "2026-05-07",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Arama",
+    "TypeScript"
    ]
   },
   {
@@ -6972,6 +9067,12 @@
    "pushed": "2026-04-29",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Bellek",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -6999,6 +9100,15 @@
    "pushed": "2026-08-24",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Bellek",
+    "CLI",
+    "LLM",
+    "RAG",
+    "TypeScript"
    ]
   },
   {
@@ -7018,6 +9128,12 @@
    "pushed": "2026-07-04",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "AI",
+    "Ajan",
+    "Arama",
+    "TypeScript"
    ]
   },
   {
@@ -7031,6 +9147,10 @@
    "pushed": "2019-10-28",
    "cats": [
     "🖨️ Etiket & Baskı Sistemleri"
+   ],
+   "tags": [
+    "Etiket",
+    "TypeScript"
    ]
   },
   {
@@ -7053,6 +9173,12 @@
    "pushed": "2026-08-04",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "TypeScript",
+    "İK"
    ]
   },
   {
@@ -7063,9 +9189,13 @@
    "stars": 9,
    "license": "",
    "topics": [],
-   "pushed": "2026-08-12",
+   "pushed": "2026-08-24",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "TypeScript"
    ]
   },
   {
@@ -7079,6 +9209,11 @@
    "pushed": "2026-08-14",
    "cats": [
     "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "Eklenti",
+    "TypeScript"
    ]
   },
   {
@@ -7092,7 +9227,8 @@
    "pushed": "2025-12-12",
    "cats": [
     "📚 Kaynak & Awesome Listeler"
-   ]
+   ],
+   "tags": []
   }
  ]
 }

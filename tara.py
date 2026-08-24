@@ -215,11 +215,23 @@ def main():
         return
 
     lids = list_ids()
+    def refresh_data():
+        """Data dosyasını (data.json + index.html + repo-indeksi.txt) tazele."""
+        print("\n🔄 Data dosyaları güncelleniyor (guncelle.py --fetch)...")
+        r = subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'guncelle.py'), '--fetch'],
+                           capture_output=True, text=True, timeout=300)
+        print(r.stdout.strip()[-400:] if r.returncode == 0 else f"⚠️  guncelle.py hatası: {r.stderr[:150]}")
+        print("✅ Data dosyaları güncel — katalog: https://yunusozkarakasoglu.github.io/star-katalog/")
+
     if args.auto:
         print("\n⚡ AUTO MOD: soru sorulmadan ekleniyor...")
+        added = 0
         for cat, r in found:
-            add_repo(r['name'], cat, lids, mode='otomatik')
-        print("✅ AUTO tamamlandı")
+            if add_repo(r['name'], cat, lids, mode='otomatik'):
+                added += 1
+        print(f"✅ AUTO tamamlandı ({added} repo)")
+        if added:
+            refresh_data()
         return
 
     sel = interactive_select(found)
@@ -227,9 +239,13 @@ def main():
         print("ℹ️  Hiçbir repo eklenmedi.")
         return
     print(f"\n➕ {len(sel)} repo ekleniyor...")
+    added = 0
     for cat, r, newcat in sel:
-        add_repo(r['name'], newcat, lids, mode='manuel')
-    print("✅ Tamamlandı — 'kataloğu güncelle' dersen index.html de güncellenir.")
+        if add_repo(r['name'], newcat, lids, mode='manuel'):
+            added += 1
+    print(f"✅ Tamamlandı ({added} repo eklendi)")
+    if added:
+        refresh_data()
 
 if __name__ == '__main__':
     main()
