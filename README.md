@@ -108,6 +108,44 @@ python3 tara.py --gun 30 --min-stars 100     # isteğe bağlı min ★ (varsayı
 
 ---
 
+## 🎯 Bu Katalog Neden Var? (Proje Kütüphanesi)
+
+Bu repo, GitHub karmaşasına girmeden projelerinde kullanabileceğin **süzülmüş bir kütüphane**.
+Tüm repolar önceden doğrulanmış: **tamamen açık kaynak + ücretsiz + kaliteli**.
+
+**İlerideki iş akışı:**
+```
+SEN: "xxx repomuzu incele ve bu repolar içinden bu projemizde
+      kullanabileceğimiz repoları (tamamı ya da herhangi bir özelliği) listele."
+ASİSTAN: 1) Projenin ihtiyaçlarını anlar
+         2) repo-indeksi.txt / ara.py ile hızlıca tarar
+         3) Adayların README'lerini okur, özellikleri çıkarır
+         4) Kategori bilgisiyle öneri listesi sunar
+```
+
+## ⚡ Hızlı Arama (`ara.py`)
+
+```bash
+python3 ara.py --indeks              # indeks dosyalarını (yeniden) üret
+python3 ara.py "pdf"                 # anahtar kelime ara
+python3 ara.py "pdf üretim"          # çok kelimeli arama
+python3 ara.py "rag" --kategori "Bellek"  # kategori filtresi
+python3 ara.py "crm" --lang python   # dil filtresi
+python3 ara.py "erp" --min 1000      # min ★ ile
+python3 ara.py --liste               # tüm kategoriler + sayılar
+```
+
+**Veri dosyaları (senin için hızlı tarama):**
+| Dosya | İçerik |
+|---|---|
+| `repo-indeksi.json` | Yapılandırılmış indeks (her repo: ad, url, açıklama, etiketler, kategori, dil, ★, lisans) |
+| `repo-indeksi.txt` | **grep dostu** tek satır kayıtlar → `grep -i "pdf" repo-indeksi.txt` ile anlık arama |
+| `data.json` | Ham veri (guncelle.py üretir) |
+
+> 💡 Asistanına *"projem için pdf işi yapan repo bul"* gibi bir istek verdiğinde, bu indeks dosyaları üzerinden saniyeler içinde tarar ve önerir.
+
+---
+
 ## 🗂️ Dosya Yapısı
 
 | Dosya | Açıklama |
@@ -116,6 +154,8 @@ python3 tara.py --gun 30 --min-stars 100     # isteğe bağlı min ★ (varsayı
 | `guncelle.py` | Veriyi GitHub API'den çeker, `index.html`'i üretir |
 | `guncelle.sh` | Tek komutla güncelleme (çek → üret → commit → push) |
 | `tara.py` | 🔍 Yeni repo tarama aracı |
+| `ara.py` | ⚡ Hızlı arama / indeks aracı (proje kütüphanesi) |
+| `repo-indeksi.json` / `.txt` | Arama için optimize indeks dosyaları |
 | `data.json` | Son veri önbelleği (repo + kategori üyelikleri) |
 | `tarama.md` | Son tarama çıktısı (—kaydet ile oluşur) |
 

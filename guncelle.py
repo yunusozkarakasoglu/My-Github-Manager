@@ -399,3 +399,6 @@ buildSidebar(); buildFilters(); setCategory('Tümü');
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'index.html')
 open(out, 'w', encoding='utf-8').write(HTML)
 print(f"✅ index.html üretildi: {os.path.getsize(out):,} bytes ({len(repos)} repo)")
+# İndeks dosyalarını da tazele
+import subprocess as _sp
+_sp.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ara.py'), '--indeks'], check=False)
