@@ -3,6 +3,16 @@
 **yunusozkarakasoglu** hesabının star'ladığı tüm repoların **tek dosyalık, aranabilir** HTML kataloğu.
 GitHub star'larını ve kategori (Lists) üyeliklerini otomatik çeker, tarayıcıda kullanılabilir bir kataloğa dönüştürür.
 
+<p align="center">
+  <img src="assets/my-repo-list.png" alt="Repo Listesi" width="90%">
+  <br><em>📚 Repo listesi görünümü</em>
+</p>
+
+<p align="center">
+  <img src="assets/yeni-repo-akış.png" alt="Yeni Repo Tarama Akışı" width="45%">
+  <br><em>🔍 Yeni repo tarama akışı</em>
+</p>
+
 ---
 
 ## ✅ Gereksinimler
@@ -164,6 +174,7 @@ python3 ara.py --liste               # tüm kategoriler + sayılar
 | `repo-indeksi.txt` | grep dostu indeks (data.json'dan türetilir) |
 | `data.json` | Son veri önbelleği (repo + kategori üyelikleri) |
 | `tarama.md` | Son tarama çıktısı (—kaydet ile oluşur) |
+| `assets/` | README görselleri (repo listesi + tarama akışı ekran görüntüleri) |
 
 ---
 
