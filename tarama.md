@@ -1,0 +1,18 @@
+# 🔍 Yeni Repo Tarama (2026-08-25)
+
+**Aralık:** `>=2026-08-11` · **Sonuç:** 12 · _lisans: kesinlikle açık kaynak + ücretsiz_
+
+| Repo Adı | URL | Tarih | Özellikler (ne yapar) | ★ | Lisans | Kategori |
+|---|---|---|---|---|---|---|
+| [sohaibdevv/youtube-music](https://github.com/sohaibdevv/youtube-music) | https://github.com/sohaibdevv/youtube-music | 2026-08-11 | A lightweight, ad‑free client for streaming music from YouTube Music. No subscription requ | ★845 | MIT | 🔌 Ücretsiz API'ler & Kütüphaneler |
+| [imsai-sh/awesome-deepseek-harness-plugins](https://github.com/imsai-sh/awesome-deepseek-harness-plugins) | https://github.com/imsai-sh/awesome-deepseek-harness-plugins | 2026-08-14 | DeepSeek Harness plugin store, marketplace and hub — 3,100+ dsh plugins with search, ranki | ★182 | MIT | 🔌 Ücretsiz API'ler & Kütüphaneler |
+| [CroireF/LocalVoiceStudio](https://github.com/CroireF/LocalVoiceStudio) | https://github.com/CroireF/LocalVoiceStudio | 2026-08-17 | VoiceStudio is a local-first, free text-to-speech studio for multi-languages. Create polis | ★63 | MIT | 🔌 Ücretsiz API'ler & Kütüphaneler |
+| [DDDMUC/dsh-free-search](https://github.com/DDDMUC/dsh-free-search) | https://github.com/DDDMUC/dsh-free-search | 2026-08-14 | Free web search provider for DeepSeek Harness - DuckDuckGo backend, no API key needed | ★55 | MIT | 🔌 Ücretsiz API'ler & Kütüphaneler |
+| [ParsaBordbar/Daftar](https://github.com/ParsaBordbar/Daftar) | https://github.com/ParsaBordbar/Daftar | 2026-08-18 | Daftar is a free Persian poetry design tool powered by Ganjoor API, open-source fonts, and | ★32 | MIT | 🔌 Ücretsiz API'ler & Kütüphaneler |
+| [bellanger1916332/Hyperliquid-Leaderboard-Analytics](https://github.com/bellanger1916332/Hyperliquid-Leaderboard-Analytics) | https://github.com/bellanger1916332/Hyperliquid-Leaderboard-Analytics | 2026-08-15 | Hyperliquid leaderboard analytics in your terminal — track top traders by PnL, ROI and acc | ★22 | MIT | 🔌 Ücretsiz API'ler & Kütüphaneler |
+| [TJ-Digital-LLC/google-bridge-public](https://github.com/TJ-Digital-LLC/google-bridge-public) | https://github.com/TJ-Digital-LLC/google-bridge-public | 2026-08-17 | Let your AI assistant create and edit real Google Docs. No server, no per-user API keys. A | ★19 | MIT | 🔌 Ücretsiz API'ler & Kütüphaneler |
+| [markanderson697222/exports-semver-hint](https://github.com/markanderson697222/exports-semver-hint) | https://github.com/markanderson697222/exports-semver-hint | 2026-08-11 | TypeScript library maintainers who want a **lightweight, deterministic** public-API diff t | ★10 | MIT | 🔌 Ücretsiz API'ler & Kütüphaneler |
+| [kiteretsu903/eink-assistant](https://github.com/kiteretsu903/eink-assistant) | https://github.com/kiteretsu903/eink-assistant | 2026-08-12 | macOS menu bar app for colour e-ink displays: per-display saturation boost and a shadow-li | ★9 | MIT | 🔌 Ücretsiz API'ler & Kütüphaneler |
+| [Jaimo-so/agent-reach-public](https://github.com/Jaimo-so/agent-reach-public) | https://github.com/Jaimo-so/agent-reach-public | 2026-08-18 | Read six public internet sources without accounts, cookies, paid APIs or write operations. | ★8 | MIT | 🔌 Ücretsiz API'ler & Kütüphaneler |
+| [www-sheraji-com/hmss](https://github.com/www-sheraji-com/hmss) | https://github.com/www-sheraji-com/hmss | 2026-08-16 | All apps data collection storage, Apps published , website and apps cloud server, API with | ★0 | GPL-3.0 | 🔌 Ücretsiz API'ler & Kütüphaneler |
+| [saurowankhade/dragonfly-docs](https://github.com/saurowankhade/dragonfly-docs) | https://github.com/saurowankhade/dragonfly-docs | 2026-08-14 | Official documentation for Dragonfly, the free REST API client for VS Code. Send HTTP requ | ★0 | MIT | 🔌 Ücretsiz API'ler & Kütüphaneler |
