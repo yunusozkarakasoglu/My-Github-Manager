@@ -27,7 +27,7 @@ Asistan (pi coding agent) bu repoyu açtığında AŞAĞIDAKİ kurallara uyar.
 | **"X repo bul" / "X işi yapan repo"** | `python3 ara.py "X"` ile data.json'da arar, gerekirse README'leri okuyup öneri listesi sunar. |
 | **"şu repoyu ekle" / "şu kategoriye ekle"** | Repoyu star'lar, doğru kategori listesine ekler (`updateUserListsForItem` — **tüm liste ID'leri birlikte verilir**, repo başka listede düşmesin). |
 | **"repo incele: X"** | Reponun README/doküman/kaynak kodunu okuyup detaylı değerlendirme sunar (ne yapar, güçlü/zayıf yönler, kullanım senaryosu). |
-| **"sabah raporu"** | `~/Github-Raporlari/` son raporu gösterir; yoksa `github_daily_scan.sh` çalıştırır. |
+| **"sabah raporu"** | `~/Masaüstü/Github-Raporu.html` son raporu tarayıcıda açar (yoksa `github_daily_scan.sh` çalıştırır). |
 
 ---
 
@@ -66,5 +66,5 @@ Etiketler `guncelle.py`/`tara.py`/`ara.py` içindeki `KEYWORD_TAGS` listesiyle �
 ## 🕒 Otomatik Sabah Raporu
 
 - `github_daily_scan.sh` — her sabah 08:00'de systemd timer ile çalışır (bilgisayar kapalıysa açılınca çalışır)
-- Yeni repo keşfederse masaüstü bildirimi + `~/Github-Raporlari/YYYY-MM-DD.md` raporu üretir
+- Yeni repo keşfederse masaüstü bildirimi + `~/Masaüstü/Github-Raporu.html` (tıklanabilir) raporu üretir; arşiv: `~/Github-Raporlari/`
 - Kullanıcı raporu okuyup "şunları ekle" derse, katalog güncellenir
