@@ -30,13 +30,32 @@ GitHub star'larını ve kategori (Lists) üyeliklerini otomatik çeker, tarayıc
 
 ---
 
-## ✅ Gereksinimler
+## 🤖 Vizyon: Kişisel GitHub Asistanı
 
-| Araç | Neden gerekli |
+Bu repo sadece bir katalog değil — **kişisel GitHub asistanımızın beyni**. Amacı, GitHub'ı projelerimiz için ilham alacağımız, kendi branşlarımıza uygun kategori ve repolarla **izole bir veri kaynağına** dönüştürmek.
+
+| Görev | Araç / Komut |
 |---|---|
-| **Python 3.8+** | Scriptleri çalıştırmak için (`python3 --version` ile kontrol et) |
-| **GitHub CLI (`gh`)** | GitHub API erişimi için — kurulu ve giriş yapılmış olmalı |
-| **Git** | Güncellemeleri push etmek için |
+| 🔍 Yeni repo araştırma | `python3 tara.py` (son aramadan itibaren — kaçıran repo yok) |
+| 📚 Projeler için özellik araştırma | `python3 ara.py "pdf"` / `"projem için pdf işi yapan repo bul"` |
+| 💡 Öneriler alma | kategori + etiket sistemi + asistan değerlendirmesi |
+| 🗂️ Katalog yönetimi | `./guncelle.sh` (çek → üret → commit → push) |
+| 🕒 Otomatik sabah raporu | `github_daily_scan.sh` + systemd timer (her sabah 08:00) |
+| 🧠 Asistan davranış kuralları | `AGENTS.md` — pi asistanı bu repoyu açınca otomatik okur |
+
+> 🧭 Gelecek özellikler için [`ROADMAP.md`](ROADMAP.md) bölümüne bak.
+
+---
+
+## ✅ Gereksinimler / Bağımlılıklar
+
+| Araç | Neden gerekli | Kurulum |
+|---|---|---|
+| **GitHub CLI (`gh`)** | GitHub API erişimi — star/liste çekme, repo ekleme | `sudo apt install gh` + `gh auth login` |
+| **Python 3.8+** | Scriptleri çalıştırmak için | `sudo apt install python3` |
+| **Git** | Güncellemeleri commit/push etmek | `sudo apt install git` |
+| **`notify-send`** | Sabah raporu masaüstü bildirimi (opsiyonel — yoksa sessiz geçer) | `sudo apt install libnotify-bin` |
+| **systemd (user)** | `github_daily_scan.sh`'i her sabah 08:00'de otomatik tetikleme | Debian/Ubuntu'da hazır |
 
 `gh` kurulumu ve giriş:
 ```bash
