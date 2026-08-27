@@ -267,7 +267,7 @@ def main():
         r = subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'guncelle.py'), '--fetch'],
                            capture_output=True, text=True, timeout=300)
         print(r.stdout.strip()[-400:] if r.returncode == 0 else f"⚠️  guncelle.py hatası: {r.stderr[:150]}")
-        print("✅ Data dosyaları güncel — katalog: https://yunusozkarakasoglu.github.io/star-katalog/")
+        print("✅ Data dosyaları güncel — katalog: https://yunusozkarakasoglu.github.io/My-Github-Manager/")
 
     if args.auto:
         print("\n⚡ AUTO MOD: soru sorulmadan ekleniyor...")

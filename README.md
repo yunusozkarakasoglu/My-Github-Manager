@@ -1,4 +1,4 @@
-# ⭐ Star Kataloğu
+# ⭐ My GitHub Manager
 
 **yunusozkarakasoglu** hesabının star'ladığı tüm repoların **tek dosyalık, aranabilir** HTML kataloğu.
 GitHub star'larını ve kategori (Lists) üyeliklerini otomatik çeker, tarayıcıda kullanılabilir bir kataloğa dönüştürür.
@@ -17,7 +17,7 @@ GitHub star'larını ve kategori (Lists) üyeliklerini otomatik çeker, tarayıc
 
 ## ℹ️ Bu Repo Nedir?
 
-**Star Kataloğu**, GitHub'da star'ladığım tüm repoları **süzülmüş, kategorize edilmiş ve aranabilir** bir kütüphaneye dönüştüren kişisel bir araç deposudur. GitHub'ın dağınık star listesi yerine; kullanım amacına göre 30 kategoriye ayrılmış, **tamamı açık kaynak + ücretsiz + kaliteli** repolardan oluşan bir koleksiyon sunar.
+**My GitHub Manager**, GitHub'da star'ladığım tüm repoları **süzülmüş, kategorize edilmiş ve aranabilir** bir kütüphaneye dönüştüren kişisel bir araç deposudur. GitHub'ın dağınık star listesi yerine; kullanım amacına göre 30 kategoriye ayrılmış, **tamamı açık kaynak + ücretsiz + kaliteli** repolardan oluşan bir koleksiyon sunar.
 
 ### 🎯 Ne İşe Yarar?
 
@@ -55,8 +55,8 @@ gh auth login              # github.com hesabına giriş
 
 ```bash
 # 1) Repoyu kopyala
-git clone https://github.com/yunusozkarakasoglu/star-katalog.git
-cd star-katalog
+git clone https://github.com/yunusozkarakasoglu/My-Github-Manager.git
+cd My-Github-Manager
 
 # 2) Kataloğu aç (index.html'i tarayıcıda çift tıkla — sunucu gerekmez)
 ```
@@ -201,7 +201,7 @@ python3 ara.py --liste               # tüm kategoriler + sayılar
 ## 🖥️ Görüntüleme Seçenekleri
 
 1. **Yerel:** `index.html`'i tarayıcıda aç (çift tık — internet gerekmez)
-2. **GitHub Pages (canlı):** https://yunusozkarakasoglu.github.io/star-katalog/
+2. **GitHub Pages (canlı):** https://yunusozkarakasoglu.github.io/My-Github-Manager/
    - Pages açıksa, her `git push` sonrası otomatik güncellenir
    - `.nojekyll` dosyası sayesinde Jekyll işleme kapalıdır (sorunsuz statik servis)
 

@@ -94,7 +94,7 @@ HTML = f"""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>⭐ Star Kataloğu — yunusozkarakasoglu</title>
+<title>⭐ My GitHub Manager — yunusozkarakasoglu</title>
 <style>
 :root {{
   --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#30363d;
@@ -193,7 +193,7 @@ td.tags {{ min-width:170px; }}
 <body>
 <header>
   <button id="menuBtn" title="Menü">☰</button>
-  <h1>⭐ Star <span>Kataloğu</span></h1>
+  <h1>⭐ My <span>GitHub Manager</span></h1>
   <div id="headerStats"><b id="totalRepos">{len(repos)}</b> repo · <b id="totalStars">{sum(r['stars'] for r in repos):,}</b> ★<br><span id="updated">{data['updated']}</span></div>
 </header>
 
