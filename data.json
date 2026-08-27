@@ -1,6 +1,7 @@
 {
- "updated": "2026-08-27",
+ "updated": "2026-08-28",
  "lists": [
+  "🌐 Web Sitesi Oluşturucu",
   "🧪 Diğer Araçlar",
   "🧩 Pi Coding Agent Ekosistemi",
   "🤖 AI IDE Arayüz - Desktop",
@@ -18,7 +19,6 @@
   "🏠 Akıllı Ev & IoT",
   "🎬 Medya & Eğlence",
   "📧 İletişim & E-posta",
-  "🌐 Web Sitesi Oluşturucu",
   "🗄️ Veritabanı & CMS",
   "📝 Not Alma & Bilgi Yönetimi",
   "💰 Finans & Bütçe",
@@ -40,7 +40,7 @@
    "url": "https://github.com/public-apis/public-apis",
    "desc": "A collective list of free APIs",
    "lang": "Python",
-   "stars": 471660,
+   "stars": 471666,
    "license": "MIT",
    "topics": [
     "api",
@@ -72,7 +72,7 @@
    "url": "https://github.com/obra/superpowers",
    "desc": "An agentic skills framework & software development methodology that works.",
    "lang": "Shell",
-   "stars": 278600,
+   "stars": 278604,
    "license": "MIT",
    "topics": [
     "ai",
@@ -101,7 +101,7 @@
    "url": "https://github.com/anomalyco/opencode",
    "desc": "The open source coding agent.",
    "lang": "TypeScript",
-   "stars": 201945,
+   "stars": 201948,
    "license": "MIT",
    "topics": [],
    "pushed": "2026-08-27",
@@ -119,7 +119,7 @@
    "url": "https://github.com/deepseek-ai/deepseek-harness",
    "desc": "DeepSeek Harness: Everything is a Plugin.",
    "lang": "TypeScript",
-   "stars": 200074,
+   "stars": 200085,
    "license": "MIT",
    "topics": [
     "ai-agents",
@@ -144,7 +144,7 @@
    "url": "https://github.com/open-webui/open-webui",
    "desc": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
    "lang": "Python",
-   "stars": 150132,
+   "stars": 150133,
    "license": "NOASSERTION",
    "topics": [
     "ai",
@@ -183,7 +183,7 @@
    "url": "https://github.com/langchain-ai/langchain",
    "desc": "The agent engineering platform.",
    "lang": "Python",
-   "stars": 145141,
+   "stars": 145144,
    "license": "MIT",
    "topics": [
     "agents",
@@ -231,7 +231,7 @@
    "url": "https://github.com/Graphify-Labs/graphify",
    "desc": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
    "lang": "Python",
-   "stars": 111571,
+   "stars": 111576,
    "license": "Apache-2.0",
    "topics": [
     "ai-agents",
@@ -310,7 +310,7 @@
    "url": "https://github.com/mui/material-ui",
    "desc": "Material UI: Comprehensive React component library that implements Google's Material Design. Free forever.",
    "lang": "JavaScript",
-   "stars": 98948,
+   "stars": 98949,
    "license": "MIT",
    "topics": [
     "design-system",
@@ -334,7 +334,7 @@
    "url": "https://github.com/earendil-works/pi",
    "desc": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
    "lang": "TypeScript",
-   "stars": 98277,
+   "stars": 98279,
    "license": "MIT",
    "topics": [],
    "pushed": "2026-08-27",
@@ -357,7 +357,7 @@
    "url": "https://github.com/thedotmack/claude-mem",
    "desc": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
    "lang": "JavaScript",
-   "stars": 92212,
+   "stars": 92219,
    "license": "Apache-2.0",
    "topics": [
     "ai",
@@ -536,7 +536,7 @@
    "url": "https://github.com/odysseus-dev/odysseus",
    "desc": "Self-hosted AI workspace. ",
    "lang": "Python",
-   "stars": 86394,
+   "stars": 86395,
    "license": "AGPL-3.0",
    "topics": [],
    "pushed": "2026-08-27",
@@ -631,7 +631,7 @@
    "url": "https://github.com/Egonex-AI/Understand-Anything",
    "desc": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
    "lang": "TypeScript",
-   "stars": 80760,
+   "stars": 80763,
    "license": "MIT",
    "topics": [
     "antigravity-skills",
@@ -715,7 +715,7 @@
    "url": "https://github.com/AppFlowy-IO/AppFlowy",
    "desc": "Bring projects, wikis, and teams together with AI. AppFlowy is the AI collaborative workspace where you achieve more without losing control of your data. The leading open source Notion alternative.",
    "lang": "Dart",
-   "stars": 76011,
+   "stars": 76012,
    "license": "AGPL-3.0",
    "topics": [
     "blog",
@@ -791,7 +791,7 @@
    "url": "https://github.com/apache/superset",
    "desc": "Apache Superset is a Data Visualization and Data Exploration Platform",
    "lang": "Python",
-   "stars": 74489,
+   "stars": 74490,
    "license": "Apache-2.0",
    "topics": [
     "analytics",
@@ -872,7 +872,7 @@
    "url": "https://github.com/FoundationAgents/MetaGPT",
    "desc": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
    "lang": "Python",
-   "stars": 70068,
+   "stars": 70069,
    "license": "MIT",
    "topics": [
     "agent",
@@ -915,7 +915,7 @@
    "url": "https://github.com/headroomlabs-ai/headroom",
    "desc": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
    "lang": "Python",
-   "stars": 67813,
+   "stars": 67814,
    "license": "Apache-2.0",
    "topics": [
     "agent",
@@ -960,7 +960,7 @@
    "url": "https://github.com/dani-garcia/vaultwarden",
    "desc": "Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs",
    "lang": "Rust",
-   "stars": 66376,
+   "stars": 66378,
    "license": "AGPL-3.0",
    "topics": [
     "bitwarden",
@@ -1058,7 +1058,7 @@
    "url": "https://github.com/pocketbase/pocketbase",
    "desc": "Open Source realtime backend in 1 file",
    "lang": "Go",
-   "stars": 60849,
+   "stars": 60850,
    "license": "MIT",
    "topics": [
     "authentication",
@@ -1142,7 +1142,7 @@
    "url": "https://github.com/makeplane/plane",
    "desc": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
    "lang": "TypeScript",
-   "stars": 58410,
+   "stars": 58412,
    "license": "AGPL-3.0",
    "topics": [
     "boards",
@@ -1214,7 +1214,7 @@
    "url": "https://github.com/jellyfin/jellyfin",
    "desc": "The Free Software Media System - Server Backend & API",
    "lang": "C#",
-   "stars": 56266,
+   "stars": 56268,
    "license": "GPL-2.0",
    "topics": [
     "csharp",
@@ -1237,7 +1237,7 @@
    "url": "https://github.com/stablyai/orca",
    "desc": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and VPS.",
    "lang": "TypeScript",
-   "stars": 55164,
+   "stars": 55170,
    "license": "MIT",
    "topics": [
     "ade",
@@ -1427,7 +1427,7 @@
    "url": "https://github.com/payloadcms/payload",
    "desc": "Payload is the open-source, fullstack Next.js framework, giving you instant backend superpowers. Get a full TypeScript backend and admin panel instantly. Use Payload as a headless CMS or for building powerful applications.",
    "lang": "TypeScript",
-   "stars": 44436,
+   "stars": 44438,
    "license": "MIT",
    "topics": [
     "cms",
@@ -1515,7 +1515,7 @@
    "url": "https://github.com/GyulyVGC/sniffnet",
    "desc": "Comfortably monitor your network traffic 🕵️‍♂️",
    "lang": "Rust",
-   "stars": 40879,
+   "stars": 40880,
    "license": "Apache-2.0",
    "topics": [
     "application",
@@ -1578,7 +1578,7 @@
    "url": "https://github.com/frappe/erpnext",
    "desc": "Free and Open Source Enterprise Resource Planning (ERP)",
    "lang": "Python",
-   "stars": 38575,
+   "stars": 38576,
    "license": "GPL-3.0",
    "topics": [
     "accounting",
@@ -1653,7 +1653,7 @@
    "url": "https://github.com/blakeblackshear/frigate",
    "desc": "NVR with realtime local object detection for IP cameras",
    "lang": "TypeScript",
-   "stars": 35436,
+   "stars": 35437,
    "license": "MIT",
    "topics": [
     "ai",
@@ -1686,7 +1686,7 @@
    "url": "https://github.com/volcengine/OpenViking",
    "desc": "Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.",
    "lang": "Python",
-   "stars": 33863,
+   "stars": 33864,
    "license": "AGPL-3.0",
    "topics": [
     "agent-memory",
@@ -1716,7 +1716,7 @@
    "url": "https://github.com/herdrdev/herdr",
    "desc": "the runtime your coding agents live on",
    "lang": "Rust",
-   "stars": 32902,
+   "stars": 32904,
    "license": "Apache-2.0",
    "topics": [
     "agent",
@@ -2074,7 +2074,7 @@
    "url": "https://github.com/kestra-io/kestra",
    "desc": "Event Driven Orchestration & Scheduling Platform for Mission Critical Applications",
    "lang": "Java",
-   "stars": 27938,
+   "stars": 27939,
    "license": "Apache-2.0",
    "topics": [
     "ai-agents",
@@ -2159,7 +2159,7 @@
    "url": "https://github.com/rohitg00/agentmemory",
    "desc": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
    "lang": "TypeScript",
-   "stars": 27608,
+   "stars": 27609,
    "license": "Apache-2.0",
    "topics": [
     "agentmemory",
@@ -2358,7 +2358,7 @@
    "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
    "desc": "TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, shared, and equipped across agents and frameworks.",
    "lang": "TypeScript",
-   "stars": 24853,
+   "stars": 24854,
    "license": "NOASSERTION",
    "topics": [
     "agent",
@@ -2570,7 +2570,7 @@
    "url": "https://github.com/fosrl/pangolin",
    "desc": "Identity-aware VPN and tunneled reverse proxy for remote access based on WireGuard®.",
    "lang": "TypeScript",
-   "stars": 22509,
+   "stars": 22510,
    "license": "NOASSERTION",
    "topics": [
     "identity-management",
@@ -2748,7 +2748,7 @@
    "url": "https://github.com/pingdotgg/t3code",
    "desc": "",
    "lang": "TypeScript",
-   "stars": 20746,
+   "stars": 20750,
    "license": "MIT",
    "topics": [],
    "pushed": "2026-08-27",
@@ -2960,7 +2960,7 @@
    "url": "https://github.com/PrimeIntellect-ai/prime-agent",
    "desc": "A self-improving RLM agent for coding workflows and long-running autonomous tasks.",
    "lang": "TypeScript",
-   "stars": 18800,
+   "stars": 18801,
    "license": "MIT",
    "topics": [],
    "pushed": "2026-08-27",
@@ -3216,7 +3216,7 @@
    "url": "https://github.com/Sonarr/Sonarr",
    "desc": "Smart PVR for newsgroup and bittorrent users.",
    "lang": "C#",
-   "stars": 15294,
+   "stars": 15295,
    "license": "GPL-3.0",
    "topics": [],
    "pushed": "2026-08-26",
@@ -3660,7 +3660,7 @@
    "url": "https://github.com/Untrivial-ai/agent-orchestrator",
    "desc": "Agent IDE that enables you to manage fleets of coding agents. It comes with an agentic orchestrator that plans tasks, spawns agents, and autonomously handles CI fixes, merge conflicts, and code reviews.",
    "lang": "Go",
-   "stars": 10122,
+   "stars": 10124,
    "license": "Apache-2.0",
    "topics": [
     "agent-fleet",
@@ -3744,7 +3744,7 @@
    "url": "https://github.com/TechnitiumSoftware/DnsServer",
    "desc": "Technitium DNS Server",
    "lang": "C#",
-   "stars": 9693,
+   "stars": 9694,
    "license": "GPL-3.0",
    "topics": [
     "cross-platform",
@@ -4019,7 +4019,7 @@
    "url": "https://github.com/frappe/hrms",
    "desc": "Open Source HR and Payroll Software",
    "lang": "Python",
-   "stars": 8684,
+   "stars": 8685,
    "license": "GPL-3.0",
    "topics": [
     "attendance",
@@ -4892,7 +4892,7 @@
    "url": "https://github.com/mayswind/ezbookkeeping",
    "desc": "A lightweight, self-hosted personal finance app with a user-friendly interface and powerful bookkeeping features.",
    "lang": "Go",
-   "stars": 5478,
+   "stars": 5479,
    "license": "MIT",
    "topics": [
     "accounting",
@@ -4935,7 +4935,7 @@
    "url": "https://github.com/agegr/pi-web",
    "desc": "Web UI for the pi coding agent",
    "lang": "TypeScript",
-   "stars": 5428,
+   "stars": 5429,
    "license": "MIT",
    "topics": [],
    "pushed": "2026-08-26",
@@ -5997,7 +5997,7 @@
    "url": "https://github.com/SharpAI/DeepCamera",
    "desc": "Open-Source AI Camera Skills Platform, AI NVR & CCTV Surveillance. Local VLM video analysis with Qwen, DeepSeek, SmolVLM, LLaVA, YOLO26. LLM-powered agentic security camera agent — watches, understands, remembers & guards your home via Telegram, Discord or Slack. Pluggable AI skills. OpenAI, Google, Anthropic or local AI. Runs on Mac Mini & AI PC.",
    "lang": "JavaScript",
-   "stars": 3021,
+   "stars": 3022,
    "license": "MIT",
    "topics": [
     "ai",
@@ -6376,7 +6376,7 @@
    "url": "https://github.com/securo-finance/securo",
    "desc": "Open-source personal finance manager. Self-hosted, privacy-first.",
    "lang": "Python",
-   "stars": 2376,
+   "stars": 2378,
    "license": "AGPL-3.0",
    "topics": [
     "expense-tracker",
@@ -7338,7 +7338,7 @@
    "url": "https://github.com/tintinweb/pi-subagents",
    "desc": "Claude Code like Sub-Agents & Workflow Orchestration for Pi — parallel execution, live widget, fleet view, custom agent types, mid-run steering, claude compatible dynamic workflows and more ...",
    "lang": "TypeScript",
-   "stars": 980,
+   "stars": 983,
    "license": "MIT",
    "topics": [
     "ai-agents",
@@ -7832,6 +7832,23 @@
    ]
   },
   {
+   "name": "svkozak/pi-acp",
+   "url": "https://github.com/svkozak/pi-acp",
+   "desc": "ACP adapter for pi coding agent",
+   "lang": "TypeScript",
+   "stars": 645,
+   "license": "MIT",
+   "topics": [],
+   "pushed": "2026-07-30",
+   "cats": [
+    "🧩 Pi Coding Agent Ekosistemi"
+   ],
+   "tags": [
+    "Ajan",
+    "TypeScript"
+   ]
+  },
+  {
    "name": "NaitLee/Cat-Printer",
    "url": "https://github.com/NaitLee/Cat-Printer",
    "desc": "Application supporting Bluetooth thermal “Cat Printers”, for everyone!",
@@ -7857,23 +7874,6 @@
     "Baskı",
     "Python",
     "Termal"
-   ]
-  },
-  {
-   "name": "svkozak/pi-acp",
-   "url": "https://github.com/svkozak/pi-acp",
-   "desc": "ACP adapter for pi coding agent",
-   "lang": "TypeScript",
-   "stars": 644,
-   "license": "MIT",
-   "topics": [],
-   "pushed": "2026-07-30",
-   "cats": [
-    "🧩 Pi Coding Agent Ekosistemi"
-   ],
-   "tags": [
-    "Ajan",
-    "TypeScript"
    ]
   },
   {
@@ -9710,6 +9710,24 @@
    ],
    "tags": [
     "Ajan",
+    "TypeScript"
+   ]
+  },
+  {
+   "name": "voilabs/pagiera",
+   "url": "https://github.com/voilabs/pagiera",
+   "desc": "A full-stack visual website builder for React and Next.js.",
+   "lang": "TypeScript",
+   "stars": 8,
+   "license": "MIT",
+   "topics": [],
+   "pushed": "2026-08-26",
+   "cats": [
+    "🌐 Web Sitesi Oluşturucu"
+   ],
+   "tags": [
+    "React",
+    "Site Kurucu",
     "TypeScript"
    ]
   },
