@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # ⭐ Yeni Repo Tarama
 # Kullanım:
+#   python3 tara.py                          # 📌 SON ARAMADAN bugüne tarar (tarih hatırlanır, ilk seferde 30 gün)
 #   python3 tara.py --gun 30                  # son 30 günde oluşturulan ilgili repolar (sorar)
 #   python3 tara.py --gun 30 --auto           # soru sormadan uygun olanları otomatik ekler
 #   python3 tara.py --gun 30 --no-add         # sadece tara, ekleme yapma
@@ -8,6 +9,9 @@
 #   python3 tara.py --since X --until Y       # tarih aralığı
 #   python3 tara.py --gun 14 --kategori "AI"  # yalnızca belirli kategori
 #   python3 tara.py --gun 30 --kaydet         # sonucu tarama.md olarak kaydeder
+#
+# 🕒 Son tarama tarihi `.son-tarama.json` dosyasında saklanır; her tarama bitince güncellenir.
+#    Argümansız çalıştırınca son aramadan bugüne kadar olan aralık taranır → hiçbir repo kaçmaz.
 #
 # Çıktı sütunları: Repo Adı | URL | Tarih | Özellikler (ne yapar) | ★ | Lisans | Kategori
 
@@ -88,6 +92,34 @@ def search(q, created_q, per_page=12):
     d = gh_api(url)
     return d.get('items', []) if d else []
 
+# ── SON TARAMA TARİHİ (hatırlama) ──
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SON_TARAMA_PATH = os.path.join(BASE_DIR, '.son-tarama.json')
+DEFAULT_GUN = 30  # ilk çalıştırmada varsayılan aralık (gün)
+
+def load_last_scan():
+    """Kayıtlı son tarama tarihini döndürür; yoksa None."""
+    try:
+        with open(SON_TARAMA_PATH, encoding='utf-8') as f:
+            return datetime.date.fromisoformat(json.load(f)['son_tarama'])
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError):
+        return None
+
+def save_last_scan(d):
+    """Son tarama tarihini kaydeder (tarama ne kadar ileriyi kapsadıysa o tarihi)."""
+    with open(SON_TARAMA_PATH, 'w', encoding='utf-8') as f:
+        json.dump({'son_tarama': d.isoformat(),
+                   'son_guncelleme': datetime.datetime.now().isoformat(timespec='seconds')},
+                  f, ensure_ascii=False, indent=1)
+    print(f"🕒 Son tarama tarihi kaydedildi: {d.isoformat()} — bir sonraki tarama bu tarihten itibaren olacak")
+
+def fmt_range(created_q):
+    """created_q sorgusunu okunur metne çevirir."""
+    if '..' in created_q:
+        a, b = created_q.split('..')
+        return f"{a} → {b}"
+    return f"{created_q.lstrip('>=')} sonrası"
+
 # ── EKLEME ──
 def add_repo(name, cat, lids, mode='otomatik'):
     """Repoyu star'lar ve kategori listesine ekler."""
@@ -153,17 +185,28 @@ def main():
     p.add_argument('--no-add', action='store_true', help='Sadece tara, ekleme yapma')
     args = p.parse_args()
 
-    # Tarih aralığı
+    # Tarih aralığı — son tarama tarihi hatırlanır, kaçırılan repo kalmaz
     today = datetime.date.today()
+    last = load_last_scan()
     if args.gun:
         since = today - datetime.timedelta(days=args.gun)
         created_q = f">={since.isoformat()}"
+        scan_until = today
     elif args.since:
-        created_q = f"{args.since}..{args.until}" if args.until else f">={args.since}"
+        until_d = datetime.date.fromisoformat(args.until) if args.until else today
+        scan_until = min(until_d, today)  # ileri tarihli --until olsa bile bugünü aşma
+        created_q = f"{args.since}..{scan_until.isoformat()}" if args.until else f">={args.since}"
     else:
-        created_q = f">={today - datetime.timedelta(days=30)}"
+        # 📌 Argümansız: son aramadan bugüne (ilk seferde DEFAULT_GUN gün)
+        since = last or (today - datetime.timedelta(days=DEFAULT_GUN))
+        created_q = f">={since.isoformat()}"
+        scan_until = today
+        if last:
+            print(f"ℹ️  Son tarama: {last.isoformat()} — o tarihten bugüne ({since.isoformat()} → {today.isoformat()}) taranıyor")
+        else:
+            print(f"ℹ️  İlk tarama — son {DEFAULT_GUN} gün taranıyor ({since.isoformat()} sonrası)")
 
-    print(f"🔍 Tarama başladı: {created_q.replace('>=','sonrası ')} | lisans: OSI açık kaynak + ücretsiz\n")
+    print(f"🔍 Tarama aralığı: {fmt_range(created_q)} | lisans: OSI açık kaynak + ücretsiz\n")
 
     cats = QUERIES
     if args.kategori:
@@ -206,6 +249,9 @@ def main():
         fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tarama.md')
         open(fn, 'w', encoding='utf-8').write(out)
         print(f"💾 Kaydedildi: {fn}")
+
+    # ── Son tarama tarihini hatırla (tarama yapıldığına göre, ekleme olsun olmasın) ──
+    save_last_scan(scan_until)
 
     # ── Eklemeye karar ──
     if not found:

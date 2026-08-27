@@ -111,17 +111,21 @@ python3 guncelle.py --fetch   # veriyi GitHub'dan çek + data.json + index.html 
 
 Son günlerde oluşturulan, kategorilerine uygun **yeni açık kaynak repoları** bulur.
 
+> 🕒 **Son arama tarihi hatırlanır!** `.son-tarama.json` dosyası son tarama tarihini saklar.
+> Her tarama bitince güncellenir; böylece **hiçbir repo kaçmaz** — aralık üst üste binmez, zincirleme taranır.
+
 ### Kullanım:
 ```bash
-python3 tara.py --gun 30                      # son 30 günde oluşturulanlar (SORAR)
-python3 tara.py --gun 30 --auto             # ⚡ soru sormadan uygunları otomatik ekler
-python3 tara.py --gun 30 --no-add           # sadece tara, ekleme yapma
-python3 tara.py --since 2026-08-01           # belirli tarihten beri
-python3 tara.py --since X --until Y          # tarih aralığı
-python3 tara.py --gun 14 --kategori "AI"     # yalnızca belirli kategori
-python3 tara.py --gun 30 --kaydet            # sonucu tarama.md olarak kaydeder
-python3 tara.py --gun 7 --max 5              # kategori başına sonuç sayısı (varsayılan 8)
-python3 tara.py --gun 30 --min-stars 100     # isteğe bağlı min ★ (varsayılan: kriter yok)
+python3 tara.py                           # 📌 ÖNERİLEN: SON ARAMADAN bugüne kadar tarar (ilk seferde 30 gün)
+python3 tara.py --gun 30                  # son 30 günde oluşturulanlar (SORAR)
+python3 tara.py --gun 30 --auto           # ⚡ soru sormadan uygunları otomatik ekler
+python3 tara.py --gun 30 --no-add         # sadece tara, ekleme yapma
+python3 tara.py --since 2026-08-01        # belirli tarihten beri
+python3 tara.py --since X --until Y       # tarih aralığı (son tarama tarihi bu aralığın sonuna ayarlanır)
+python3 tara.py --gun 14 --kategori "AI"  # yalnızca belirli kategori
+python3 tara.py --gun 30 --kaydet         # sonucu tarama.md olarak kaydeder
+python3 tara.py --gun 7 --max 5           # kategori başına sonuç sayısı (varsayılan 8)
+python3 tara.py --gun 30 --min-stars 100  # isteğe bağlı min ★ (varsayılan: kriter yok)
 ```
 
 ### Çıktı sütunları:
@@ -134,7 +138,7 @@ python3 tara.py --gun 30 --min-stars 100     # isteğe bağlı min ★ (varsayı
 - ⛔ Min ★ kriteri yok (istemezsen) — küçük ama değerli repolar da yakalanır
 - 🗂️ Her sonuç için **önerilen kategori** otomatik eşleştirilir (TR+EN anahtar kelimelerle)
 
-> 💡 **Asistana söyle:** *"repo tara"* → senin için çalıştırır, listeyi sunar ve **sana sorar** hangilerini ekleyeceğini (manuel). *"repo tara --auto"* dersen hepsini otomatik ekler.
+> 💡 **Asistana söyle:** *"repo tara"* → senin için çalıştırır (argümansız = son aramadan itibaren), listeyi sunar ve **sana sorar** hangilerini ekleyeceğini (manuel). *"repo tara --auto"* dersen hepsini otomatik ekler.
 
 ---
 
@@ -185,6 +189,7 @@ python3 ara.py --liste               # tüm kategoriler + sayılar
 | `guncelle.py` | Veriyi GitHub API'den çeker, `index.html`'i üretir |
 | `guncelle.sh` | Tek komutla güncelleme (çek → üret → commit → push) |
 | `tara.py` | 🔍 Yeni repo tarama aracı |
+| `.son-tarama.json` | 🕒 Son tarama tarihi (tara.py otomatik günceller — son aramadan itibaren tarar) |
 | `ara.py` | ⚡ Hızlı arama / indeks aracı (proje kütüphanesi) |
 | `repo-indeksi.txt` | grep dostu indeks (data.json'dan türetilir) |
 | `data.json` | Son veri önbelleği (repo + kategori üyelikleri) |
