@@ -55,7 +55,7 @@ RAPOR="$RAPOR_DIR/$TARIH.md"
   echo "_Otomatik tarama · çıkış kodu: ${RC}_"
 } > "$RAPOR"
 
-# ── 4) HTML rapor üret (Masaüstü + arşiv) — örnek tasarım, dinamik veri ──
+# ── 4) HTML rapor üret (Masaüstü + arşiv) — örnek tasarım + Benim Seçimlerim sekmesi ──
 MASAUSTU="$HOME/Masaüstü"
 [ -d "$MASAUSTU" ] || MASAUSTU="$HOME/Desktop"
 HTML_DESK="$MASAUSTU/Github-Raporu.html"
@@ -70,6 +70,26 @@ aralik = ''
 m = re.search(r'Tarama aralığı: ([^|\n]+)', src)
 if m:
     aralik = m.group(1).strip()
+
+# ── Asistan seçim profili: kural → "neden seçildi" (sadece YÜKSEK değer kurallar) ──
+# Genel/gevşek kuralar (pdf, memory, network...) seçim üretmez — "öne çıkan" seçkin olmalı.
+PICK_RULES = [
+    ('mcp', 'MCP tabanlı — AI araç ekosistemiyle doğrudan entegre olur'),
+    ('pi coding', 'Pi ekosistemi — kendi araç zincirimizle örtüşüyor'),
+    (' pi ', 'Pi ekosistemi — kendi araç zincirimizle örtüşüyor'),
+    ('ocr', 'Belge işleme — offline/gizlilik değeri yüksek'),
+    ('scanned', 'Belge işleme — offline/gizlilik değeri yüksek'),
+    ('codebase', 'Kod istihbaratı — proje analizimizde kullanılabilir'),
+    ('knowledge graph', 'Kod istihbaratı — proje analizimizde kullanılabilir'),
+    ('indexer', 'Kod istihbaratı — proje analizimizde kullanılabilir'),
+    ('kanban', 'Proje yönetimi — iş akışımıza uygun'),
+    ('task board', 'Proje yönetimi — iş akışımıza uygun'),
+    ('ui/ux', 'Tasarım kalitesi — profesyonel bakış'),
+    ('design skill', 'Tasarım kalitesi — profesyonel bakış'),
+    ('component library', 'UI kütüphanesi — tasarım sistemimize katkı'),
+    ('harness', 'Agent altyapısı — profesyonel kurulum felsefesi'),
+]
+MAX_PICKS = 10  # "öne çıkan" seçkisi — tarama başına en fazla bu kadar
 
 # ── Repoları parse et (tara.py çıktısı) ──
 repos = []
@@ -86,9 +106,23 @@ for line in src.splitlines():
     owner, _, repo = full.rpartition('/')
     desc = parts[3][:140]
     stars = int(re.sub(r'[^0-9]', '', parts[4]) or 0)
-    repos.append({'owner': owner, 'repo': repo, 'url': mm.group(2),
-                  'date': parts[2], 'desc': desc, 'stars': stars,
-                  'license': parts[5], 'cat': parts[6]})
+    # Asistan seçimi: kural eşleşmesi → picked + reason (sınırlı)
+    picked, reason = False, ''
+    blob = (desc + ' ' + repo + ' ' + owner).lower()
+    for kw, why in PICK_RULES:
+        if kw in blob:
+            picked, reason = True, why
+            break
+    repos.append({'id': f'r{len(repos)+1}', 'owner': owner, 'repo': repo,
+                  'url': mm.group(2), 'date': parts[2], 'desc': desc,
+                  'stars': stars, 'license': parts[5], 'cat': parts[6],
+                  'picked': picked, 'reason': reason})
+
+# ── Asistan seçimi: en fazla MAX_PICKS (yüksek ★ öncelikli) ──
+_plist = [r for r in repos if r['picked']]
+if len(_plist) > MAX_PICKS:
+    for r in sorted(_plist, key=lambda x: -x['stars'])[MAX_PICKS:]:
+        r['picked'], r['reason'] = False, ''
 
 # ── Kategori anahtarları (filtre için) ──
 cats_seen = {}
@@ -100,6 +134,7 @@ for r in repos:
 # ── İstatistikler ──
 total = len(repos)
 n_cats = len(cats_seen)
+n_picks = sum(1 for r in repos if r['picked'])
 max_repo = max(repos, key=lambda r: r['stars']) if repos else None
 lic_counts = {}
 for r in repos:
@@ -121,7 +156,7 @@ ticks = [f"{total} YENİ REPO KEŞFEDİLDİ"]
 if max_repo:
     ticks.append(f"EN ÇOK YILDIZ: {max_repo['repo'].upper()} ★{max_repo['stars']}")
 ticks.append(f"{n_cats} KATEGORİ AKTİF")
-ticks.append(f"%{lic_pct} {top_lic.upper()} LİSANSLI")
+ticks.append(f"{n_picks} ASİSTAN SEÇİMİ")
 ticker = ''.join(f'<span>{t}</span>' for _ in range(2) for t in ticks)
 
 # ── Filtre chip'leri ──
@@ -164,7 +199,27 @@ TEMPLATE = r'''<!DOCTYPE html>
   .stat:last-child{border-right:none;}
   .stat .num{font-family:var(--serif);font-size:30px;color:var(--moss);}
   .stat .lab{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-soft);margin-top:4px;}
+  /* ── TABLAR ── */
+  .tabs{display:flex;padding:20px 40px 0;gap:2px;border-bottom:1px solid var(--line);}
+  .tab{font-family:var(--serif);font-size:15px;padding:10px 20px 12px;cursor:pointer;color:var(--ink-soft);border-bottom:3px solid transparent;display:flex;align-items:center;gap:8px;}
+  .tab.on{color:var(--ink);border-bottom-color:var(--moss);}
+  .tab .tab-count{font-family:var(--mono);font-size:10px;background:var(--moss-soft);color:var(--moss);padding:2px 7px;border-radius:10px;}
+  .tab.on .tab-count{background:var(--moss);color:#fff;}
+  /* ── SEÇİM BUTONU ── */
+  .pick-btn{border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);font-family:var(--mono);font-size:11px;padding:5px 10px;border-radius:3px;cursor:pointer;align-self:flex-end;}
+  .pick-btn::before{content:"☆ ";}
+  .pick-btn.picked{background:var(--amber);border-color:var(--amber);color:#fff;}
+  .pick-btn.picked::before{content:"★ ";}
+  /* ── NEDEN SEÇİLDİ ── */
+  .repo-reason{margin-top:10px;padding:10px 12px;background:var(--moss-soft);border-left:3px solid var(--moss);border-radius:0 3px 3px 0;font-size:12.5px;color:var(--ink);line-height:1.5;}
+  .repo-reason .reason-tag{display:block;font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:0.06em;color:var(--moss);margin-bottom:4px;}
+  /* ── BOŞ SEÇİM ── */
+  .empty-picks{padding:60px 40px;text-align:center;color:var(--ink-soft);}
+  .empty-picks .big{font-family:var(--serif);font-size:20px;color:var(--ink);margin-bottom:8px;}
+  .empty-picks .small{font-family:var(--sans);font-size:13px;}
+  /* ── FİLTRELER ── */
   .filters{display:flex;flex-wrap:wrap;gap:8px;padding:24px 40px 4px;}
+  .filters.hidden{display:none;}
   .chip{font-family:var(--mono);font-size:11px;padding:6px 12px;border:1px solid var(--line);border-radius:20px;background:var(--paper);color:var(--ink-soft);cursor:pointer;user-select:none;}
   .chip.on{background:var(--moss);border-color:var(--moss);color:#fff;}
   .section{padding:28px 40px 8px;}
@@ -177,6 +232,7 @@ TEMPLATE = r'''<!DOCTYPE html>
   .repo-main .repo-name a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);}
   .repo-main .repo-name a:hover{color:var(--moss);border-color:var(--moss);}
   .repo-main .repo-owner{font-family:var(--mono);font-size:10.5px;color:var(--amber);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;}
+  .repo-num{font-family:var(--mono);font-size:10px;color:var(--moss);border:1px solid var(--line);background:var(--paper-deep);border-radius:3px;padding:1px 6px;margin-right:6px;letter-spacing:0;}
   .repo-main .repo-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.55;max-width:56ch;}
   .repo-meta{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:8px;padding-top:2px;}
   .starbar{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;}
@@ -188,10 +244,9 @@ TEMPLATE = r'''<!DOCTYPE html>
   .cmdblock .cmdlabel{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:10px;}
   .cmdblock code{font-family:var(--mono);font-size:13px;display:block;}
   .cmdblock .cmdnote{font-family:var(--sans);font-size:12px;color:#c9c4b6;margin-top:10px;}
-  .empty{padding:40px;text-align:center;color:var(--ink-soft);font-family:var(--serif);font-size:18px;}
   @media (max-width:640px){
     .masthead h1{font-size:32px;}
-    .section,.filters,.masthead{padding-left:20px;padding-right:20px;}
+    .section,.filters,.masthead,.tabs{padding-left:20px;padding-right:20px;}
     .repo{grid-template-columns:1fr;}
     .repo-meta{flex-direction:row;align-items:center;justify-content:flex-start;gap:14px;}
     .stats{flex-wrap:wrap;}
@@ -217,8 +272,13 @@ TEMPLATE = r'''<!DOCTYPE html>
   <div class="stats">
     <div class="stat"><div class="num">__TOTAL__</div><div class="lab">Yeni Repo</div></div>
     <div class="stat"><div class="num">__NCATS__</div><div class="lab">Kategori</div></div>
-    <div class="stat"><div class="num">__TOTAL__</div><div class="lab">Listelenen</div></div>
+    <div class="stat"><div class="num">__PICKS__</div><div class="lab">Asistan Seçimi</div></div>
     <div class="stat"><div class="num">__LICPCT__</div><div class="lab">__LICLAB__</div></div>
+  </div>
+
+  <div class="tabs" id="tabs">
+    <div class="tab on" data-tab="all">Tüm Repolar <span class="tab-count" id="countAll">__TOTAL__</span></div>
+    <div class="tab" data-tab="picks">Benim Seçimlerim <span class="tab-count" id="countPicks">__PICKS__</span></div>
   </div>
 
   <div class="filters" id="filters">__CHIPS__</div>
@@ -236,17 +296,24 @@ TEMPLATE = r'''<!DOCTYPE html>
 <script>
 const data = __DATA__;
 const maxStars = Math.max(...data.map(d=>d.stars), 1);
+const picks = new Set(data.filter(d=>d.picked).map(d=>d.id));
+const reasons = {};
+data.forEach(d=>{ if(d.reason) reasons[d.id]=d.reason; });
 
 function esc(s){return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
-function repoRow(d){
+function repoRow(d, showReason){
   const pct = Math.max(6, Math.round((d.stars/maxStars)*100));
+  const isPicked = picks.has(d.id);
+  const num = String(parseInt((d.id||'').slice(1))||0).padStart(2,'0');
+  const reasonHtml = (showReason && reasons[d.id]) ? `<div class="repo-reason"><span class="reason-tag">Neden seçildi</span>${esc(reasons[d.id])}</div>` : '';
   return `
   <div class="repo" data-cat="${d.key}">
     <div class="repo-main">
-      <div class="repo-owner">${esc(d.owner)}</div>
+      <div class="repo-owner"><span class="repo-num">${num}</span>${esc(d.owner)}</div>
       <div class="repo-name"><a href="${d.url}" target="_blank" rel="noopener">${esc(d.repo)}</a></div>
       <div class="repo-desc">${esc(d.desc)}</div>
+      ${reasonHtml}
     </div>
     <div class="repo-meta">
       <div class="starbar"><span>★ ${d.stars}</span>
@@ -254,34 +321,82 @@ function repoRow(d){
       </div>
       <div class="license-tag">${esc(d.license)}</div>
       <div class="date-tag">${esc(d.date)}</div>
+      <button class="pick-btn${isPicked?' picked':''}" data-id="${d.id}">${isPicked?'Seçildi':'Seç'}</button>
     </div>
   </div>`;
 }
 
-function render(filter){
-  const cats = [...new Set(data.map(d=>d.key))];
+let activeTab = 'all';
+let activeCat = 'all';
+
+function updateCounts(){
+  document.getElementById('countAll').textContent = data.length;
+  document.getElementById('countPicks').textContent = picks.size;
+}
+
+function render(){
   const container = document.getElementById('sections');
-  if(!data.length){ container.innerHTML = '<div class="empty">Yeni repo bulunamadı — katalog güncel. 🍃</div>'; return; }
+  updateCounts();
+
+  if(activeTab === 'picks'){
+    const items = data.filter(d=>picks.has(d.id));
+    if(items.length===0){
+      container.innerHTML = `
+      <div class="empty-picks">
+        <div class="big">Henüz seçim yapılmadı</div>
+        <div class="small">Bir repoyu seçmek için "Tüm Repolar" sekmesinde ☆ Seç butonuna basın, ya da asistanın seçimlerini bekleyin.</div>
+      </div>`;
+      return;
+    }
+    container.innerHTML = `
+    <div class="section">
+      <div class="section-head"><h2>Benim Seçimlerim</h2><span class="count">${items.length} repo</span></div>
+      ${items.map(d=>repoRow(d,true)).join('')}
+    </div>`;
+    return;
+  }
+
+  const cats = [...new Set(data.map(d=>d.key))];
+  if(!data.length){ container.innerHTML = '<div class="empty-picks"><div class="big">Yeni repo bulunamadı</div><div class="small">Katalog güncel — tarama aralığında ilgi alanlarına uygun repo yok. 🍃</div></div>'; return; }
   container.innerHTML = cats.map(key=>{
     const items = data.filter(d=>d.key===key);
-    if(filter!=='all' && filter!==key) return '';
+    if(activeCat!=='all' && activeCat!==key) return '';
     const label = items[0].cat;
     return `
     <div class="section">
       <div class="section-head"><h2>${esc(label)}</h2><span class="count">${items.length} repo</span></div>
-      ${items.map(repoRow).join('')}
+      ${items.map(d=>repoRow(d,false)).join('')}
     </div>`;
   }).join('');
 }
 
-render('all');
+render();
+
+document.getElementById('tabs').addEventListener('click',(e)=>{
+  const tab = e.target.closest('.tab');
+  if(!tab) return;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  tab.classList.add('on');
+  activeTab = tab.dataset.tab;
+  document.getElementById('filters').classList.toggle('hidden', activeTab==='picks');
+  render();
+});
 
 document.getElementById('filters').addEventListener('click',(e)=>{
   const chip = e.target.closest('.chip');
   if(!chip) return;
   document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
   chip.classList.add('on');
-  render(chip.dataset.cat);
+  activeCat = chip.dataset.cat;
+  render();
+});
+
+document.getElementById('sections').addEventListener('click',(e)=>{
+  const btn = e.target.closest('.pick-btn');
+  if(!btn) return;
+  const id = btn.dataset.id;
+  if(picks.has(id)) picks.delete(id); else picks.add(id);
+  render();
 });
 </script>
 </body>
@@ -291,11 +406,12 @@ page = (TEMPLATE
     .replace('__TARIH__', tarih_str).replace('__SAAT__', saat_str)
     .replace('__ARALIK__', aralik).replace('__TICKER__', ticker)
     .replace('__TOTAL__', str(total)).replace('__NCATS__', str(n_cats))
+    .replace('__PICKS__', str(n_picks))
     .replace('__LICPCT__', f'%{lic_pct}').replace('__LICLAB__', f'{top_lic.upper()} Lisans')
     .replace('__CHIPS__', chips_html).replace('__DATA__', data_js))
 open(desk_out, 'w', encoding='utf-8').write(page)
 open(arsiv_out, 'w', encoding='utf-8').write(page)
-print(f"🌐 HTML rapor: {desk_out} ({total} repo)")
+print(f"🌐 HTML rapor: {desk_out} ({total} repo, {n_picks} asistan seçimi)")
 PYEOF
 
 # ── 5) Masaüstü bildirimi ──
