@@ -56,6 +56,7 @@ Bu repo sadece bir katalog değil — **kişisel GitHub asistanımızın beyni**
 | **Git** | Güncellemeleri commit/push etmek | `sudo apt install git` |
 | **`notify-send`** | Sabah raporu masaüstü bildirimi (opsiyonel — yoksa sessiz geçer) | `sudo apt install libnotify-bin` |
 | **systemd (user)** | `github_daily_scan.sh`'i her sabah 08:00'de otomatik tetikleme | Debian/Ubuntu'da hazır |
+| **CTranslate2 + NLLB-200** (yerel çeviri, opsiyonel) | Rapor açıklamalarını Türkçeye çevirir (`~/.ct2-env` + `~/ct2-nllb`, ~1.5GB) | `python3 -m venv ~/.ct2-env` + pip kurulumu |
 
 `gh` kurulumu ve giriş:
 ```bash

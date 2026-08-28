@@ -61,7 +61,7 @@ MASAUSTU="$HOME/Masaüstü"
 HTML_DESK="$MASAUSTU/Github-Raporu.html"
 HTML_ARSIV="$RAPOR_DIR/$TARIH.html"
 python3 - "$LOGFILE" "$HTML_DESK" "$HTML_ARSIV" <<'PYEOF'
-import sys, re, json, datetime
+import sys, re, json, datetime, os, subprocess
 log_path, desk_out, arsiv_out = sys.argv[1], sys.argv[2], sys.argv[3]
 src = open(log_path, encoding='utf-8').read()
 
@@ -117,6 +117,29 @@ for line in src.splitlines():
                   'url': mm.group(2), 'date': parts[2], 'desc': desc,
                   'stars': stars, 'license': parts[5], 'cat': parts[6],
                   'picked': picked, 'reason': reason})
+
+# ── Yerel çeviri (NLLB via CTranslate2): Türkçe açıklama + İngilizce orijinal ──
+_desc_list = list(dict.fromkeys(r['desc'] for r in repos if r['desc']))
+_ceviriler = {}
+if _desc_list:
+    _g = os.path.expanduser('~/Github-Raporlari/.ceviri-giris.json')
+    _c = os.path.expanduser('~/Github-Raporlari/.ceviri-cikti.json')
+    json.dump({'metinler': _desc_list}, open(_g, 'w', encoding='utf-8'), ensure_ascii=False)
+    _rr = subprocess.run([os.path.expanduser('~/.ct2-env/bin/python'),
+                          '/home/yunus/Github-My-Katalog/ceviri.py', _g, _c],
+                         capture_output=True, text=True, timeout=1800)
+    try:
+        _ceviriler = json.load(open(_c, encoding='utf-8'))['ceviriler']
+    except Exception:
+        _ceviriler = {}
+for _r2 in repos:
+    _tr = _ceviriler.get(_r2['desc'])
+    if _tr and _tr != _r2['desc']:
+        _r2['desc_tr'] = _tr
+        _r2['desc_en'] = _r2['desc']
+    else:
+        _r2['desc_tr'] = _r2['desc']
+        _r2['desc_en'] = ''
 
 # ── Asistan seçimi: en fazla MAX_PICKS (yüksek ★ öncelikli) ──
 _plist = [r for r in repos if r['picked']]
@@ -234,6 +257,7 @@ TEMPLATE = r'''<!DOCTYPE html>
   .repo-main .repo-owner{font-family:var(--mono);font-size:10.5px;color:var(--amber);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;}
   .repo-num{font-family:var(--mono);font-size:10px;color:var(--moss);border:1px solid var(--line);background:var(--paper-deep);border-radius:3px;padding:1px 6px;margin-right:6px;letter-spacing:0;}
   .repo-main .repo-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.55;max-width:56ch;}
+  .repo-desc-en{margin-top:4px;font-size:11px;font-style:italic;color:var(--ink-soft);opacity:.75;line-height:1.4;max-width:56ch;}
   .repo-meta{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:8px;padding-top:2px;}
   .starbar{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;}
   .starbar .track{width:60px;height:5px;background:var(--moss-soft);border-radius:3px;overflow:hidden;}
@@ -307,12 +331,15 @@ function repoRow(d, showReason){
   const isPicked = picks.has(d.id);
   const num = String(parseInt((d.id||'').slice(1))||0).padStart(2,'0');
   const reasonHtml = (showReason && reasons[d.id]) ? `<div class="repo-reason"><span class="reason-tag">Neden seçildi</span>${esc(reasons[d.id])}</div>` : '';
+  const descHtml = d.desc_en
+    ? `<div class="repo-desc">${esc(d.desc_tr)}</div><div class="repo-desc-en">${esc(d.desc_en)}</div>`
+    : `<div class="repo-desc">${esc(d.desc_tr)}</div>`;
   return `
   <div class="repo" data-cat="${d.key}">
     <div class="repo-main">
       <div class="repo-owner"><span class="repo-num">${num}</span>${esc(d.owner)}</div>
       <div class="repo-name"><a href="${d.url}" target="_blank" rel="noopener">${esc(d.repo)}</a></div>
-      <div class="repo-desc">${esc(d.desc)}</div>
+      ${descHtml}
       ${reasonHtml}
     </div>
     <div class="repo-meta">
