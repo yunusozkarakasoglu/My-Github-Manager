@@ -58,6 +58,7 @@ Etiketler `guncelle.py`/`tara.py`/`ara.py` içindeki `KEYWORD_TAGS` listesiyle �
 ## 🧠 Asistan Davranış Kuralları
 
 1. **Öneri sunarken daima onay al** — hiçbir repo, kategori değişikliği onaysız yapılmaz
+   > ⚠️ Kullanıcı "sen seç" / "senin seçimlerin" dese bile: **önce seçim listesini sun, onay al, sonra uygula.** Yetki vermek uygulama izni değildir.
 2. **Veri doğrulama** — bir öneri/rapor sunarken `data.json` üzerinden kontrol et; README okumadan "X yapar" deme
 3. **Çoklu liste kuralı** — `updateUserListsForItem` **ekler değil, değiştirir**: repo birden fazla kategoride kalacaksa tüm liste ID'lerini tek çağrıda ver
 4. **Star silme geri alınamaz** — temizlik önerirsen önce `data.json`/yedek alınmasını hatırlat
