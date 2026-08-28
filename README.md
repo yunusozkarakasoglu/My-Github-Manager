@@ -56,7 +56,27 @@ Bu repo sadece bir katalog değil — **kişisel GitHub asistanımızın beyni**
 | **Git** | Güncellemeleri commit/push etmek | `sudo apt install git` |
 | **`notify-send`** | Sabah raporu masaüstü bildirimi (opsiyonel — yoksa sessiz geçer) | `sudo apt install libnotify-bin` |
 | **systemd (user)** | `github_daily_scan.sh`'i her sabah 08:00'de otomatik tetikleme | Debian/Ubuntu'da hazır |
-| **CTranslate2 + NLLB-200** (yerel çeviri, opsiyonel) | Rapor açıklamalarını Türkçeye çevirir (`~/.ct2-env` + `~/ct2-nllb`, ~1.5GB) | `python3 -m venv ~/.ct2-env` + pip kurulumu |
+| **CTranslate2 + NLLB-200** (yerel çeviri, opsiyonel) | Rapor açıklamalarını Türkçeye çevirir — sunucu/docker gerektirmez, tamamen offline | Aşağıdaki kurulum rehberine bak |
+
+> ⚙️ **Yerel Çeviri Kurulumu (opsiyonel — NLLB-200 via CTranslate2):**
+> Açıklamaları Türkçeye çeviren saf kütüphane (sunucu yok, docker yok). Kurulu değilse rapor İngilizce açıklamayla üretilir (sistem yine çalışır).
+>
+> ```bash
+> # 1) Python ortamı (sistemden bağımsız)
+> python3 -m venv ~/.ct2-env
+> ~/.ct2-env/bin/pip install ctranslate2 sentencepiece huggingface_hub
+>
+> # 2) NLLB-200 modelini indir (~1.4GB, int8)
+> ~/.ct2-env/bin/python -c "from huggingface_hub import snapshot_download; snapshot_download(repo_id='michaelfeil/ct2fast-nllb-200-distilled-1.3B', local_dir='/home/$(whoami)/ct2-nllb')"
+>
+> # 3) Tokenizer dosyasını ekle (NLLB ailesi ortak kullanır)
+> ~/.ct2-env/bin/python -c "from huggingface_hub import hf_hub_download; hf_hub_download('facebook/nllb-200-distilled-600M', 'sentencepiece.bpe.model', local_dir='/home/$(whoami)/ct2-nllb')"
+>
+> # 4) Test
+> ~/.ct2-env/bin/python ceviri.py
+> ```
+>
+> Çeviri önbelleği `~/Github-Raporlari/.ceviriler.json`'da tutulur — aynı metin bir daha çevrilmez.
 
 `gh` kurulumu ve giriş:
 ```bash
