@@ -53,6 +53,18 @@ QUERIES = {
 # ⛔ LİSANS: kesinlikle tamamen açık kaynak + ücretsiz (OSI onaylı)
 GOOD_LICENSES = {'MIT','Apache-2.0','GPL-3.0','GPL-2.0','AGPL-3.0','LGPL-3.0','LGPL-2.1','MPL-2.0','BSD-3-Clause','BSD-2-Clause','ISC','EPL-2.0','EPL-1.0','Unlicense','0BSD','CC0-1.0','Zlib','BSL-1.0'}
 
+# 🚫 SPAM/KORSAN KARA LİSTESİ — repo adı + açıklamada bu desenler varsa asla önerilmez
+# (katalog ilkesi: crack/korsan/promo/spam repoları yok)
+BAD_PATTERNS = [
+    # korsan/crack kalıpları
+    'crack', 'keygen', 'serial key', 'activation key', 'full version',
+    'free download', 'free desktop', 'no api key', 'unlocked', 'mod apk',
+    # sahte "AI desktop" spam ailesi (X-Desktop---Y-2026 kalıbı)
+    '.git-', '---2026', '---2025', '---2027', 'free gpt', 'free claude',
+    # bahis/kumar/promo
+    'betting', 'casino', 'gambling', 'porn', 'xxx',
+]
+
 def gh_api(path, retries=3):
     for attempt in range(retries):
         try:
@@ -225,6 +237,8 @@ def main():
                 lic = (it.get('license') or {}).get('spdx_id') or ''
                 if lic not in GOOD_LICENSES: continue          # ⛔ açık kaynak + ücretsiz
                 if it.get('archived'): continue
+                blob = (full + ' ' + (it.get('description') or '')).lower()
+                if any(b in blob for b in BAD_PATTERNS): continue   # 🚫 spam/korsan filtresi
                 if args.min_stars and it['stargazers_count'] < args.min_stars: continue
                 seen.add(full)
                 found.append((cat, {'name': full, 'url': it['html_url'],

@@ -174,6 +174,25 @@ saat_str = now.strftime('%H:%M')
 
 data_js = json.dumps(repos, ensure_ascii=False).replace('</', '<\\/')
 
+# ── 📈 Trend: katalogdaki yıldız artışı (data.json vs önceki yedek) ──
+trend = []
+_data_yeni = '/home/yunus/Github-My-Katalog/data.json'
+_data_eski = os.path.expanduser('~/Github-Raporlari/.data-onceki.json')
+if os.path.exists(_data_yeni) and os.path.exists(_data_eski):
+    try:
+        _y = {r['name']: r for r in json.load(open(_data_yeni, encoding='utf-8'))['repos']}
+        _e = {r['name']: r['stars'] for r in json.load(open(_data_eski, encoding='utf-8'))['repos']}
+        for _n, _r in _y.items():
+            if _n in _e:
+                _f = _r['stars'] - _e[_n]
+                if _f >= 50:
+                    trend.append({'name': _n, 'url': _r['url'], 'eski': _e[_n], 'yeni': _r['stars'], 'fark': _f})
+        trend.sort(key=lambda x: -x['fark'])
+        trend = trend[:8]
+    except Exception:
+        trend = []
+trend_js = json.dumps(trend, ensure_ascii=False).replace('</', '<\\/')
+
 # ── Ticker mesajları ──
 ticks = [f"{total} YENİ REPO KEŞFEDİLDİ"]
 if max_repo:
@@ -264,6 +283,14 @@ TEMPLATE = r'''<!DOCTYPE html>
   .starbar .fill{height:100%;background:var(--amber);}
   .license-tag{font-family:var(--mono);font-size:10px;color:var(--ink-soft);border:1px solid var(--line);border-radius:3px;padding:2px 6px;}
   .date-tag{font-family:var(--mono);font-size:10px;color:var(--ink-soft);}
+  .trend-item{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px;flex-wrap:wrap;}
+  .trend-item:last-child{border-bottom:none;}
+  .trend-item a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);font-family:var(--serif);font-size:15px;}
+  .trend-item a:hover{color:var(--moss);border-color:var(--moss);}
+  .trend-old{font-family:var(--mono);font-size:11px;color:var(--ink-soft);}
+  .trend-arrow{color:var(--amber);}
+  .trend-new{font-family:var(--mono);font-size:12px;font-weight:bold;}
+  .trend-up{font-family:var(--mono);font-size:11px;color:var(--moss);background:var(--moss-soft);padding:1px 8px;border-radius:10px;}
   .cmdblock{margin:36px 40px 0;background:var(--ink);color:var(--paper);border-radius:4px;padding:20px 24px;}
   .cmdblock .cmdlabel{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:10px;}
   .cmdblock code{font-family:var(--mono);font-size:13px;display:block;}
@@ -305,6 +332,13 @@ TEMPLATE = r'''<!DOCTYPE html>
     <div class="tab" data-tab="picks">Benim Seçimlerim <span class="tab-count" id="countPicks">__PICKS__</span></div>
   </div>
 
+  <div class="trend" id="trendBox" style="display:none">
+    <div class="section" style="padding-top:20px">
+      <div class="section-head"><h2>🔥 Bu Hafta Patlayanlar</h2><span class="count">★ artışı (katalogdaki repolar)</span></div>
+      <div id="trendList"></div>
+    </div>
+  </div>
+
   <div class="filters" id="filters">__CHIPS__</div>
 
   <div id="sections"></div>
@@ -319,6 +353,18 @@ TEMPLATE = r'''<!DOCTYPE html>
 
 <script>
 const data = __DATA__;
+const trendData = __TREND__;
+if(trendData.length){
+  document.getElementById('trendBox').style.display = '';
+  document.getElementById('trendList').innerHTML = trendData.map(t=>`
+    <div class="trend-item">
+      <a href="${t.url}" target="_blank" rel="noopener">${esc(t.name)}</a>
+      <span class="trend-old">★${t.eski.toLocaleString('tr-TR')}</span>
+      <span class="trend-arrow">→</span>
+      <span class="trend-new">★${t.yeni.toLocaleString('tr-TR')}</span>
+      <span class="trend-up">+${t.fark.toLocaleString('tr-TR')} ★</span>
+    </div>`).join('');
+}
 const maxStars = Math.max(...data.map(d=>d.stars), 1);
 const picks = new Set(data.filter(d=>d.picked).map(d=>d.id));
 const reasons = {};
@@ -435,7 +481,7 @@ page = (TEMPLATE
     .replace('__TOTAL__', str(total)).replace('__NCATS__', str(n_cats))
     .replace('__PICKS__', str(n_picks))
     .replace('__LICPCT__', f'%{lic_pct}').replace('__LICLAB__', f'{top_lic.upper()} Lisans')
-    .replace('__CHIPS__', chips_html).replace('__DATA__', data_js))
+    .replace('__CHIPS__', chips_html).replace('__DATA__', data_js).replace('__TREND__', trend_js))
 open(desk_out, 'w', encoding='utf-8').write(page)
 open(arsiv_out, 'w', encoding='utf-8').write(page)
 print(f"🌐 HTML rapor: {desk_out} ({total} repo, {n_picks} asistan seçimi)")
