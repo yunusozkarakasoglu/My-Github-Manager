@@ -147,6 +147,25 @@ python3 guncelle.py --fetch   # veriyi GitHub'dan çek + data.json + index.html 
 
 ---
 
+## 🕒 Otomatik Sabah Raporu (`github_daily_scan.sh`)
+
+Her sabah 08:00'de systemd timer ile çalışır (bilgisayar kapalıysa açılınca çalışır); son aramadan
+itibaren yeni repoları tarar, raporu **Masaüstü'ndeki `Github-Raporu.html`** olarak üretir ve bildirim gönderir.
+
+### Rapor özellikleri
+
+- 📑 **Sekmeler:** *Tüm Repolar* + *Benim Seçimlerim* (asistanın seçtikleri)
+- 🔢 **Numaralandırma:** her kartta rozet (01, 02...) — *"2, 5, 9 ekle"* de, numaralarla kataloğa ekleyelim
+- 🏆 **Benim Seçimlerim:** asistan seçim profili (MCP, Pi, belge işleme, kod istihbaratı...) + **"Neden seçildi"** açıklaması
+- ⭐ **☆ Seç butonu:** tarayıcıda kendi seçimlerini de işaretleyebilirsin
+- 🌍 **Türkçe açıklamalar:** yerel NLLB-200 çevirisi (opsiyonel; İngilizce orijinal küçük not olarak altında)
+- 🔥 **Bu Hafta Patlayanlar:** katalogdaki repoların yıldız artışı analizi (data.json yedek karşılaştırması)
+- 🎨 **Kağıt tema:** ticker, istatistik şeridi, kategori filtreleri, mobil uyumlu
+
+> 💡 **Asistana söyle:** *"sabah raporu"* → masaüstündeki son raporu tarayıcıda açar.
+
+---
+
 ## 🔍 Yeni Repo Tarama (`tara.py`)
 
 Son günlerde oluşturulan, kategorilerine uygun **yeni açık kaynak repoları** bulur.
@@ -175,6 +194,7 @@ python3 tara.py --gun 30 --min-stars 100  # isteğe bağlı min ★ (varsayılan
 - ✅ **Lisans kesinlikle tamamen açık kaynak + ücretsiz** (OSI onaylı: MIT, Apache, GPL, AGPL, MPL, BSD, CC0...)
 - ✅ Arşivlenmemiş, aktif repolar
 - ✅ Zaten star'lı olanlar hariç tutulur
+- 🚫 **Spam/korsan kara listesi** — crack, keygen, "free-desktop" sahte AI uygulamaları, `.git-` desenli şüpheli isimler, bahis/kumar vb. otomatik elenir
 - ⛔ Min ★ kriteri yok (istemezsen) — küçük ama değerli repolar da yakalanır
 - 🗂️ Her sonuç için **önerilen kategori** otomatik eşleştirilir (TR+EN anahtar kelimelerle)
 
