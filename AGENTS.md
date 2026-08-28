@@ -28,6 +28,7 @@ Asistan (pi coding agent) bu repoyu açtığında AŞAĞIDAKİ kurallara uyar.
 | **"şu repoyu ekle" / "şu kategoriye ekle"** | Repoyu star'lar, doğru kategori listesine ekler (`updateUserListsForItem` — **tüm liste ID'leri birlikte verilir**, repo başka listede düşmesin). |
 | **"repo incele: X"** | Reponun README/doküman/kaynak kodunu okuyup detaylı değerlendirme sunar (ne yapar, güçlü/zayıf yönler, kullanım senaryosu). |
 | **"sabah raporu"** | `~/Masaüstü/Github-Raporu.html` son raporu tarayıcıda açar (yoksa `github_daily_scan.sh` çalıştırır). |
+| **"2, 5, 9 ekle" (numaralı ekleme)** | Rapor/listedeki numaralara göre ekler: `Masaüstü/Github-Raporu.html`'deki repo numaralarına karşılık gelen repoları star'lar + ilgili kategorilere ekler. |
 
 ---
 
@@ -39,6 +40,9 @@ Asistan (pi coding agent) bu repoyu açtığında AŞAĞIDAKİ kurallara uyar.
 | `repo-indeksi.txt` | grep dostu hızlı tarama (`grep -i "pdf" repo-indeksi.txt`) |
 | `.son-tarama.json` | Son tarama tarihi — argümansız tara.py bunu kullanır |
 | `tarama.md` | Son tarama çıktısı (—kaydet ile oluşur) |
+| `ceviri.py` | Yerel çeviri aracı (NLLB via CTranslate2) — rapor açıklamalarını Türkçeye çevirir |
+| `~/Github-Raporlari/.ceviriler.json` | Çeviri önbelleği (aynı metin tekrar çevrilmez) |
+| `~/Github-Raporlari/.data-onceki.json` | 📈 Trend yedeği — `guncelle.py --fetch` eski data.json'u buraya kopyalar (yıldız artışı analizi) |
 | `assets/` | README görselleri |
 
 ## 🤖 Etiket Mantığı
@@ -51,7 +55,7 @@ Etiketler `guncelle.py`/`tara.py`/`ara.py` içindeki `KEYWORD_TAGS` listesiyle �
 
 - Yalnızca **OSI onaylı, tamamen açık kaynak + ücretsiz** lisanslar (MIT, Apache, GPL, AGPL, MPL, BSD, CC0, Unlicense...)
 - Arşivlenmiş repolar **hariç**
-- Crack/korsan/spam/promo repoları **asla** önerme (örn. "X-Crack", "X-Free-Desktop")
+- 🚫 **Spam/korsan kara listesi** (`tara.py` `BAD_PATTERNS`): crack, keygen, "free-desktop" sahte AI uygulamaları, `.git-` desenli isimler, bahis/kumar, xxx vb. otomatik elenir — asla önerme
 - Yıldız tek kriter değil: küçük ama değerli niş repolar da önerilir
 - Öneri yaparken **kullanıcının kategorilerine uygunluğu** ana kriterdir
 
@@ -68,4 +72,5 @@ Etiketler `guncelle.py`/`tara.py`/`ara.py` içindeki `KEYWORD_TAGS` listesiyle �
 
 - `github_daily_scan.sh` — her sabah 08:00'de systemd timer ile çalışır (bilgisayar kapalıysa açılınca çalışır)
 - Yeni repo keşfederse masaüstü bildirimi + `~/Masaüstü/Github-Raporu.html` (tıklanabilir) raporu üretir; arşiv: `~/Github-Raporlari/`
+- Rapor özellikleri: **Tüm Repolar / Benim Seçimlerim** sekmeleri, kartlarda **numara rozetleri** (kullanıcı numarayla ekleme yapar), asistan seçim profili + **"Neden seçildi"** açıklamaları, **🔥 Bu Hafta Patlayanlar** (trend), **Türkçe açıklamalar** (NLLB yerel çeviri)
 - Kullanıcı raporu okuyup "şunları ekle" derse, katalog güncellenir
