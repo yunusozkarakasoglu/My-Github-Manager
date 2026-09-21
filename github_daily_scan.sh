@@ -6,7 +6,7 @@
 set -uo pipefail
 
 REPO_DIR="$HOME/Github-My-Katalog"
-RAPOR_DIR="$HOME/Github-Raporlari"
+RAPOR_DIR="$HOME/Github-My-Katalog/Raporlar"
 LOGFILE="$RAPOR_DIR/.son-tarama-log.txt"
 mkdir -p "$RAPOR_DIR"
 
@@ -42,7 +42,7 @@ RAPOR="$RAPOR_DIR/$TARIH.md"
   elif [ "$LISANS_IZI" -gt 0 ]; then
     echo "## ⚠️ Tarama sorunlu olabilir"
     echo
-    echo "Çıktıda hata/limit işareti görüldü. Ayrıntı: \`cat ~/Github-Raporlari/.son-tarama-log.txt\`"
+    echo "Çıktıda hata/limit işareti görüldü. Ayrıntı: \`cat ~/Github-My-Katalog/Raporlar/.son-tarama-log.txt\`"
     echo
     tail -20 "$LOGFILE"
   else
@@ -122,8 +122,8 @@ for line in src.splitlines():
 _desc_list = list(dict.fromkeys(r['desc'] for r in repos if r['desc']))
 _ceviriler = {}
 if _desc_list:
-    _g = os.path.expanduser('~/Github-Raporlari/.ceviri-giris.json')
-    _c = os.path.expanduser('~/Github-Raporlari/.ceviri-cikti.json')
+    _g = os.path.expanduser('~/Github-My-Katalog/Raporlar/.ceviri-giris.json')
+    _c = os.path.expanduser('~/Github-My-Katalog/Raporlar/.ceviri-cikti.json')
     json.dump({'metinler': _desc_list}, open(_g, 'w', encoding='utf-8'), ensure_ascii=False)
     _rr = subprocess.run([os.path.expanduser('~/.ct2-env/bin/python'),
                           '/home/yunus/Github-My-Katalog/ceviri.py', _g, _c],
@@ -177,7 +177,7 @@ data_js = json.dumps(repos, ensure_ascii=False).replace('</', '<\\/')
 # ── 📈 Trend: katalogdaki yıldız artışı (data.json vs önceki yedek) ──
 trend = []
 _data_yeni = '/home/yunus/Github-My-Katalog/data.json'
-_data_eski = os.path.expanduser('~/Github-Raporlari/.data-onceki.json')
+_data_eski = os.path.expanduser('~/Github-My-Katalog/Raporlar/.data-onceki.json')
 if os.path.exists(_data_yeni) and os.path.exists(_data_eski):
     try:
         _y = {r['name']: r for r in json.load(open(_data_yeni, encoding='utf-8'))['repos']}

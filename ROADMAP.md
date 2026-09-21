@@ -14,7 +14,7 @@
 
 ### 1. 🕒 Sabah Raporu (yakında)
 - `github_daily_scan.sh`: her sabah son aramadan itibaren tara → özet üret → masaüstü bildirimi
-- Rapor: `~/Masaüstü/Github-Raporu.html` (tıklanabilir linkler) + arşiv `~/Github-Raporlari/YYYY-MM-DD.md`
+- Rapor: `~/Masaüstü/Github-Raporu.html` (tıklanabilir linkler) + arşiv `~/Github-My-Katalog/Raporlar/YYYY-MM-DD.md`
 - systemd user timer: 08:00, `Persistent=true` (bilgisayar kapalıysa açılınca çalışır)
 
 ### 2. 📈 Trend & İzleme

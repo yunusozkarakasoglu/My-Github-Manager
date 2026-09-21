@@ -3,11 +3,11 @@
 # Kullanım: ceviri.py <giris.json> <cikti.json>
 #   giris.json : {"metinler": ["...", ...]}
 #   cikti.json : {"ceviriler": {"metin": "çeviri", ...}}
-# Önbellek    : ~/Github-Raporlari/.ceviriler.json  (daha önce çevrilenler tekrar çevrilmez)
+# Önbellek    : ~/Github-My-Katalog/Raporlar/.ceviriler.json  (daha önce çevrilenler tekrar çevrilmez)
 import json, os, sys, time
 
 MODEL = os.path.expanduser('~/ct2-nllb')
-CACHE = os.path.expanduser('~/Github-Raporlari/.ceviriler.json')
+CACHE = os.path.expanduser('~/Github-My-Katalog/Raporlar/.ceviriler.json')
 
 def main():
     giris, cikti = sys.argv[1], sys.argv[2]

@@ -41,8 +41,8 @@ Asistan (pi coding agent) bu repoyu açtığında AŞAĞIDAKİ kurallara uyar.
 | `.son-tarama.json` | Son tarama tarihi — argümansız tara.py bunu kullanır |
 | `tarama.md` | Son tarama çıktısı (—kaydet ile oluşur) |
 | `ceviri.py` | Yerel çeviri aracı (NLLB via CTranslate2) — rapor açıklamalarını Türkçeye çevirir |
-| `~/Github-Raporlari/.ceviriler.json` | Çeviri önbelleği (aynı metin tekrar çevrilmez) |
-| `~/Github-Raporlari/.data-onceki.json` | 📈 Trend yedeği — `guncelle.py --fetch` eski data.json'u buraya kopyalar (yıldız artışı analizi) |
+| `~/Github-My-Katalog/Raporlar/.ceviriler.json` | Çeviri önbelleği (aynı metin tekrar çevrilmez) |
+| `~/Github-My-Katalog/Raporlar/.data-onceki.json` | 📈 Trend yedeği — `guncelle.py --fetch` eski data.json'u buraya kopyalar (yıldız artışı analizi) |
 | `assets/` | README görselleri |
 
 ## 🤖 Etiket Mantığı
@@ -71,6 +71,6 @@ Etiketler `guncelle.py`/`tara.py`/`ara.py` içindeki `KEYWORD_TAGS` listesiyle �
 ## 🕒 Otomatik Sabah Raporu
 
 - `github_daily_scan.sh` — her sabah 08:00'de systemd timer ile çalışır (bilgisayar kapalıysa açılınca çalışır)
-- Yeni repo keşfederse masaüstü bildirimi + `~/Masaüstü/Github-Raporu.html` (tıklanabilir) raporu üretir; arşiv: `~/Github-Raporlari/`
+- Yeni repo keşfederse masaüstü bildirimi + `~/Masaüstü/Github-Raporu.html` (tıklanabilir) raporu üretir; arşiv: `~/Github-My-Katalog/Raporlar/`
 - Rapor özellikleri: **Tüm Repolar / Benim Seçimlerim** sekmeleri, kartlarda **numara rozetleri** (kullanıcı numarayla ekleme yapar), asistan seçim profili + **"Neden seçildi"** açıklamaları, **🔥 Bu Hafta Patlayanlar** (trend), **Türkçe açıklamalar** (NLLB yerel çeviri)
 - Kullanıcı raporu okuyup "şunları ekle" derse, katalog güncellenir

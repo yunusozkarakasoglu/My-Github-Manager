@@ -75,10 +75,10 @@ def fetch_data():
 
 # ── Veri (yerel önbellek varsa onu kullan, yoksa çek) ──
 DATA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data.json')
-# 📈 Trend takibi için: --fetch çekiminde ESKİ data.json'u yedekle (~/Github-Raporlari/.data-onceki.json)
+# 📈 Trend takibi için: --fetch çekiminde ESKİ data.json'u yedekle (~/Github-My-Katalog/Raporlar/.data-onceki.json)
 if '--fetch' in sys.argv and os.path.exists(DATA_PATH):
     import shutil
-    onceki = os.path.join(os.path.expanduser('~'), 'Github-Raporlari', '.data-onceki.json')
+    onceki = os.path.join(os.path.expanduser('~'), 'Github-My-Katalog/Raporlar', '.data-onceki.json')
     os.makedirs(os.path.dirname(onceki), exist_ok=True)
     shutil.copy(DATA_PATH, onceki)
     print(f'📈 Eski data.json yedeklendi (trend karşılaştırması için): {onceki}')

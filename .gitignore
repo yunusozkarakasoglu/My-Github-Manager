@@ -1,0 +1,6 @@
+# 📂 Rapor arşivi ve önbellekleri — üretilen çıktı, git'e girmez (yerel kalır)
+Raporlar/
+
+# Python
+__pycache__/
+*.pyc

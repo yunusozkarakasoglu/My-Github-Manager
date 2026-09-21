@@ -76,7 +76,7 @@ Bu repo sadece bir katalog değil — **kişisel GitHub asistanımızın beyni**
 > ~/.ct2-env/bin/python ceviri.py
 > ```
 >
-> Çeviri önbelleği `~/Github-Raporlari/.ceviriler.json`'da tutulur — aynı metin bir daha çevrilmez.
+> Çeviri önbelleği `~/Github-My-Katalog/Raporlar/.ceviriler.json`'da tutulur — aynı metin bir daha çevrilmez.
 
 `gh` kurulumu ve giriş:
 ```bash
