@@ -249,7 +249,7 @@ python3 ara.py --liste               # tüm kategoriler + sayılar
 | `guncelle.py` | Veriyi GitHub API'den çeker, `index.html`'i üretir |
 | `guncelle.sh` | Tek komutla güncelleme (çek → üret → commit → push) |
 | `tara.py` | 🔍 Yeni repo tarama aracı |
-| `.son-tarama.json` | 🕒 Son tarama tarihi (tara.py otomatik günceller — son aramadan itibaren tarar) |
+| `.son-tarama.json` | 🕒 Son tarama tarihi (tara.py otomatik günceller — son aramadan itibaren tarar) — **yerel, git'e girmez** (`.gitignore`) |
 | `ara.py` | ⚡ Hızlı arama / indeks aracı (proje kütüphanesi) |
 | `repo-indeksi.txt` | grep dostu indeks (data.json'dan türetilir) |
 | `data.json` | Son veri önbelleği (repo + kategori üyelikleri) |

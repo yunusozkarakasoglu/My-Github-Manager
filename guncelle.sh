@@ -8,7 +8,9 @@ echo "⏳ GitHub'dan star'lar ve kategoriler çekiliyor..."
 python3 guncelle.py --fetch
 
 echo "⏳ Git'e ekleniyor..."
-git add index.html data.json repo-indeksi.txt .son-tarama.json tarama.md
+# .son-tarama.json artık .gitignore'da (github_daily_scan.sh her sabah güncelliyor)
+# → git add listesinden çıkarıldı, yoksa 'set -e' bu satırda script'i öldürürdü
+git add index.html data.json repo-indeksi.txt tarama.md
 git commit -m "katalog güncellendi: $(date '+%d.%m.%Y %H:%M')" --allow-empty
 git push
 
