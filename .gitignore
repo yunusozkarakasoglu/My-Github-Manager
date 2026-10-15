@@ -1,6 +1,9 @@
 # 📂 Rapor arşivi ve önbellekleri — üretilen çıktı, git'e girmez (yerel kalır)
 Raporlar/
 
+# 📅 Yerel tarama durumu — github_daily_scan.sh her sabah günceller (takip edilmez)
+.son-tarama.json
+
 # Python
 __pycache__/
 *.pyc
